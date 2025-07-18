@@ -368,7 +368,7 @@ export const Dashboard = ({ user, onLogout }) => {
             </div>
             <div className="flex items-center space-x-2 text-sm text-gray-300">
               <CheckCircle className="w-4 h-4 text-green-400" />
-              <span>You both get $5 bonus!</span>
+              <span>You get $5 (500 coins) bonus!</span>
             </div>
           </div>
         </div>
