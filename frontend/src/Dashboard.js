@@ -81,19 +81,6 @@ export const Dashboard = ({ user, onLogout }) => {
     },
     {
       id: 4,
-      title: "TikTok - Social Media",
-      description: "Join TikTok and start creating or watching videos",
-      reward: 600, // 600 coins = $6
-      currency: "coins",
-      type: "signup",
-      difficulty: "Easy",
-      time: "2 min",
-      locked: false,
-      url: "https://www.tiktok.com/t/ZT6YEEcjU/",
-      image: "https://images.unsplash.com/photo-1611605698323-b1e99cfd37ea?w=100&h=100&fit=crop&crop=center"
-    },
-    {
-      id: 5,
       title: "Shopify - Start Your Store",
       description: "Create a Shopify store and complete the tutorial",
       reward: 2500, // 2500 coins = $25
@@ -106,7 +93,7 @@ export const Dashboard = ({ user, onLogout }) => {
       image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=100&h=100&fit=crop&crop=center"
     },
     {
-      id: 6,
+      id: 5,
       title: "Coinbase - Crypto Signup",
       description: "Sign up for Coinbase and verify your account",
       reward: 3000, // 3000 coins = $30
@@ -119,7 +106,7 @@ export const Dashboard = ({ user, onLogout }) => {
       image: "https://images.unsplash.com/photo-1621761191319-c6fb62004040?w=100&h=100&fit=crop&crop=center"
     },
     {
-      id: 7,
+      id: 6,
       title: "Uber Eats - Food Delivery",
       description: "Order food through Uber Eats (minimum $15)",
       reward: 2000, // 2000 coins = $20
@@ -132,7 +119,7 @@ export const Dashboard = ({ user, onLogout }) => {
       image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=100&h=100&fit=crop&crop=center"
     },
     {
-      id: 8,
+      id: 7,
       title: "Netflix - Stream Movies",
       description: "Sign up for Netflix free trial",
       reward: 1200, // 1200 coins = $12
@@ -145,7 +132,7 @@ export const Dashboard = ({ user, onLogout }) => {
       image: "https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?w=100&h=100&fit=crop&crop=center"
     },
     {
-      id: 9,
+      id: 8,
       title: "Spotify - Music Streaming",
       description: "Sign up for Spotify Premium trial",
       reward: 1000, // 1000 coins = $10
