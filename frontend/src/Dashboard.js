@@ -1084,7 +1084,7 @@ export const Dashboard = ({ user, onLogout }) => {
             </nav>
           </div>
           
-          <div className="p-6">
+          <div className="p-4 sm:p-6">
             {activeTab === 'offers' && renderOffers()}
             {activeTab === 'started' && renderOffersStarted()}
             {activeTab === 'cashout' && renderCashout()}
