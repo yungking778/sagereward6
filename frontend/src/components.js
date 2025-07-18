@@ -438,7 +438,7 @@ export const WhyChoose = () => {
               className="bg-gray-900 rounded-2xl p-8 border border-gray-700 hover:border-orange-500 transition-all group"
             >
               <div className="flex items-start space-x-6">
-                <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
                   <div className="text-white">
                     {feature.icon}
                   </div>
