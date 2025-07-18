@@ -817,7 +817,8 @@ export const Dashboard = ({ user, onLogout }) => {
               {[
                 { id: 'offers', label: 'Offers', icon: Gift },
                 { id: 'started', label: 'Started', icon: Clock },
-                { id: 'withdrawal', label: 'Withdrawal', icon: CreditCard },
+                { id: 'cashout', label: 'Cashout', icon: CreditCard },
+                { id: 'withdrawal', label: 'Withdrawal', icon: DollarSign },
                 { id: 'referral', label: 'Referral', icon: Users }
               ].map((tab) => (
                 <button
