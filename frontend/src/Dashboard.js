@@ -1114,6 +1114,9 @@ export const Dashboard = ({ user, onLogout }) => {
             {activeTab === 'cashout' && renderCashout()}
             {activeTab === 'withdrawal' && renderWithdrawal()}
             {activeTab === 'referral' && renderReferral()}
+            {activeTab === 'profile' && renderProfile()}
+            {activeTab === 'transactions' && renderTransactions()}
+            {activeTab === 'support' && renderSupport()}
           </div>
         </div>
       </main>
