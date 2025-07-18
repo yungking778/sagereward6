@@ -111,7 +111,7 @@ html {
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
 
-/* Responsive design utilities */
+/* Mobile optimizations */
 @media (max-width: 768px) {
   .hero-title {
     font-size: 2.5rem;
@@ -120,6 +120,27 @@ html {
   
   .hero-subtitle {
     font-size: 1.125rem;
+  }
+  
+  /* Touch-friendly buttons */
+  .btn-touch {
+    min-height: 44px;
+    padding: 12px 24px;
+  }
+  
+  /* Mobile tap highlights */
+  .tap-highlight {
+    -webkit-tap-highlight-color: rgba(59, 130, 246, 0.3);
+  }
+  
+  /* Mobile scroll optimization */
+  body {
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Mobile input improvements */
+  input, textarea, select {
+    font-size: 16px; /* Prevents zoom on iOS */
   }
 }
 
