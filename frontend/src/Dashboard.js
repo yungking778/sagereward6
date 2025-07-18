@@ -26,6 +26,11 @@ export const Dashboard = ({ user, onLogout }) => {
   const [pendingWithdrawals, setPendingWithdrawals] = useState([]);
   const [referralCode] = useState('HYPER' + Math.random().toString(36).substr(2, 6).toUpperCase());
   const [showWithdrawalPopup, setShowWithdrawalPopup] = useState(false);
+  const [showPayPalPopup, setShowPayPalPopup] = useState(false);
+  const [showProfileMenu, setShowProfileMenu] = useState(false);
+  const [selectedCashoutOption, setSelectedCashoutOption] = useState(null);
+  const [paypalEmail, setPaypalEmail] = useState('');
+  const [confirmPaypalEmail, setConfirmPaypalEmail] = useState('');
   const [withdrawalEmail, setWithdrawalEmail] = useState('');
   const [withdrawalAmount, setWithdrawalAmount] = useState('');
 
