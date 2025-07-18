@@ -326,7 +326,7 @@ export const Dashboard = ({ user, onLogout }) => {
                     <p className="text-gray-400 text-xs">{new Date(withdrawal.date).toLocaleString()}</p>
                   </div>
                   <div className="text-right">
-                    <p className="text-orange-400 font-semibold">-${withdrawal.amount}</p>
+                    <p className="text-green-400 font-semibold">-${withdrawal.amount}</p>
                     <p className="text-gray-400 text-xs">{withdrawal.coins} coins</p>
                     <span className="bg-yellow-500 text-black px-2 py-1 rounded-full text-xs">Pending</span>
                   </div>
