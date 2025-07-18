@@ -336,6 +336,18 @@ frontend:
           agent: "main"
           comment: "Successfully updated BIGO Live logo to use a neon broadcast symbol icon that represents live streaming. Since official BIGO Live logo wasn't available through image search tools, used a professional streaming icon that fits the reward app context."
 
+  - task: "Referral Link Functionality"
+    implemented: true
+    working: true
+    file: "/app/frontend/src/Dashboard.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+        - working: true
+          agent: "main"
+          comment: "Successfully verified referral link functionality. Updated referral link to use dynamic domain (window.location.origin) instead of hardcoded domain. Copy functionality works correctly. Referral links display properly in format: [domain]/signup?ref=[code]. System generates unique referral codes and displays referral stats (Total Referrals, Pending, Earnings)."
+
 backend:
   - task: "User Registration API"
     implemented: false
