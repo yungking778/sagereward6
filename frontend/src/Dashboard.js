@@ -656,7 +656,7 @@ export const Dashboard = ({ user, onLogout }) => {
           <div className="bg-gray-700 rounded-lg p-4 mb-4">
             <div className="flex items-center justify-between">
               <div className="flex-1 mr-3">
-                <span className="text-sm font-medium text-orange-400 break-all">{referralLink}</span>
+                <span className="text-sm font-medium text-cyan-400 break-all">{referralLink}</span>
               </div>
               <button
                 onClick={copyReferralLink}
