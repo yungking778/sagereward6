@@ -58,11 +58,11 @@ export const Dashboard = ({ user, onLogout }) => {
       image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=100&h=100&fit=crop&crop=center"
     },
     {
-      id: 2,
+      id: 3,
       title: "Shopify - Start Your Store",
       description: "Create a Shopify store and complete the tutorial",
-      reward: 25,
-      currency: "$",
+      reward: 2500, // 2500 coins = $25
+      currency: "coins",
       type: "signup",
       difficulty: "Medium",
       time: "10 min",
@@ -71,11 +71,11 @@ export const Dashboard = ({ user, onLogout }) => {
       image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=100&h=100&fit=crop&crop=center"
     },
     {
-      id: 3,
+      id: 4,
       title: "Coinbase - Crypto Signup",
       description: "Sign up for Coinbase and verify your account",
-      reward: 30,
-      currency: "$",
+      reward: 3000, // 3000 coins = $30
+      currency: "coins",
       type: "signup",
       difficulty: "Medium",
       time: "15 min",
@@ -84,11 +84,11 @@ export const Dashboard = ({ user, onLogout }) => {
       image: "https://images.unsplash.com/photo-1621761191319-c6fb62004040?w=100&h=100&fit=crop&crop=center"
     },
     {
-      id: 4,
+      id: 5,
       title: "Uber Eats - Food Delivery",
       description: "Order food through Uber Eats (minimum $15)",
-      reward: 20,
-      currency: "$",
+      reward: 2000, // 2000 coins = $20
+      currency: "coins",
       type: "purchase",
       difficulty: "Easy",
       time: "5 min",
@@ -97,11 +97,11 @@ export const Dashboard = ({ user, onLogout }) => {
       image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=100&h=100&fit=crop&crop=center"
     },
     {
-      id: 5,
+      id: 6,
       title: "Netflix - Stream Movies",
       description: "Sign up for Netflix free trial",
-      reward: 12,
-      currency: "$",
+      reward: 1200, // 1200 coins = $12
+      currency: "coins",
       type: "trial",
       difficulty: "Easy",
       time: "3 min",
@@ -110,11 +110,11 @@ export const Dashboard = ({ user, onLogout }) => {
       image: "https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?w=100&h=100&fit=crop&crop=center"
     },
     {
-      id: 6,
+      id: 7,
       title: "Spotify - Music Streaming",
       description: "Sign up for Spotify Premium trial",
-      reward: 10,
-      currency: "$",
+      reward: 1000, // 1000 coins = $10
+      currency: "coins",
       type: "trial",
       difficulty: "Easy",
       time: "2 min",
@@ -132,10 +132,55 @@ export const Dashboard = ({ user, onLogout }) => {
     }
   };
 
+  const handleWithdrawal = () => {
+    if (withdrawalEmail && withdrawalAmount) {
+      const amount = parseFloat(withdrawalAmount);
+      const requiredCoins = amount * 100; // Convert dollars to coins
+      
+      if (requiredCoins <= userCoins && amount >= 1) {
+        setShowWithdrawalPopup(true);
+        setWithdrawalEmail('');
+        setWithdrawalAmount('');
+      } else {
+        alert('Insufficient coins or invalid amount. Minimum withdrawal is $1.');
+      }
+    } else {
+      alert('Please fill in both email and amount.');
+    }
+  };
+
   const copyReferralCode = () => {
     navigator.clipboard.writeText(referralCode);
     alert('Referral code copied to clipboard!');
   };
+
+  // Withdrawal Success Popup
+  const WithdrawalPopup = () => (
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+      <motion.div
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.3 }}
+        className="bg-gray-900 rounded-2xl p-8 max-w-md w-full border border-gray-700"
+      >
+        <div className="text-center">
+          <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
+            <CheckCircle className="w-8 h-8 text-white" />
+          </div>
+          <h3 className="text-2xl font-bold text-white mb-4">Withdrawal Processing</h3>
+          <p className="text-gray-300 mb-6">
+            Your withdrawal is processing. You will receive an email confirmation within 1-24 hours, but it can take up to 48 hours to complete.
+          </p>
+          <button
+            onClick={() => setShowWithdrawalPopup(false)}
+            className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-lg font-semibold transition-colors"
+          >
+            Got it!
+          </button>
+        </div>
+      </motion.div>
+    </div>
+  );
 
   const renderOffers = () => (
     <div className="space-y-6">
