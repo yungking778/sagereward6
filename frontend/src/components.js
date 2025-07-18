@@ -50,7 +50,7 @@ export const SignUpModal = ({ isOpen, onClose, onSignUp }) => {
               </svg>
               <div className="absolute inset-0 bg-cyan-400 rounded-full animate-pulse opacity-50"></div>
             </div>
-            <span className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">HYPEREWARD</span>
+            <span className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">RewardSage</span>
           </div>
           <h2 className="text-2xl font-bold text-white mb-2">Join HYPEREWARD</h2>
         </div>
