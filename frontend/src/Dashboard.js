@@ -865,6 +865,74 @@ export const Dashboard = ({ user, onLogout }) => {
         </div>
       </main>
       
+      {/* PayPal Email Confirmation Popup */}
+      {showPayPalPopup && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.3 }}
+            className="bg-gray-900 rounded-2xl p-8 max-w-md w-full border border-gray-700"
+          >
+            <div className="text-center mb-6">
+              <div className="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-white font-bold text-xl">PayPal</span>
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-2">Confirm PayPal Email</h3>
+              <p className="text-gray-300">
+                Cashing out ${selectedCashoutOption?.amount} 
+                {selectedCashoutOption?.bonus > 0 && <span className="text-orange-400"> (+${selectedCashoutOption?.bonus} bonus)</span>}
+              </p>
+            </div>
+
+            <div className="space-y-4">
+              <div>
+                <label className="block text-sm font-medium text-gray-300 mb-2">PayPal Email</label>
+                <input
+                  type="email"
+                  value={paypalEmail}
+                  onChange={(e) => setPaypalEmail(e.target.value)}
+                  placeholder="Enter your PayPal email"
+                  className="w-full px-4 py-3 bg-gray-800 text-white rounded-lg border border-gray-600 focus:border-blue-500 focus:outline-none"
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-gray-300 mb-2">Confirm PayPal Email</label>
+                <input
+                  type="email"
+                  value={confirmPaypalEmail}
+                  onChange={(e) => setConfirmPaypalEmail(e.target.value)}
+                  placeholder="Confirm your PayPal email"
+                  className="w-full px-4 py-3 bg-gray-800 text-white rounded-lg border border-gray-600 focus:border-blue-500 focus:outline-none"
+                />
+              </div>
+
+              <div className="flex space-x-4 mt-6">
+                <button
+                  onClick={() => {
+                    setShowPayPalPopup(false);
+                    setPaypalEmail('');
+                    setConfirmPaypalEmail('');
+                    setSelectedCashoutOption(null);
+                  }}
+                  className="flex-1 bg-gray-700 hover:bg-gray-600 text-white px-4 py-3 rounded-lg font-semibold transition-colors"
+                >
+                  Cancel
+                </button>
+                <button
+                  onClick={handlePayPalSubmit}
+                  disabled={!paypalEmail || !confirmPaypalEmail || paypalEmail !== confirmPaypalEmail}
+                  className="flex-1 bg-blue-500 hover:bg-blue-600 disabled:bg-gray-600 text-white px-4 py-3 rounded-lg font-semibold transition-colors"
+                >
+                  Confirm Cashout
+                </button>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      )}
+
       {/* Withdrawal Success Popup */}
       {showWithdrawalPopup && <WithdrawalPopup />}
     </div>
