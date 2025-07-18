@@ -762,29 +762,33 @@ export const Dashboard = ({ user, onLogout }) => {
         amount: 1,
         coins: 100,
         bonus: 0,
-        status: userCoins >= 100 ? 'available' : 'locked',
-        progress: Math.min((userCoins / 100) * 100, 100)
+        status: !isFirstWithdrawal && userCoins >= 100 ? 'available' : 'locked',
+        progress: Math.min((userCoins / 100) * 100, 100),
+        firstWithdrawalLocked: isFirstWithdrawal
       },
       {
         amount: 5,
         coins: 500,
         bonus: 1,
-        status: userCoins >= 500 ? 'available' : userCoins >= 400 ? 'almost' : 'locked',
-        progress: Math.min((userCoins / 500) * 100, 100)
+        status: !isFirstWithdrawal && userCoins >= 500 ? 'available' : userCoins >= 400 ? 'almost' : 'locked',
+        progress: Math.min((userCoins / 500) * 100, 100),
+        firstWithdrawalLocked: isFirstWithdrawal
       },
       {
         amount: 10,
         coins: 1000,
         bonus: 5,
-        status: userCoins >= 1000 ? 'available' : userCoins >= 800 ? 'almost' : 'locked',
-        progress: Math.min((userCoins / 1000) * 100, 100)
+        status: !isFirstWithdrawal && userCoins >= 1000 ? 'available' : userCoins >= 800 ? 'almost' : 'locked',
+        progress: Math.min((userCoins / 1000) * 100, 100),
+        firstWithdrawalLocked: isFirstWithdrawal
       },
       {
         amount: 20,
         coins: 2000,
         bonus: 10,
         status: userCoins >= 2000 ? 'available' : userCoins >= 1600 ? 'almost' : 'locked',
-        progress: Math.min((userCoins / 2000) * 100, 100)
+        progress: Math.min((userCoins / 2000) * 100, 100),
+        firstWithdrawalLocked: false
       },
       {
         amount: 50,
@@ -792,7 +796,8 @@ export const Dashboard = ({ user, onLogout }) => {
         bonus: 25,
         status: userCoins >= 5000 ? 'available' : userCoins >= 4000 ? 'almost' : 'locked',
         progress: Math.min((userCoins / 5000) * 100, 100),
-        bestDeal: true
+        bestDeal: true,
+        firstWithdrawalLocked: false
       }
     ];
 
