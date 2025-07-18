@@ -509,6 +509,9 @@ export const Dashboard = ({ user, onLogout }) => {
           </div>
         </div>
       </main>
+      
+      {/* Withdrawal Success Popup */}
+      {showWithdrawalPopup && <WithdrawalPopup />}
     </div>
   );
 };
