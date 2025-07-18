@@ -532,9 +532,9 @@ export const FinalCTA = ({ onSignUp }) => {
 
   return (
     <>
-      <section className="py-20 bg-gradient-to-br from-orange-500 to-orange-600 relative overflow-hidden">
+      <section className="py-20 bg-gradient-to-br from-blue-500 to-blue-600 relative overflow-hidden">
         {/* Background decoration */}
-        <div className="absolute inset-0 bg-gradient-to-br from-orange-400/20 to-purple-500/20"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-400/20 to-green-500/20"></div>
         
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <motion.div
