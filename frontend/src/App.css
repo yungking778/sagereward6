@@ -136,11 +136,48 @@ html {
   /* Mobile scroll optimization */
   body {
     -webkit-overflow-scrolling: touch;
+    overflow-x: hidden;
   }
   
   /* Mobile input improvements */
   input, textarea, select {
     font-size: 16px; /* Prevents zoom on iOS */
+  }
+  
+  /* Mobile container adjustments */
+  .container, .max-w-7xl {
+    max-width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  /* Mobile grid adjustments */
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  /* Mobile spacing */
+  .space-y-6 > * + * {
+    margin-top: 1.5rem;
+  }
+  
+  /* Mobile padding adjustments */
+  .p-6 {
+    padding: 1rem;
+  }
+  
+  .p-8 {
+    padding: 1.5rem;
+  }
+  
+  /* Mobile text sizing */
+  .text-2xl {
+    font-size: 1.5rem;
+  }
+  
+  .text-xl {
+    font-size: 1.25rem;
   }
 }
 
