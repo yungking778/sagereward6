@@ -283,12 +283,18 @@ export const Dashboard = ({ user, onLogout }) => {
                 type="number"
                 placeholder="Minimum $1"
                 min="1"
-                max={userCoins}
+                max={parseFloat(coinsToDollars(userCoins))}
+                value={withdrawalAmount}
+                onChange={(e) => setWithdrawalAmount(e.target.value)}
                 className="w-full px-4 py-2 bg-gray-700 text-white rounded-lg border border-gray-600 focus:border-orange-500 focus:outline-none"
               />
+              <p className="text-xs text-gray-400 mt-1">
+                Available: ${coinsToDollars(userCoins)} ({userCoins} coins)
+              </p>
             </div>
             <button 
-              disabled={userCoins < 1}
+              onClick={handleWithdrawal}
+              disabled={userCoins < 100} // Minimum 100 coins = $1
               className="w-full bg-orange-500 hover:bg-orange-600 disabled:bg-gray-600 text-white px-4 py-2 rounded-lg font-semibold transition-colors"
             >
               Withdraw to PayPal
