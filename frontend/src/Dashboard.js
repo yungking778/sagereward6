@@ -763,7 +763,7 @@ export const Dashboard = ({ user, onLogout }) => {
     };
 
     return (
-      <div className="min-h-screen bg-gradient-to-br from-purple-600 via-blue-600 to-purple-800 p-4">
+      <div className="min-h-screen bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 p-4">
         <div className="max-w-4xl mx-auto">
           {/* Header */}
           <div className="text-center mb-8 pt-8">
