@@ -575,12 +575,12 @@ export const Dashboard = ({ user, onLogout }) => {
           
           <div className="bg-gray-800 rounded-xl p-6 border border-gray-700">
             <div className="flex items-center space-x-4">
-              <div className="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center">
-                <CheckCircle className="w-6 h-6 text-white" />
+              <div className="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center">
+                <Clock className="w-6 h-6 text-white" />
               </div>
               <div>
-                <p className="text-2xl font-bold text-white">{completedOffers.length}</p>
-                <p className="text-gray-400">Completed Offers</p>
+                <p className="text-2xl font-bold text-white">{startedOffers.length}</p>
+                <p className="text-gray-400">Started Offers</p>
               </div>
             </div>
           </div>
