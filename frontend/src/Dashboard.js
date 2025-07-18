@@ -997,18 +997,18 @@ export const Dashboard = ({ user, onLogout }) => {
             </div>
 
             {/* Right - Coin Box */}
-            <div className="flex items-center space-x-6">
-              <div className="flex items-center space-x-2 bg-gray-800 rounded-lg px-4 py-2">
-                <Coins className="w-5 h-5 text-cyan-400" />
-                <span className="text-white font-semibold">{userCoins}</span>
-                <span className="text-gray-400 text-sm">coins</span>
+            <div className="flex items-center space-x-2 sm:space-x-6">
+              <div className="flex items-center space-x-2 bg-gray-800 rounded-lg px-3 sm:px-4 py-2">
+                <Coins className="w-4 h-4 sm:w-5 sm:h-5 text-cyan-400" />
+                <span className="text-white font-semibold text-sm sm:text-base">{userCoins}</span>
+                <span className="text-gray-400 text-xs sm:text-sm">coins</span>
               </div>
               
               <button
                 onClick={onLogout}
                 className="text-gray-400 hover:text-white transition-colors"
               >
-                <LogOut className="w-5 h-5" />
+                <LogOut className="w-4 h-4 sm:w-5 sm:h-5" />
               </button>
             </div>
           </div>
