@@ -1,19 +1,15 @@
-# Netlify Build Configuration
 [build]
   publish = "build"
   command = "yarn build"
 
-# Redirect all requests to index.html for React Router
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
 
-# Environment variables
 [build.environment]
   NODE_VERSION = "18"
-  
-# Security headers
+
 [[headers]]
   for = "/*"
   [headers.values]
