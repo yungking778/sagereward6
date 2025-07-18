@@ -33,6 +33,8 @@ export const Dashboard = ({ user, onLogout }) => {
   const [confirmPaypalEmail, setConfirmPaypalEmail] = useState('');
   const [withdrawalEmail, setWithdrawalEmail] = useState('');
   const [withdrawalAmount, setWithdrawalAmount] = useState('');
+  const [isFirstWithdrawal, setIsFirstWithdrawal] = useState(true);
+  const [referralLink] = useState(`https://hyperreward.com/signup?ref=${Math.random().toString(36).substr(2, 8).toUpperCase()}`);
 
   // Conversion rate: 100 points = $1
   const coinsToDollars = (coins) => (coins / 100).toFixed(2);
