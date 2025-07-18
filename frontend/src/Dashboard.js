@@ -1021,7 +1021,7 @@ export const Dashboard = ({ user, onLogout }) => {
         <div className="grid md:grid-cols-3 gap-6 mb-8">
           <div className="bg-gray-800 rounded-xl p-6 border border-gray-700">
             <div className="flex items-center space-x-4">
-              <div className="w-12 h-12 bg-orange-500 rounded-lg flex items-center justify-center">
+              <div className="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center">
                 <DollarSign className="w-6 h-6 text-white" />
               </div>
               <div>
