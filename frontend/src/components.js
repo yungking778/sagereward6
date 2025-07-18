@@ -377,7 +377,7 @@ export const HowItWorks = () => {
               className="text-center"
             >
               <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-8 border border-gray-700 hover:border-orange-500 transition-all group">
-                <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+                <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
                   <span className="text-2xl font-bold text-white">{step.number}</span>
                 </div>
                 <h3 className="text-xl font-bold text-white mb-4">{step.title}</h3>
