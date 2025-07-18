@@ -285,6 +285,18 @@ frontend:
           agent: "testing"
           comment: "Stats overview displays correctly with three cards: Total Earnings, Started Offers count, and Referrals count. Started offers count updates accurately when offers are started (tested showing 2 when both Hopper and Temu offers were started). All stats display in real-time."
 
+  - task: "Netlify Deployment Configuration"
+    implemented: true
+    working: true
+    file: "/app/netlify.toml"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+        - working: true
+          agent: "main"
+          comment: "Fixed Netlify deployment configuration parsing error. Moved netlify.toml from /app/frontend/ to /app/ (root directory) and updated build configuration to work with frontend subdirectory. Build command updated to 'cd frontend && yarn install && yarn build' with publish directory 'frontend/build'. Build tested successfully - application builds correctly and is ready for Netlify deployment."
+
 backend:
   - task: "User Registration API"
     implemented: false
