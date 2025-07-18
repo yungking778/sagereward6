@@ -77,7 +77,7 @@ export const Dashboard = ({ user, onLogout }) => {
       time: "2 min",
       locked: false,
       url: "https://slink.bigovideo.tv/GXRLgJ",
-      image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=100&h=100&fit=crop&crop=center"
+      image: "https://images.unsplash.com/photo-1690683790356-c1edb75e3df7?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzd8MHwxfHNlYXJjaHwxfHxicm9hZGNhc3QlMjBpY29ufGVufDB8fHx8MTc1Mjg0Mjc0M3ww&ixlib=rb-4.1.0&q=85&w=100&h=100&fit=crop"
     },
     {
       id: 4,
