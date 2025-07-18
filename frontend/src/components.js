@@ -504,7 +504,7 @@ export const Testimonials = () => {
                 <div className="flex items-center justify-between mb-4">
                   <div>
                     <h4 className="font-bold text-white">{testimonial.name}</h4>
-                    <p className="text-sm text-orange-400 font-semibold">Earned {testimonial.earned}</p>
+                    <p className="text-sm text-green-400 font-semibold">Earned {testimonial.earned}</p>
                   </div>
                   <div className="flex space-x-1">
                     {[...Array(testimonial.rating)].map((_, i) => (
