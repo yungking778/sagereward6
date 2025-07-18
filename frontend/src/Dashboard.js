@@ -362,6 +362,30 @@ export const Dashboard = ({ user, onLogout }) => {
         <p className="text-green-100">Cash out your earnings to PayPal or gift cards</p>
       </div>
       
+      {/* Pending Withdrawals */}
+      {pendingWithdrawals.length > 0 && (
+        <div className="bg-gray-800 rounded-xl p-6 border border-gray-700">
+          <h4 className="text-xl font-bold text-white mb-4">Pending Withdrawals</h4>
+          <div className="space-y-3">
+            {pendingWithdrawals.map((withdrawal) => (
+              <div key={withdrawal.id} className="bg-gray-700 rounded-lg p-4">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <p className="text-white font-medium">${withdrawal.amount.toFixed(2)} to {withdrawal.email}</p>
+                    <p className="text-sm text-gray-400">
+                      {new Date(withdrawal.date).toLocaleDateString()} • {withdrawal.coins} coins deducted
+                    </p>
+                  </div>
+                  <span className="px-3 py-1 bg-yellow-500 text-black rounded-full text-sm font-medium">
+                    Pending
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+      
       <div className="grid md:grid-cols-2 gap-6">
         <div className="bg-gray-800 rounded-xl p-6">
           <h4 className="text-xl font-bold text-white mb-4">PayPal Withdrawal</h4>
