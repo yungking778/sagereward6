@@ -604,6 +604,7 @@ export const Dashboard = ({ user, onLogout }) => {
             <nav className="flex space-x-0">
               {[
                 { id: 'offers', label: 'Offers', icon: Gift },
+                { id: 'started', label: 'Started', icon: Clock },
                 { id: 'withdrawal', label: 'Withdrawal', icon: CreditCard },
                 { id: 'referral', label: 'Referral', icon: Users }
               ].map((tab) => (
