@@ -568,17 +568,30 @@ export const Dashboard = ({ user, onLogout }) => {
 
     const handleCashout = (option) => {
       if (option.status === 'available') {
+        setSelectedCashoutOption(option);
+        setShowPayPalPopup(true);
+      }
+    };
+
+    const handlePayPalSubmit = () => {
+      if (paypalEmail && confirmPaypalEmail && paypalEmail === confirmPaypalEmail) {
         const withdrawal = {
           id: Date.now(),
-          email: 'paypal@example.com',
-          amount: option.amount,
-          coins: option.coins,
+          email: paypalEmail,
+          amount: selectedCashoutOption.amount,
+          coins: selectedCashoutOption.coins,
           date: new Date().toISOString(),
           status: 'pending'
         };
-        setUserCoins(userCoins - option.coins);
+        setUserCoins(userCoins - selectedCashoutOption.coins);
         setPendingWithdrawals([...pendingWithdrawals, withdrawal]);
+        setShowPayPalPopup(false);
         setShowWithdrawalPopup(true);
+        setPaypalEmail('');
+        setConfirmPaypalEmail('');
+        setSelectedCashoutOption(null);
+      } else {
+        alert('Please enter matching PayPal email addresses');
       }
     };
 
