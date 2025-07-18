@@ -1,0 +1,22 @@
+{
+  "short_name": "RewardSage",
+  "name": "RewardSage - Earn Instant Cash Rewards",
+  "icons": [
+    {
+      "src": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkyIiBoZWlnaHQ9IjE5MiIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cGF0aCBkPSJNMTIgMkw4IDhoOGwtNC02em0wIDIwbDQtNkg4bDQgNnptLTYtOGwtNC02djEybDQtNnptMTIgMGw0LTZ2MTJsLTQtNnoiIGZpbGw9IiNmOTczMTYiLz4KPC9zdmc+",
+      "sizes": "192x192",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cGF0aCBkPSJNMTIgMkw4IDhoOGwtNC02em0wIDIwbDQtNkg4bDQgNnptLTYtOGwtNC02djEybDQtNnptMTIgMGw0LTZ2MTJsLTQtNnoiIGZpbGw9IiNmOTczMTYiLz4KPC9zdmc+",
+      "sizes": "512x512",
+      "type": "image/svg+xml"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#1f2937",
+  "background_color": "#0f0f10",
+  "orientation": "portrait",
+  "categories": ["finance", "games", "productivity"]
+}
