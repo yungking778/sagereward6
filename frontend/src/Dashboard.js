@@ -784,7 +784,7 @@ export const Dashboard = ({ user, onLogout }) => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className={`relative bg-gradient-to-br from-blue-500 to-blue-700 rounded-2xl p-6 border-2 ${
                   option.status === 'available' ? 'border-green-400 cursor-pointer hover:scale-105' : 
-                  option.status === 'almost' ? 'border-yellow-400' : 'border-gray-500'
+                  option.status === 'almost' ? 'border-green-400' : 'border-gray-500'
                 } transition-all duration-300`}
                 onClick={() => handleCashout(option)}
               >
