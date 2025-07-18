@@ -110,7 +110,7 @@ export const SignUpModal = ({ isOpen, onClose, onSignUp }) => {
 
           <button
             type="submit"
-            className="w-full bg-gradient-to-r from-orange-500 to-orange-600 text-white py-3 rounded-lg font-semibold hover:from-orange-600 hover:to-orange-700 transition-all flex items-center justify-center"
+            className="w-full bg-gradient-to-r from-blue-500 to-blue-600 text-white py-3 rounded-lg font-semibold hover:from-blue-600 hover:to-blue-700 transition-all flex items-center justify-center"
           >
             <UserPlus className="w-5 h-5 mr-2" />
             Create Account & Get 500 Coins
