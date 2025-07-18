@@ -300,6 +300,18 @@ frontend:
           agent: "main"
           comment: "Fixed Node.js version incompatibility error. Updated NODE_VERSION from '18' to '20' in netlify.toml to meet react-router-dom@7.5.1 requirement (>=20.0.0). Build tested successfully with updated configuration."
 
+  - task: "Remove Made with Emergent Badge"
+    implemented: true
+    working: true
+    file: "/app/frontend/public/index.html"
+    stuck_count: 0
+    priority: "low"
+    needs_retesting: false
+    status_history:
+        - working: true
+          agent: "main"
+          comment: "Successfully removed the 'Made with Emergent' badge from the bottom-right corner of the application. Badge element and text completely removed from index.html file. Application tested and confirmed badge is no longer visible."
+
 backend:
   - task: "User Registration API"
     implemented: false
