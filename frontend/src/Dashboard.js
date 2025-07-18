@@ -1019,38 +1019,38 @@ export const Dashboard = ({ user, onLogout }) => {
       <main className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-4 sm:py-8">
         {/* Stats Overview */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 mb-6 sm:mb-8">
-          <div className="bg-gray-800 rounded-xl p-6 border border-gray-700">
-            <div className="flex items-center space-x-4">
-              <div className="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center">
-                <DollarSign className="w-6 h-6 text-white" />
+          <div className="bg-gray-800 rounded-xl p-4 sm:p-6 border border-gray-700">
+            <div className="flex items-center space-x-3 sm:space-x-4">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-green-500 rounded-lg flex items-center justify-center">
+                <DollarSign className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
               </div>
               <div>
-                <p className="text-2xl font-bold text-white">${coinsToDollars(userCoins)}</p>
-                <p className="text-gray-400">Total Earnings</p>
+                <p className="text-xl sm:text-2xl font-bold text-white">${coinsToDollars(userCoins)}</p>
+                <p className="text-gray-400 text-sm sm:text-base">Total Earnings</p>
               </div>
             </div>
           </div>
           
-          <div className="bg-gray-800 rounded-xl p-6 border border-gray-700">
-            <div className="flex items-center space-x-4">
-              <div className="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center">
-                <Clock className="w-6 h-6 text-white" />
+          <div className="bg-gray-800 rounded-xl p-4 sm:p-6 border border-gray-700">
+            <div className="flex items-center space-x-3 sm:space-x-4">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-blue-500 rounded-lg flex items-center justify-center">
+                <Clock className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
               </div>
               <div>
-                <p className="text-2xl font-bold text-white">{startedOffers.length}</p>
-                <p className="text-gray-400">Started Offers</p>
+                <p className="text-xl sm:text-2xl font-bold text-white">{startedOffers.length}</p>
+                <p className="text-gray-400 text-sm sm:text-base">Started Offers</p>
               </div>
             </div>
           </div>
           
-          <div className="bg-gray-800 rounded-xl p-6 border border-gray-700">
-            <div className="flex items-center space-x-4">
-              <div className="w-12 h-12 bg-purple-500 rounded-lg flex items-center justify-center">
-                <Users className="w-6 h-6 text-white" />
+          <div className="bg-gray-800 rounded-xl p-4 sm:p-6 border border-gray-700">
+            <div className="flex items-center space-x-3 sm:space-x-4">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-purple-500 rounded-lg flex items-center justify-center">
+                <Users className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
               </div>
               <div>
-                <p className="text-2xl font-bold text-white">0</p>
-                <p className="text-gray-400">Referrals</p>
+                <p className="text-xl sm:text-2xl font-bold text-white">0</p>
+                <p className="text-gray-400 text-sm sm:text-base">Referrals</p>
               </div>
             </div>
           </div>
