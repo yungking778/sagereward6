@@ -757,11 +757,71 @@ export const Dashboard = ({ user, onLogout }) => {
       <header className="bg-gray-900 bg-opacity-90 backdrop-blur-sm border-b border-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-gradient-to-br from-orange-400 to-orange-600 rounded-full flex items-center justify-center">
-                <Gift className="w-5 h-5 text-white" />
+            <div className="flex items-center space-x-4">
+              {/* Profile Menu */}
+              <div className="relative">
+                <button
+                  onClick={() => setShowProfileMenu(!showProfileMenu)}
+                  className="flex items-center space-x-2 text-gray-300 hover:text-white transition-colors"
+                >
+                  <div className="w-8 h-8 bg-gradient-to-br from-orange-400 to-orange-600 rounded-full flex items-center justify-center">
+                    <User className="w-5 h-5 text-white" />
+                  </div>
+                  <span className="text-sm font-medium">Menu</span>
+                </button>
+
+                {/* Profile Dropdown */}
+                {showProfileMenu && (
+                  <div className="absolute left-0 top-full mt-2 w-64 bg-gray-800 rounded-lg shadow-lg border border-gray-700 z-50">
+                    <div className="p-4 border-b border-gray-700">
+                      <h3 className="text-white font-semibold">Welcome, {user?.name || 'User'}</h3>
+                      <p className="text-gray-400 text-sm">{user?.email || 'user@example.com'}</p>
+                    </div>
+                    
+                    <div className="py-2">
+                      <button
+                        onClick={() => {
+                          setActiveTab('profile');
+                          setShowProfileMenu(false);
+                        }}
+                        className="w-full px-4 py-2 text-left text-gray-300 hover:bg-gray-700 hover:text-white transition-colors flex items-center space-x-3"
+                      >
+                        <User className="w-4 h-4" />
+                        <span>Profile</span>
+                      </button>
+                      
+                      <button
+                        onClick={() => {
+                          setActiveTab('transactions');
+                          setShowProfileMenu(false);
+                        }}
+                        className="w-full px-4 py-2 text-left text-gray-300 hover:bg-gray-700 hover:text-white transition-colors flex items-center space-x-3"
+                      >
+                        <CreditCard className="w-4 h-4" />
+                        <span>Transactions</span>
+                      </button>
+                      
+                      <button
+                        onClick={() => {
+                          setActiveTab('support');
+                          setShowProfileMenu(false);
+                        }}
+                        className="w-full px-4 py-2 text-left text-gray-300 hover:bg-gray-700 hover:text-white transition-colors flex items-center space-x-3"
+                      >
+                        <Gift className="w-4 h-4" />
+                        <span>Support</span>
+                      </button>
+                    </div>
+                  </div>
+                )}
               </div>
-              <span className="text-xl font-bold text-white">HyperReward</span>
+
+              <div className="flex items-center space-x-2">
+                <div className="w-8 h-8 bg-gradient-to-br from-orange-400 to-orange-600 rounded-full flex items-center justify-center">
+                  <Gift className="w-5 h-5 text-white" />
+                </div>
+                <span className="text-xl font-bold text-white">HyperReward</span>
+              </div>
             </div>
             
             <div className="flex items-center space-x-6">
