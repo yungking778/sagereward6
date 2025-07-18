@@ -52,7 +52,7 @@ export const SignUpModal = ({ isOpen, onClose, onSignUp }) => {
             </div>
             <span className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">RewardSage</span>
           </div>
-          <h2 className="text-2xl font-bold text-white mb-2">Join HYPEREWARD</h2>
+          <h2 className="text-2xl font-bold text-white mb-2">Join RewardSage</h2>
         </div>
 
         <div className="mb-6">
