@@ -295,7 +295,65 @@ export const Dashboard = ({ user, onLogout }) => {
     </div>
   );
 
-  const renderWithdrawal = () => (
+  const renderOffersStarted = () => (
+    <div className="space-y-6">
+      <div className="bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl p-6 text-white">
+        <h3 className="text-2xl font-bold mb-2">Offers Started</h3>
+        <p className="text-blue-100">Track your progress on started offers</p>
+      </div>
+      
+      {startedOffers.length === 0 ? (
+        <div className="text-center py-12">
+          <div className="w-16 h-16 bg-gray-700 rounded-full flex items-center justify-center mx-auto mb-4">
+            <Gift className="w-8 h-8 text-gray-400" />
+          </div>
+          <h3 className="text-xl font-semibold text-white mb-2">No Offers Started Yet</h3>
+          <p className="text-gray-400">Start some offers to track your progress here!</p>
+        </div>
+      ) : (
+        <div className="space-y-4">
+          {startedOffers.map((offer) => (
+            <div key={offer.id} className="bg-gray-800 rounded-xl p-6 border border-gray-700">
+              <div className="flex items-start justify-between">
+                <div className="flex items-start space-x-4">
+                  <img 
+                    src={offer.image} 
+                    alt={offer.title}
+                    className="w-16 h-16 rounded-lg object-cover"
+                  />
+                  <div className="flex-1">
+                    <h4 className="font-bold text-white mb-1">{offer.title}</h4>
+                    <p className="text-sm text-gray-400 mb-2">{offer.description}</p>
+                    <div className="flex items-center space-x-4 text-xs text-gray-500">
+                      <span>Started: {new Date(offer.startedAt).toLocaleDateString()}</span>
+                      <span>Reward: {offer.reward} coins (${coinsToDollars(offer.reward)})</span>
+                    </div>
+                  </div>
+                </div>
+                <div className="flex flex-col items-end space-y-2">
+                  <span className={`px-3 py-1 rounded-full text-xs font-medium ${
+                    offer.status === 'completed' 
+                      ? 'bg-green-500 text-white' 
+                      : 'bg-yellow-500 text-black'
+                  }`}>
+                    {offer.status === 'completed' ? 'Completed' : 'In Progress'}
+                  </span>
+                  {offer.status === 'started' && (
+                    <button
+                      onClick={() => handleCompleteOffer(offer.id)}
+                      className="bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded-lg text-sm font-semibold transition-colors"
+                    >
+                      Mark Complete
+                    </button>
+                  )}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
     <div className="space-y-6">
       <div className="bg-gradient-to-r from-green-500 to-green-600 rounded-xl p-6 text-white">
         <h3 className="text-2xl font-bold mb-2">Withdrawal Center</h3>
