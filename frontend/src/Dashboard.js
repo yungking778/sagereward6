@@ -409,7 +409,7 @@ export const Dashboard = ({ user, onLogout }) => {
               <textarea
                 rows={4}
                 placeholder="Describe your issue in detail..."
-                className="w-full px-4 py-2 bg-gray-700 text-white rounded-lg border border-gray-600 focus:border-purple-500 focus:outline-none resize-none"
+                className="w-full px-4 py-2 bg-gray-700 text-white rounded-lg border border-gray-600 focus:border-green-500 focus:outline-none resize-none"
               />
             </div>
             <button className="w-full bg-purple-500 hover:bg-purple-600 text-white px-4 py-2 rounded-lg font-semibold transition-colors">
