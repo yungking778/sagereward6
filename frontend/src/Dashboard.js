@@ -710,13 +710,15 @@ export const Dashboard = ({ user, onLogout }) => {
       
       <div className="grid md:grid-cols-2 gap-6">
         <div className="bg-gray-800 rounded-xl p-6">
-          <h4 className="text-xl font-bold text-white mb-4">Your Referral Code</h4>
+          <h4 className="text-xl font-bold text-white mb-4">Your Referral Link</h4>
           <div className="bg-gray-700 rounded-lg p-4 mb-4">
             <div className="flex items-center justify-between">
-              <span className="text-2xl font-bold text-orange-400">{referralCode}</span>
+              <div className="flex-1 mr-3">
+                <span className="text-sm font-medium text-orange-400 break-all">{referralLink}</span>
+              </div>
               <button
-                onClick={copyReferralCode}
-                className="bg-orange-500 hover:bg-orange-600 text-white p-2 rounded-lg transition-colors"
+                onClick={copyReferralLink}
+                className="bg-orange-500 hover:bg-orange-600 text-white p-2 rounded-lg transition-colors flex-shrink-0"
               >
                 <Copy className="w-4 h-4" />
               </button>
