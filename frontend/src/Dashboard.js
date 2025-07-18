@@ -1059,7 +1059,7 @@ export const Dashboard = ({ user, onLogout }) => {
         {/* Tabs */}
         <div className="bg-gray-800 rounded-xl border border-gray-700">
           <div className="border-b border-gray-700">
-            <nav className="flex space-x-0">
+            <nav className="flex space-x-0 overflow-x-auto">
               {[
                 { id: 'offers', label: 'Offers', icon: Gift },
                 { id: 'started', label: 'Started', icon: Clock },
@@ -1070,14 +1070,15 @@ export const Dashboard = ({ user, onLogout }) => {
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
-                  className={`flex items-center space-x-2 px-6 py-4 text-sm font-medium rounded-t-xl transition-colors ${
+                  className={`flex items-center space-x-1 sm:space-x-2 px-3 sm:px-6 py-3 sm:py-4 text-xs sm:text-sm font-medium rounded-t-xl transition-colors whitespace-nowrap ${
                     activeTab === tab.id
                       ? 'text-orange-400 bg-gray-900 border-b-2 border-orange-400'
                       : 'text-gray-400 hover:text-white'
                   }`}
                 >
-                  <tab.icon className="w-4 h-4" />
-                  <span>{tab.label}</span>
+                  <tab.icon className="w-4 h-4 flex-shrink-0" />
+                  <span className="hidden sm:inline">{tab.label}</span>
+                  <span className="sm:hidden">{tab.label.substring(0, 4)}</span>
                 </button>
               ))}
             </nav>
