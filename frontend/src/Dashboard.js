@@ -201,6 +201,199 @@ export const Dashboard = ({ user, onLogout }) => {
     alert('Referral code copied to clipboard!');
   };
 
+  const renderProfile = () => (
+    <div className="space-y-6">
+      <div className="bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl p-6 text-white">
+        <h3 className="text-2xl font-bold mb-2">Your Profile</h3>
+        <p className="text-blue-100">Manage your account information and preferences</p>
+      </div>
+      
+      <div className="grid md:grid-cols-2 gap-6">
+        <div className="bg-gray-800 rounded-xl p-6 border border-gray-700">
+          <h4 className="text-xl font-bold text-white mb-4">Account Information</h4>
+          <div className="space-y-4">
+            <div>
+              <label className="block text-sm font-medium text-gray-300 mb-2">Name</label>
+              <input
+                type="text"
+                value={user?.name || ''}
+                className="w-full px-4 py-2 bg-gray-700 text-white rounded-lg border border-gray-600 focus:border-orange-500 focus:outline-none"
+                readOnly
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-300 mb-2">Email</label>
+              <input
+                type="email"
+                value={user?.email || ''}
+                className="w-full px-4 py-2 bg-gray-700 text-white rounded-lg border border-gray-600 focus:border-orange-500 focus:outline-none"
+                readOnly
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-300 mb-2">Member Since</label>
+              <input
+                type="text"
+                value={new Date().toLocaleDateString()}
+                className="w-full px-4 py-2 bg-gray-700 text-white rounded-lg border border-gray-600 focus:border-orange-500 focus:outline-none"
+                readOnly
+              />
+            </div>
+          </div>
+        </div>
+        
+        <div className="bg-gray-800 rounded-xl p-6 border border-gray-700">
+          <h4 className="text-xl font-bold text-white mb-4">Account Stats</h4>
+          <div className="space-y-4">
+            <div className="flex justify-between items-center">
+              <span className="text-gray-300">Total Coins Earned</span>
+              <span className="text-white font-semibold">{userCoins + completedOffers.length * 500}</span>
+            </div>
+            <div className="flex justify-between items-center">
+              <span className="text-gray-300">Current Balance</span>
+              <span className="text-orange-400 font-semibold">{userCoins} coins</span>
+            </div>
+            <div className="flex justify-between items-center">
+              <span className="text-gray-300">Offers Completed</span>
+              <span className="text-green-400 font-semibold">{completedOffers.length}</span>
+            </div>
+            <div className="flex justify-between items-center">
+              <span className="text-gray-300">Referrals</span>
+              <span className="text-purple-400 font-semibold">0</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+
+  const renderTransactions = () => (
+    <div className="space-y-6">
+      <div className="bg-gradient-to-r from-green-500 to-green-600 rounded-xl p-6 text-white">
+        <h3 className="text-2xl font-bold mb-2">Transaction History</h3>
+        <p className="text-green-100">View all your earnings and withdrawals</p>
+      </div>
+      
+      <div className="bg-gray-800 rounded-xl p-6 border border-gray-700">
+        <h4 className="text-xl font-bold text-white mb-4">Recent Transactions</h4>
+        
+        {pendingWithdrawals.length > 0 || completedOffers.length > 0 ? (
+          <div className="space-y-4">
+            {/* Pending Withdrawals */}
+            {pendingWithdrawals.map((withdrawal) => (
+              <div key={withdrawal.id} className="bg-gray-700 rounded-lg p-4 border-l-4 border-orange-500">
+                <div className="flex justify-between items-start">
+                  <div>
+                    <h5 className="text-white font-semibold">PayPal Withdrawal</h5>
+                    <p className="text-gray-300 text-sm">{withdrawal.email}</p>
+                    <p className="text-gray-400 text-xs">{new Date(withdrawal.date).toLocaleString()}</p>
+                  </div>
+                  <div className="text-right">
+                    <p className="text-orange-400 font-semibold">-${withdrawal.amount}</p>
+                    <p className="text-gray-400 text-xs">{withdrawal.coins} coins</p>
+                    <span className="bg-yellow-500 text-black px-2 py-1 rounded-full text-xs">Pending</span>
+                  </div>
+                </div>
+              </div>
+            ))}
+            
+            {/* Completed Offers */}
+            {startedOffers.filter(offer => offer.status === 'completed').map((offer) => (
+              <div key={offer.id} className="bg-gray-700 rounded-lg p-4 border-l-4 border-green-500">
+                <div className="flex justify-between items-start">
+                  <div>
+                    <h5 className="text-white font-semibold">{offer.title}</h5>
+                    <p className="text-gray-300 text-sm">Offer Completed</p>
+                    <p className="text-gray-400 text-xs">{new Date(offer.startedAt).toLocaleString()}</p>
+                  </div>
+                  <div className="text-right">
+                    <p className="text-green-400 font-semibold">+{offer.reward} coins</p>
+                    <p className="text-gray-400 text-xs">${coinsToDollars(offer.reward)}</p>
+                    <span className="bg-green-500 text-white px-2 py-1 rounded-full text-xs">Completed</span>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <div className="text-center py-8">
+            <CreditCard className="w-12 h-12 text-gray-400 mx-auto mb-4" />
+            <h5 className="text-white font-semibold mb-2">No Transactions Yet</h5>
+            <p className="text-gray-400">Complete some offers to see your transaction history</p>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+
+  const renderSupport = () => (
+    <div className="space-y-6">
+      <div className="bg-gradient-to-r from-purple-500 to-purple-600 rounded-xl p-6 text-white">
+        <h3 className="text-2xl font-bold mb-2">Support Center</h3>
+        <p className="text-purple-100">Get help with your account and earn rewards</p>
+      </div>
+      
+      <div className="grid md:grid-cols-2 gap-6">
+        <div className="bg-gray-800 rounded-xl p-6 border border-gray-700">
+          <h4 className="text-xl font-bold text-white mb-4">Frequently Asked Questions</h4>
+          <div className="space-y-4">
+            <div className="border-b border-gray-700 pb-3">
+              <h5 className="text-white font-semibold mb-2">How do I earn coins?</h5>
+              <p className="text-gray-400 text-sm">Complete offers by clicking "Start" and following the instructions. Mark offers as complete to receive your coins.</p>
+            </div>
+            <div className="border-b border-gray-700 pb-3">
+              <h5 className="text-white font-semibold mb-2">When will I receive my PayPal payment?</h5>
+              <p className="text-gray-400 text-sm">PayPal payments are processed within 1-24 hours, but can take up to 48 hours to complete.</p>
+            </div>
+            <div className="border-b border-gray-700 pb-3">
+              <h5 className="text-white font-semibold mb-2">What's the minimum withdrawal amount?</h5>
+              <p className="text-gray-400 text-sm">You can withdraw as little as $1 (100 coins) to your PayPal account.</p>
+            </div>
+            <div>
+              <h5 className="text-white font-semibold mb-2">How do referrals work?</h5>
+              <p className="text-gray-400 text-sm">Share your referral code with friends. You'll earn $5 (500 coins) when they sign up and complete their first offer.</p>
+            </div>
+          </div>
+        </div>
+        
+        <div className="bg-gray-800 rounded-xl p-6 border border-gray-700">
+          <h4 className="text-xl font-bold text-white mb-4">Contact Support</h4>
+          <div className="space-y-4">
+            <div>
+              <label className="block text-sm font-medium text-gray-300 mb-2">Subject</label>
+              <input
+                type="text"
+                placeholder="Brief description of your issue"
+                className="w-full px-4 py-2 bg-gray-700 text-white rounded-lg border border-gray-600 focus:border-purple-500 focus:outline-none"
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-300 mb-2">Message</label>
+              <textarea
+                rows={4}
+                placeholder="Describe your issue in detail..."
+                className="w-full px-4 py-2 bg-gray-700 text-white rounded-lg border border-gray-600 focus:border-purple-500 focus:outline-none resize-none"
+              />
+            </div>
+            <button className="w-full bg-purple-500 hover:bg-purple-600 text-white px-4 py-2 rounded-lg font-semibold transition-colors">
+              Send Message
+            </button>
+          </div>
+          
+          <div className="mt-6 p-4 bg-gray-700 rounded-lg">
+            <h5 className="text-white font-semibold mb-2">Quick Links</h5>
+            <div className="space-y-2">
+              <a href="#" className="block text-blue-400 hover:text-blue-300 text-sm">Terms of Service</a>
+              <a href="#" className="block text-blue-400 hover:text-blue-300 text-sm">Privacy Policy</a>
+              <a href="#" className="block text-blue-400 hover:text-blue-300 text-sm">Payment Issues</a>
+              <a href="#" className="block text-blue-400 hover:text-blue-300 text-sm">Account Security</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+
   // Withdrawal Success Popup
   const WithdrawalPopup = () => (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
