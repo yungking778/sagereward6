@@ -401,7 +401,7 @@ export const Dashboard = ({ user, onLogout }) => {
               <input
                 type="text"
                 placeholder="Brief description of your issue"
-                className="w-full px-4 py-2 bg-gray-700 text-white rounded-lg border border-gray-600 focus:border-purple-500 focus:outline-none"
+                className="w-full px-4 py-2 bg-gray-700 text-white rounded-lg border border-gray-600 focus:border-green-500 focus:outline-none"
               />
             </div>
             <div>
