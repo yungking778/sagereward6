@@ -546,7 +546,7 @@ export const FinalCTA = ({ onSignUp }) => {
               Ready to Start Earning?
             </h2>
             <p className="text-xl text-blue-100 mb-8">
-              Join HyperReward today and get your 500 coin welcome bonus!
+              Join RewardSage today and get your 500 coin welcome bonus!
             </p>
             
             <div className="flex items-center justify-center mb-8">
