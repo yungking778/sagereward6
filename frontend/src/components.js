@@ -599,7 +599,7 @@ export const Footer = () => {
           </div>
         </div>
         <div className="mt-8 pt-8 border-t border-gray-800 text-center">
-          <p className="text-gray-400">© 2025 HyperReward. All rights reserved.</p>
+          <p className="text-gray-400">© 2025 RewardSage. All rights reserved.</p>
         </div>
       </div>
     </footer>
