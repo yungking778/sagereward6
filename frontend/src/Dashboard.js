@@ -22,6 +22,8 @@ export const Dashboard = ({ user, onLogout }) => {
   const [activeTab, setActiveTab] = useState('offers');
   const [userCoins, setUserCoins] = useState(500); // Welcome bonus (500 coins = $5)
   const [completedOffers, setCompletedOffers] = useState([]);
+  const [startedOffers, setStartedOffers] = useState([]);
+  const [pendingWithdrawals, setPendingWithdrawals] = useState([]);
   const [referralCode] = useState('HYPER' + Math.random().toString(36).substr(2, 6).toUpperCase());
   const [showWithdrawalPopup, setShowWithdrawalPopup] = useState(false);
   const [withdrawalEmail, setWithdrawalEmail] = useState('');
