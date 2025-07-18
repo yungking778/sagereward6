@@ -1016,9 +1016,9 @@ export const Dashboard = ({ user, onLogout }) => {
       </header>
 
       {/* Main Content */}
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <main className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-4 sm:py-8">
         {/* Stats Overview */}
-        <div className="grid md:grid-cols-3 gap-6 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 mb-6 sm:mb-8">
           <div className="bg-gray-800 rounded-xl p-6 border border-gray-700">
             <div className="flex items-center space-x-4">
               <div className="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center">
