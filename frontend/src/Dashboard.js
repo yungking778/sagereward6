@@ -768,7 +768,7 @@ export const Dashboard = ({ user, onLogout }) => {
           {/* Header */}
           <div className="text-center mb-8 pt-8">
             <h1 className="text-3xl font-bold text-white mb-2">Cash Out</h1>
-            <p className="text-purple-200">Choose your PayPal reward</p>
+            <p className="text-blue-200">Choose your PayPal reward</p>
             <div className="mt-4 bg-white/10 rounded-full px-6 py-2 inline-block">
               <span className="text-white font-semibold">{userCoins} coins available</span>
             </div>
