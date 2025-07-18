@@ -254,7 +254,7 @@ export const Dashboard = ({ user, onLogout }) => {
               <input
                 type="text"
                 value={user?.name || ''}
-                className="w-full px-4 py-2 bg-gray-700 text-white rounded-lg border border-gray-600 focus:border-orange-500 focus:outline-none"
+                className="w-full px-4 py-2 bg-gray-700 text-white rounded-lg border border-gray-600 focus:border-green-500 focus:outline-none"
                 readOnly
               />
             </div>
