@@ -69,6 +69,14 @@ function App() {
             } 
           />
           <Route 
+            path="/signup" 
+            element={
+              isLoggedIn ? 
+                <Navigate to="/dashboard" replace /> : 
+                <SignupPage onSignUp={handleSignUp} />
+            } 
+          />
+          <Route 
             path="/dashboard" 
             element={
               isLoggedIn ? 
