@@ -187,7 +187,7 @@ export const Header = ({ onSignUp }) => {
                   <button className="block w-full text-left px-3 py-2 text-gray-300 hover:text-white">Log in</button>
                   <button 
                     onClick={handleSignUpClick}
-                    className="block w-full bg-gradient-to-r from-orange-500 to-orange-600 text-white px-3 py-2 rounded-lg mt-2 hover:from-orange-600 hover:to-orange-700 transition-all"
+                    className="block w-full bg-gradient-to-r from-blue-500 to-blue-600 text-white px-3 py-2 rounded-lg mt-2 hover:from-blue-600 hover:to-blue-700 transition-all"
                   >
                     Sign up
                   </button>
