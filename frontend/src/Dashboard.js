@@ -219,6 +219,10 @@ export const Dashboard = ({ user, onLogout }) => {
       };
       setUserCoins(userCoins - selectedCashoutOption.coins);
       setPendingWithdrawals([...pendingWithdrawals, withdrawal]);
+      
+      // Mark that user has made their first withdrawal
+      setIsFirstWithdrawal(false);
+      
       setShowPayPalPopup(false);
       setShowWithdrawalPopup(true);
       setPaypalEmail('');
@@ -229,9 +233,9 @@ export const Dashboard = ({ user, onLogout }) => {
     }
   };
 
-  const copyReferralCode = () => {
-    navigator.clipboard.writeText(referralCode);
-    alert('Referral code copied to clipboard!');
+  const copyReferralLink = () => {
+    navigator.clipboard.writeText(referralLink);
+    alert('Referral link copied to clipboard!');
   };
 
   const renderProfile = () => (
