@@ -858,9 +858,9 @@ export const Dashboard = ({ user, onLogout }) => {
               </div>
 
               <div 
-                className={`bg-gradient-to-br from-purple-600 to-purple-800 rounded-2xl p-8 border-4 ${
+                className={`bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl p-8 border-4 ${
                   cashoutOptions.find(option => option.bestDeal).status === 'available' ? 
-                  'border-yellow-400 cursor-pointer hover:scale-105' : 'border-gray-500'
+                  'border-green-400 cursor-pointer hover:scale-105' : 'border-gray-500'
                 } transition-all duration-300`}
                 onClick={() => handleCashout(cashoutOptions.find(option => option.bestDeal))}
               >
