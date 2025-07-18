@@ -460,7 +460,7 @@ export const Dashboard = ({ user, onLogout }) => {
           </div>
           <button
             onClick={() => setShowWithdrawalPopup(false)}
-            className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-lg font-semibold transition-colors"
+            className="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-lg font-semibold transition-colors"
           >
             Got it!
           </button>
