@@ -993,7 +993,7 @@ export const Dashboard = ({ user, onLogout }) => {
                 </svg>
                 <div className="absolute inset-0 bg-cyan-400 rounded-full animate-pulse opacity-50"></div>
               </div>
-              <span className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">HYPEREWARD</span>
+              <span className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">RewardSage</span>
             </div>
 
             {/* Right - Coin Box */}
