@@ -247,7 +247,7 @@ export const HeroSection = ({ onSignUp }) => {
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600">
                   Play and Earn
                 </span>{' '}
-                with HyperReward
+                with RewardSage
               </motion.h1>
 
               {/* Subtitle */}
