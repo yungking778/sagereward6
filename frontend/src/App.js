@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import './App.css';
 import { 
   Header, 
@@ -9,17 +10,58 @@ import {
   FinalCTA, 
   Footer 
 } from './components';
+import { Dashboard } from './Dashboard';
 
-function App() {
+function LandingPage({ onSignUp }) {
   return (
-    <div className="App">
-      <Header />
-      <HeroSection />
+    <div>
+      <Header onSignUp={onSignUp} />
+      <HeroSection onSignUp={onSignUp} />
       <HowItWorks />
       <WhyChoose />
       <Testimonials />
-      <FinalCTA />
+      <FinalCTA onSignUp={onSignUp} />
       <Footer />
+    </div>
+  );
+}
+
+function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [user, setUser] = useState(null);
+
+  const handleSignUp = (userData) => {
+    setUser(userData);
+    setIsLoggedIn(true);
+  };
+
+  const handleLogout = () => {
+    setUser(null);
+    setIsLoggedIn(false);
+  };
+
+  return (
+    <div className="App">
+      <Router>
+        <Routes>
+          <Route 
+            path="/" 
+            element={
+              isLoggedIn ? 
+                <Navigate to="/dashboard" replace /> : 
+                <LandingPage onSignUp={handleSignUp} />
+            } 
+          />
+          <Route 
+            path="/dashboard" 
+            element={
+              isLoggedIn ? 
+                <Dashboard user={user} onLogout={handleLogout} /> : 
+                <Navigate to="/" replace />
+            } 
+          />
+        </Routes>
+      </Router>
     </div>
   );
 }
