@@ -365,9 +365,9 @@ export const Dashboard = ({ user, onLogout }) => {
 
   const renderSupport = () => (
     <div className="space-y-6">
-      <div className="bg-gradient-to-r from-purple-500 to-purple-600 rounded-xl p-6 text-white">
+      <div className="bg-gradient-to-r from-green-500 to-green-600 rounded-xl p-6 text-white">
         <h3 className="text-2xl font-bold mb-2">Support Center</h3>
-        <p className="text-purple-100">Get help with your account and earn rewards</p>
+        <p className="text-green-100">Get help with your account and earn rewards</p>
       </div>
       
       <div className="grid md:grid-cols-2 gap-6">
