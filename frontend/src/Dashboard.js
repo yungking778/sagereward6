@@ -897,10 +897,10 @@ export const Dashboard = ({ user, onLogout }) => {
 
                 {/* Amount */}
                 <div className="flex items-center justify-center space-x-3">
-                  <div className="bg-purple-700 rounded-xl px-8 py-4 text-center">
+                  <div className="bg-blue-700 rounded-xl px-8 py-4 text-center">
                     <span className="text-white font-bold text-3xl">$50</span>
                   </div>
-                  <div className="bg-gradient-to-r from-yellow-400 to-orange-500 rounded-xl px-6 py-4 text-center">
+                  <div className="bg-gradient-to-r from-green-400 to-green-500 rounded-xl px-6 py-4 text-center">
                     <span className="text-white font-bold text-2xl">+$25</span>
                   </div>
                 </div>
