@@ -586,7 +586,7 @@ export const Dashboard = ({ user, onLogout }) => {
                   {offer.status === 'started' && (
                     <button
                       onClick={() => handleCompleteOffer(offer.id)}
-                      className="bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded-lg text-sm font-semibold transition-colors"
+                      className="bg-cyan-500 hover:bg-cyan-600 text-white px-3 py-1 rounded-lg text-sm font-semibold transition-colors"
                     >
                       Mark Complete
                     </button>
