@@ -888,7 +888,7 @@ export const Dashboard = ({ user, onLogout }) => {
                     <div 
                       className={`h-full transition-all duration-500 ${
                         cashoutOptions.find(option => option.bestDeal).status === 'available' ? 
-                        'bg-yellow-400' : 'bg-gray-500'
+                        'bg-green-400' : 'bg-gray-500'
                       }`}
                       style={{ width: `${cashoutOptions.find(option => option.bestDeal).progress}%` }}
                     />
