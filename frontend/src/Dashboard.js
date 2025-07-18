@@ -126,11 +126,37 @@ export const Dashboard = ({ user, onLogout }) => {
     }
   ];
 
+  const handleStartOffer = (offerId) => {
+    const offer = offers.find(o => o.id === offerId);
+    if (offer && !offer.locked && offer.url !== '#') {
+      // Add to started offers if not already started
+      if (!startedOffers.find(s => s.id === offerId)) {
+        const startedOffer = {
+          ...offer,
+          startedAt: new Date().toISOString(),
+          status: 'started'
+        };
+        setStartedOffers([...startedOffers, startedOffer]);
+      }
+      
+      // Open the URL in new tab
+      window.open(offer.url, '_blank');
+    }
+  };
+
   const handleCompleteOffer = (offerId) => {
     const offer = offers.find(o => o.id === offerId);
-    if (offer && !offer.locked) {
-      setCompletedOffers([...completedOffers, offerId]);
-      setUserCoins(userCoins + offer.reward);
+    if (offer && startedOffers.find(s => s.id === offerId)) {
+      // Only credit if they actually started the offer
+      if (!completedOffers.includes(offerId)) {
+        setCompletedOffers([...completedOffers, offerId]);
+        setUserCoins(userCoins + offer.reward);
+        
+        // Update started offer status
+        setStartedOffers(startedOffers.map(s => 
+          s.id === offerId ? { ...s, status: 'completed' } : s
+        ));
+      }
     }
   };
 
@@ -140,6 +166,20 @@ export const Dashboard = ({ user, onLogout }) => {
       const requiredCoins = amount * 100; // Convert dollars to coins
       
       if (requiredCoins <= userCoins && amount >= 1) {
+        // Deduct coins from balance
+        setUserCoins(userCoins - requiredCoins);
+        
+        // Add to pending withdrawals
+        const withdrawal = {
+          id: Date.now(),
+          email: withdrawalEmail,
+          amount: amount,
+          coins: requiredCoins,
+          date: new Date().toISOString(),
+          status: 'pending'
+        };
+        setPendingWithdrawals([...pendingWithdrawals, withdrawal]);
+        
         setShowWithdrawalPopup(true);
         setWithdrawalEmail('');
         setWithdrawalAmount('');
