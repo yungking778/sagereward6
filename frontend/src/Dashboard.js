@@ -318,11 +318,11 @@ export const Dashboard = ({ user, onLogout }) => {
                   <img src={card.image} alt={card.name} className="w-10 h-10 rounded" />
                   <div>
                     <p className="text-white font-medium">{card.name}</p>
-                    <p className="text-xs text-gray-400">Min: ${card.min}</p>
+                    <p className="text-xs text-gray-400">Min: ${card.min} ({card.min * 100} coins)</p>
                   </div>
                 </div>
                 <button 
-                  disabled={userCoins < card.min}
+                  disabled={userCoins < card.min * 100}
                   className="bg-orange-500 hover:bg-orange-600 disabled:bg-gray-600 text-white px-3 py-1 rounded text-sm font-medium transition-colors"
                 >
                   Redeem
