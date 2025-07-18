@@ -649,8 +649,8 @@ export const Dashboard = ({ user, onLogout }) => {
               <label className="block text-sm font-medium text-gray-300 mb-2">Amount ($)</label>
               <input
                 type="number"
-                placeholder="Minimum $1"
-                min="1"
+                placeholder={`Minimum $${isFirstWithdrawal ? '20' : '1'}`}
+                min={isFirstWithdrawal ? "20" : "1"}
                 max={parseFloat(coinsToDollars(userCoins))}
                 value={withdrawalAmount}
                 onChange={(e) => setWithdrawalAmount(e.target.value)}
@@ -658,6 +658,7 @@ export const Dashboard = ({ user, onLogout }) => {
               />
               <p className="text-xs text-gray-400 mt-1">
                 Available: ${coinsToDollars(userCoins)} ({userCoins} coins)
+                {isFirstWithdrawal && <span className="text-orange-400 block">First withdrawal requires minimum $20</span>}
               </p>
             </div>
             <button 
