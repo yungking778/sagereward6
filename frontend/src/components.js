@@ -42,18 +42,21 @@ export const SignUpModal = ({ isOpen, onClose, onSignUp }) => {
         transition={{ duration: 0.3 }}
         className="bg-gray-900 rounded-2xl p-8 max-w-md w-full border border-gray-700"
       >
-        <div className="flex justify-between items-center mb-6">
-          <h2 className="text-2xl font-bold text-white">Join HyperReward</h2>
-          <button
-            onClick={onClose}
-            className="text-gray-400 hover:text-white transition-colors"
-          >
-            <X className="w-6 h-6" />
-          </button>
+        <div className="text-center mb-6">
+          <div className="flex items-center justify-center space-x-2 mb-4">
+            <div className="w-12 h-12 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-full flex items-center justify-center relative">
+              <svg viewBox="0 0 24 24" className="w-6 h-6 text-white">
+                <path fill="currentColor" d="M12 2L8 8h8l-4-6zm0 20l4-6H8l4 6zm-6-8l-4-6v12l4-6zm12 0l4-6v12l-4-6z"/>
+              </svg>
+              <div className="absolute inset-0 bg-cyan-400 rounded-full animate-pulse opacity-50"></div>
+            </div>
+            <span className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">HYPEREWARD</span>
+          </div>
+          <h2 className="text-2xl font-bold text-white mb-2">Join HYPEREWARD</h2>
         </div>
 
         <div className="mb-6">
-          <div className="flex items-center justify-center bg-gradient-to-r from-orange-500 to-orange-600 rounded-lg p-4 mb-4">
+          <div className="flex items-center justify-center bg-gradient-to-r from-green-500 to-green-600 rounded-lg p-4 mb-4">
             <Gift className="w-8 h-8 text-white mr-3" />
             <div className="text-white">
               <p className="font-bold">Welcome Bonus!</p>
