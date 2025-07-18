@@ -590,7 +590,7 @@ export const Footer = () => {
                 <path fill="currentColor" d="M12 2L8 8h8l-4-6zm0 20l4-6H8l4 6zm-6-8l-4-6v12l4-6zm12 0l4-6v12l-4-6z"/>
               </svg>
             </div>
-            <span className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">HYPEREWARD</span>
+            <span className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">RewardSage</span>
           </div>
           <div className="flex items-center space-x-6">
             <a href="#" className="text-gray-400 hover:text-white transition-colors">Privacy Policy</a>
