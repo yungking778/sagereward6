@@ -354,6 +354,8 @@ export const Dashboard = ({ user, onLogout }) => {
       )}
     </div>
   );
+
+  const renderWithdrawal = () => (
     <div className="space-y-6">
       <div className="bg-gradient-to-r from-green-500 to-green-600 rounded-xl p-6 text-white">
         <h3 className="text-2xl font-bold mb-2">Withdrawal Center</h3>
