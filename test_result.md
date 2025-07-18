@@ -312,6 +312,30 @@ frontend:
           agent: "main"
           comment: "Successfully removed the 'Made with Emergent' badge from the bottom-right corner of the application. Badge element and text completely removed from index.html file. Application tested and confirmed badge is no longer visible."
 
+  - task: "Auto-Credit Rewards System"
+    implemented: true
+    working: true
+    file: "/app/frontend/src/Dashboard.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+        - working: true
+          agent: "main"
+          comment: "Successfully implemented auto-credit system for started offers. Removed 'Mark Complete' button from Started tab. Offers now automatically credit rewards after 2 minutes without displaying a timer. Users simply start offers and get credited automatically."
+
+  - task: "Update BIGO Live Logo"
+    implemented: true
+    working: true
+    file: "/app/frontend/src/Dashboard.js"
+    stuck_count: 0
+    priority: "medium"
+    needs_retesting: false
+    status_history:
+        - working: true
+          agent: "main"
+          comment: "Successfully updated BIGO Live logo to use a neon broadcast symbol icon that represents live streaming. Since official BIGO Live logo wasn't available through image search tools, used a professional streaming icon that fits the reward app context."
+
 backend:
   - task: "User Registration API"
     implemented: false
