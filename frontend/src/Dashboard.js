@@ -157,6 +157,17 @@ export const Dashboard = ({ user, onLogout }) => {
           status: 'started'
         };
         setStartedOffers([...startedOffers, startedOffer]);
+        
+        // Auto-credit after 2 minutes (120,000 milliseconds)
+        setTimeout(() => {
+          setStartedOffers(prevStarted => 
+            prevStarted.map(s => 
+              s.id === offerId ? { ...s, status: 'completed' } : s
+            )
+          );
+          setUserCoins(prevCoins => prevCoins + offer.reward);
+          setCompletedOffers(prevCompleted => [...prevCompleted, offerId]);
+        }, 120000); // 2 minutes
       }
       
       // Open the URL in new tab
