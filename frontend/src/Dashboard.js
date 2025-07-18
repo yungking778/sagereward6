@@ -339,7 +339,7 @@ export const Dashboard = ({ user, onLogout }) => {
     <div className="space-y-6">
       <div className="bg-gradient-to-r from-purple-500 to-purple-600 rounded-xl p-6 text-white">
         <h3 className="text-2xl font-bold mb-2">Referral Program</h3>
-        <p className="text-purple-100">Invite friends and earn $5 for each successful referral</p>
+        <p className="text-purple-100">Invite friends and earn $5 (500 coins) once they sign up and complete an offer</p>
       </div>
       
       <div className="grid md:grid-cols-2 gap-6">
