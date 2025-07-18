@@ -288,7 +288,7 @@ export const Dashboard = ({ user, onLogout }) => {
             </div>
             <div className="flex justify-between items-center">
               <span className="text-gray-300">Current Balance</span>
-              <span className="text-orange-400 font-semibold">{userCoins} coins</span>
+              <span className="text-cyan-400 font-semibold">{userCoins} coins</span>
             </div>
             <div className="flex justify-between items-center">
               <span className="text-gray-300">Offers Completed</span>
