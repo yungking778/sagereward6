@@ -519,7 +519,7 @@ export const Dashboard = ({ user, onLogout }) => {
                 </div>
                 
                 <div className="flex items-center justify-between">
-                  <div className="text-2xl font-bold text-orange-400">
+                  <div className="text-2xl font-bold text-cyan-400">
                     {offer.reward} coins (${coinsToDollars(offer.reward)})
                   </div>
                   {!offer.locked && (
