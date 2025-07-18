@@ -20,23 +20,42 @@ import { motion } from 'framer-motion';
 
 export const Dashboard = ({ user, onLogout }) => {
   const [activeTab, setActiveTab] = useState('offers');
-  const [userCoins, setUserCoins] = useState(500); // Welcome bonus
+  const [userCoins, setUserCoins] = useState(500); // Welcome bonus (500 coins = $5)
   const [completedOffers, setCompletedOffers] = useState([]);
   const [referralCode] = useState('HYPER' + Math.random().toString(36).substr(2, 6).toUpperCase());
+  const [showWithdrawalPopup, setShowWithdrawalPopup] = useState(false);
+  const [withdrawalEmail, setWithdrawalEmail] = useState('');
+  const [withdrawalAmount, setWithdrawalAmount] = useState('');
+
+  // Conversion rate: 100 points = $1
+  const coinsToDollars = (coins) => (coins / 100).toFixed(2);
 
   const offers = [
     {
       id: 1,
       title: "Hopper - Hotel Booking",
       description: "Sign up for Hopper and get 10% off hotels",
-      reward: 15,
-      currency: "$",
+      reward: 1500, // 1500 coins = $15
+      currency: "coins",
       type: "signup",
       difficulty: "Easy",
       time: "2 min",
       locked: false,
       url: "https://social.hopper.com/en/social/friend-invitation?referral_code=brysonh1mjs&referrer_name=Bryson&reward_items=HOTEL%3A10%25+off+%3AHotels&reward_total=10%25+off+hotels",
       image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=100&h=100&fit=crop&crop=center"
+    },
+    {
+      id: 2,
+      title: "Temu - Shopping App",
+      description: "Sign up for Temu and start shopping with great deals",
+      reward: 1000, // 1000 coins = $10
+      currency: "coins",
+      type: "signup",
+      difficulty: "Easy",
+      time: "3 min",
+      locked: false,
+      url: "https://temu.to/m/ujo1d8ihpv3",
+      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=100&h=100&fit=crop&crop=center"
     },
     {
       id: 2,
