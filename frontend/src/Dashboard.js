@@ -279,12 +279,7 @@ export const Dashboard = ({ user, onLogout }) => {
                   </div>
                   {!offer.locked && (
                     <button
-                      onClick={() => {
-                        if (offer.url !== '#') {
-                          window.open(offer.url, '_blank');
-                          handleCompleteOffer(offer.id);
-                        }
-                      }}
+                      onClick={() => handleStartOffer(offer.id)}
                       className="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-colors flex items-center"
                     >
                       Start
