@@ -296,7 +296,7 @@ export const Dashboard = ({ user, onLogout }) => {
             </div>
             <div className="flex justify-between items-center">
               <span className="text-gray-300">Referrals</span>
-              <span className="text-purple-400 font-semibold">0</span>
+              <span className="text-green-400 font-semibold">0</span>
             </div>
           </div>
         </div>
