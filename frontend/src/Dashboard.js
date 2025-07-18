@@ -1008,25 +1008,22 @@ export const Dashboard = ({ user, onLogout }) => {
                   </div>
                 )}
               </div>
-
-              <div className="flex items-center space-x-2">
-                <div className="w-8 h-8 bg-gradient-to-br from-orange-400 to-orange-600 rounded-full flex items-center justify-center">
-                  <Gift className="w-5 h-5 text-white" />
-                </div>
-                <span className="text-xl font-bold text-white">HyperReward</span>
-              </div>
             </div>
-            
+
+            {/* Center - HyperReward Logo */}
+            <div className="absolute left-1/2 transform -translate-x-1/2 flex items-center space-x-2">
+              <div className="w-8 h-8 bg-gradient-to-br from-orange-400 to-orange-600 rounded-full flex items-center justify-center">
+                <Gift className="w-5 h-5 text-white" />
+              </div>
+              <span className="text-xl font-bold text-white">HyperReward</span>
+            </div>
+
+            {/* Right - Coin Box */}
             <div className="flex items-center space-x-6">
               <div className="flex items-center space-x-2 bg-gray-800 rounded-lg px-4 py-2">
                 <Coins className="w-5 h-5 text-orange-400" />
                 <span className="text-white font-semibold">{userCoins}</span>
                 <span className="text-gray-400 text-sm">coins</span>
-              </div>
-              
-              <div className="flex items-center space-x-2 text-gray-300">
-                <User className="w-5 h-5" />
-                <span>Welcome, {user?.name || 'User'}</span>
               </div>
               
               <button
