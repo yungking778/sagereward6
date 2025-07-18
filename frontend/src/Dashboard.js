@@ -813,7 +813,7 @@ export const Dashboard = ({ user, onLogout }) => {
                     <div 
                       className={`h-full transition-all duration-500 ${
                         option.status === 'available' ? 'bg-green-400' : 
-                        option.status === 'almost' ? 'bg-yellow-400' : 'bg-gray-500'
+                        option.status === 'almost' ? 'bg-green-400' : 'bg-gray-500'
                       }`}
                       style={{ width: `${option.progress}%` }}
                     />
