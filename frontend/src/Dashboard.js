@@ -602,13 +602,13 @@ export const Dashboard = ({ user, onLogout }) => {
 
   const renderWithdrawal = () => (
     <div className="space-y-6">
-      <div className="bg-gradient-to-r from-green-500 to-green-600 rounded-xl p-6 text-white">
+      <div className="bg-gradient-to-r from-cyan-500 to-blue-600 rounded-xl p-6 text-white">
         <h3 className="text-2xl font-bold mb-2">Withdrawal Center</h3>
-        <p className="text-green-100">Cash out your earnings to PayPal or gift cards</p>
+        <p className="text-cyan-100">View your pending withdrawals and transaction history</p>
       </div>
       
       {/* Pending Withdrawals */}
-      {pendingWithdrawals.length > 0 && (
+      {pendingWithdrawals.length > 0 ? (
         <div className="bg-gray-800 rounded-xl p-6 border border-gray-700">
           <h4 className="text-xl font-bold text-white mb-4">Pending Withdrawals</h4>
           <div className="space-y-3">
@@ -621,84 +621,25 @@ export const Dashboard = ({ user, onLogout }) => {
                       {new Date(withdrawal.date).toLocaleDateString()} • {withdrawal.coins} coins deducted
                     </p>
                   </div>
-                  <span className="px-3 py-1 bg-yellow-500 text-black rounded-full text-sm font-medium">
-                    Pending
+                  <span className="px-3 py-1 bg-cyan-500 text-white rounded-full text-sm font-medium">
+                    Processing
                   </span>
                 </div>
               </div>
             ))}
           </div>
         </div>
+      ) : (
+        <div className="bg-gray-800 rounded-xl p-6 border border-gray-700">
+          <div className="text-center py-12">
+            <div className="w-16 h-16 bg-cyan-500 rounded-full flex items-center justify-center mx-auto mb-4">
+              <CreditCard className="w-8 h-8 text-white" />
+            </div>
+            <h3 className="text-xl font-semibold text-white mb-2">No Pending Withdrawals</h3>
+            <p className="text-gray-400">Your withdrawal history will appear here once you cash out.</p>
+          </div>
+        </div>
       )}
-      
-      <div className="grid md:grid-cols-2 gap-6">
-        <div className="bg-gray-800 rounded-xl p-6">
-          <h4 className="text-xl font-bold text-white mb-4">PayPal Withdrawal</h4>
-          <div className="space-y-4">
-            <div>
-              <label className="block text-sm font-medium text-gray-300 mb-2">PayPal Email</label>
-              <input
-                type="email"
-                placeholder="your@email.com"
-                value={withdrawalEmail}
-                onChange={(e) => setWithdrawalEmail(e.target.value)}
-                className="w-full px-4 py-2 bg-gray-700 text-white rounded-lg border border-gray-600 focus:border-orange-500 focus:outline-none"
-              />
-            </div>
-            <div>
-              <label className="block text-sm font-medium text-gray-300 mb-2">Amount ($)</label>
-              <input
-                type="number"
-                placeholder={`Minimum $${isFirstWithdrawal ? '20' : '1'}`}
-                min={isFirstWithdrawal ? "20" : "1"}
-                max={parseFloat(coinsToDollars(userCoins))}
-                value={withdrawalAmount}
-                onChange={(e) => setWithdrawalAmount(e.target.value)}
-                className="w-full px-4 py-2 bg-gray-700 text-white rounded-lg border border-gray-600 focus:border-orange-500 focus:outline-none"
-              />
-              <p className="text-xs text-gray-400 mt-1">
-                Available: ${coinsToDollars(userCoins)} ({userCoins} coins)
-                {isFirstWithdrawal && <span className="text-orange-400 block">First withdrawal requires minimum $20</span>}
-              </p>
-            </div>
-            <button 
-              onClick={handleWithdrawal}
-              disabled={userCoins < 100} // Minimum 100 coins = $1
-              className="w-full bg-orange-500 hover:bg-orange-600 disabled:bg-gray-600 text-white px-4 py-2 rounded-lg font-semibold transition-colors"
-            >
-              Withdraw to PayPal
-            </button>
-          </div>
-        </div>
-        
-        <div className="bg-gray-800 rounded-xl p-6">
-          <h4 className="text-xl font-bold text-white mb-4">Gift Cards</h4>
-          <div className="space-y-3">
-            {[
-              { name: "Amazon", min: 5, image: "https://images.unsplash.com/photo-1523474253046-8cd2748b5fd2?w=50&h=50&fit=crop&crop=center" },
-              { name: "Apple", min: 10, image: "https://images.unsplash.com/photo-1611472173362-3f53dbd65d80?w=50&h=50&fit=crop&crop=center" },
-              { name: "Google Play", min: 5, image: "https://images.unsplash.com/photo-1611605698323-b1e99cfd37ea?w=50&h=50&fit=crop&crop=center" },
-              { name: "Steam", min: 10, image: "https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?w=50&h=50&fit=crop&crop=center" }
-            ].map((card, index) => (
-              <div key={index} className="flex items-center justify-between p-3 bg-gray-700 rounded-lg">
-                <div className="flex items-center space-x-3">
-                  <img src={card.image} alt={card.name} className="w-10 h-10 rounded" />
-                  <div>
-                    <p className="text-white font-medium">{card.name}</p>
-                    <p className="text-xs text-gray-400">Min: ${card.min} ({card.min * 100} coins)</p>
-                  </div>
-                </div>
-                <button 
-                  disabled={userCoins < card.min * 100}
-                  className="bg-orange-500 hover:bg-orange-600 disabled:bg-gray-600 text-white px-3 py-1 rounded text-sm font-medium transition-colors"
-                >
-                  Redeem
-                </button>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
     </div>
   );
 
