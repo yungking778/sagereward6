@@ -269,7 +269,7 @@ export const HeroSection = ({ onSignUp }) => {
               >
                 <button 
                   onClick={handleSignUpClick}
-                  className="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:from-orange-600 hover:to-orange-700 transition-all transform hover:scale-105 flex items-center justify-center"
+                  className="bg-gradient-to-r from-blue-500 to-blue-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:from-blue-600 hover:to-blue-700 transition-all transform hover:scale-105 flex items-center justify-center"
                 >
                   Get Started Free
                   <ArrowRight className="w-5 h-5 ml-2" />
