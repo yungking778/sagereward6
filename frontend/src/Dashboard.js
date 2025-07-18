@@ -986,7 +986,7 @@ export const Dashboard = ({ user, onLogout }) => {
             </div>
 
             {/* Center - HyperReward Logo */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 flex items-center space-x-2">
+            <div className="hidden sm:absolute sm:left-1/2 sm:transform sm:-translate-x-1/2 sm:flex items-center space-x-2">
               <div className="w-8 h-8 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-full flex items-center justify-center relative">
                 <svg viewBox="0 0 24 24" className="w-5 h-5 text-white">
                   <path fill="currentColor" d="M12 2L8 8h8l-4-6zm0 20l4-6H8l4 6zm-6-8l-4-6v12l4-6zm12 0l4-6v12l-4-6z"/>
