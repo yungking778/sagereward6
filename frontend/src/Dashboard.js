@@ -491,7 +491,7 @@ export const Dashboard = ({ user, onLogout }) => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className={`bg-gray-800 rounded-xl p-6 border ${
+            className={`bg-gray-800 rounded-xl p-4 sm:p-6 border ${
               offer.locked ? 'border-gray-700' : 'border-orange-500'
             } relative overflow-hidden`}
           >
