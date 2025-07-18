@@ -12,18 +12,34 @@ import {
 } from './components';
 import { Dashboard } from './Dashboard';
 
-function LandingPage({ onSignUp }) {
+function LandingPage({ onSignUp, referralCode }) {
   return (
     <div>
-      <Header onSignUp={onSignUp} />
-      <HeroSection onSignUp={onSignUp} />
+      <Header onSignUp={onSignUp} referralCode={referralCode} />
+      <HeroSection onSignUp={onSignUp} referralCode={referralCode} />
       <HowItWorks />
       <WhyChoose />
       <Testimonials />
-      <FinalCTA onSignUp={onSignUp} />
+      <FinalCTA onSignUp={onSignUp} referralCode={referralCode} />
       <Footer />
     </div>
   );
+}
+
+function SignupPage({ onSignUp }) {
+  const location = useLocation();
+  const [referralCode, setReferralCode] = useState('');
+
+  useEffect(() => {
+    // Extract referral code from URL parameters
+    const params = new URLSearchParams(location.search);
+    const refCode = params.get('ref');
+    if (refCode) {
+      setReferralCode(refCode);
+    }
+  }, [location.search]);
+
+  return <LandingPage onSignUp={onSignUp} referralCode={referralCode} />;
 }
 
 function App() {
