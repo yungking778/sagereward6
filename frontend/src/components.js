@@ -126,12 +126,19 @@ export const SignUpModal = ({ isOpen, onClose, onSignUp }) => {
 };
 
 // Header Component
-export const Header = ({ onSignUp }) => {
+export const Header = ({ onSignUp, referralCode }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSignUpOpen, setIsSignUpOpen] = useState(false);
 
   const handleSignUpClick = () => {
     setIsSignUpOpen(true);
+  };
+
+  const handleSignUp = (userData) => {
+    // Include referral code in sign-up data
+    const signUpData = { ...userData, referralCode };
+    onSignUp(signUpData);
+    setIsSignUpOpen(false);
   };
 
   return (
