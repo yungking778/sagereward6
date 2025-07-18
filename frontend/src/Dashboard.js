@@ -68,6 +68,19 @@ export const Dashboard = ({ user, onLogout }) => {
     },
     {
       id: 3,
+      title: "BIGO Live - Live Streaming",
+      description: "Join BIGO Live and start live streaming or watch others",
+      reward: 800, // 800 coins = $8
+      currency: "coins",
+      type: "signup",
+      difficulty: "Easy",
+      time: "2 min",
+      locked: false,
+      url: "https://slink.bigovideo.tv/GXRLgJ",
+      image: "https://images.unsplash.com/photo-1611605698323-b1e99cfd37ea?w=100&h=100&fit=crop&crop=center"
+    },
+    {
+      id: 3,
       title: "Shopify - Start Your Store",
       description: "Create a Shopify store and complete the tutorial",
       reward: 2500, // 2500 coins = $25
