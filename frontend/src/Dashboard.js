@@ -844,7 +844,8 @@ export const Dashboard = ({ user, onLogout }) => {
                 {/* Status */}
                 <div className="text-center mb-4">
                   <h3 className="text-white font-bold text-lg mb-2">
-                    {option.status === 'available' ? 'Ready to Cash Out!' : 
+                    {option.firstWithdrawalLocked ? 'First withdrawal $20 minimum' :
+                     option.status === 'available' ? 'Ready to Cash Out!' : 
                      option.status === 'almost' ? 'Almost there!' : 'Earn to Unlock!'}
                   </h3>
                   <p className="text-white/80">
