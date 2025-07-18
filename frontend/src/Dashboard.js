@@ -484,7 +484,7 @@ export const Dashboard = ({ user, onLogout }) => {
         <p className="text-orange-100">Complete offers to earn coins and cash rewards</p>
       </div>
       
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
         {offers.map((offer) => (
           <motion.div
             key={offer.id}
