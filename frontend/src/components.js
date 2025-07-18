@@ -244,7 +244,7 @@ export const HeroSection = ({ onSignUp }) => {
                 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6"
               >
                 Instant Cash Rewards -{' '}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600">
                   Play and Earn
                 </span>{' '}
                 with HyperReward
