@@ -525,7 +525,7 @@ export const Dashboard = ({ user, onLogout }) => {
                   {!offer.locked && (
                     <button
                       onClick={() => handleStartOffer(offer.id)}
-                      className="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-colors flex items-center"
+                      className="bg-cyan-500 hover:bg-cyan-600 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-colors flex items-center"
                     >
                       Start
                       <ExternalLink className="w-4 h-4 ml-1" />
