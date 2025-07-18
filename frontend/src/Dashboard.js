@@ -826,7 +826,7 @@ export const Dashboard = ({ user, onLogout }) => {
                     <span className="text-white font-bold text-2xl">${option.amount}</span>
                   </div>
                   {option.bonus > 0 && (
-                    <div className="bg-gradient-to-r from-yellow-400 to-orange-500 rounded-xl px-4 py-3 text-center">
+                    <div className="bg-gradient-to-r from-green-400 to-green-500 rounded-xl px-4 py-3 text-center">
                       <span className="text-white font-bold">+${option.bonus}</span>
                     </div>
                   )}
