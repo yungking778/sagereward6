@@ -660,7 +660,7 @@ export const Dashboard = ({ user, onLogout }) => {
               </div>
               <button
                 onClick={copyReferralLink}
-                className="bg-orange-500 hover:bg-orange-600 text-white p-2 rounded-lg transition-colors flex-shrink-0"
+                className="bg-cyan-500 hover:bg-cyan-600 text-white p-2 rounded-lg transition-colors flex-shrink-0"
               >
                 <Copy className="w-4 h-4" />
               </button>
