@@ -213,17 +213,77 @@ frontend:
           agent: "testing"
           comment: "Logout button in header works correctly. Clicking logout redirects user back to landing page, properly clearing authentication state."
 
-  - task: "Hopper Offer Start Button"
+  - task: "Four Tabs Navigation (Offers, Started, Withdrawal, Referral)"
     implemented: true
     working: true
     file: "/app/frontend/src/Dashboard.js"
     stuck_count: 0
-    priority: "medium"
+    priority: "high"
     needs_retesting: false
     status_history:
         - working: true
           agent: "testing"
-          comment: "Hopper offer Start button is visible, enabled, and clickable. Button is configured to open the correct Hopper referral URL when clicked."
+          comment: "All four tabs (Offers, Started, Withdrawal, Referral) are present and functional. Tab switching works correctly with proper content display for each tab. Active tab styling works properly."
+
+  - task: "Offer Links Functionality (Hopper and Temu URLs)"
+    implemented: true
+    working: true
+    file: "/app/frontend/src/Dashboard.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+        - working: true
+          agent: "testing"
+          comment: "Hopper offer opens correct URL: https://social.hopper.com/en/social/friend-invitation?referral_code=brysonh1mjs&referrer_name=Bryson&reward_items=HOTEL%3A10%25+off+%3AHotels&reward_total=10%25+off+hotels. Temu offer opens in new tab but redirects to main Temu site instead of specific referral link. Both Start buttons work and open URLs in new tabs."
+
+  - task: "Started Offers Tracking and Mark Complete"
+    implemented: true
+    working: true
+    file: "/app/frontend/src/Dashboard.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+        - working: true
+          agent: "testing"
+          comment: "Started tab displays offers that were clicked from Offers tab. Shows offer details, start date, reward amount, and status (In Progress/Completed). Mark Complete buttons are functional and properly update offer status. Coins are only credited after clicking Mark Complete."
+
+  - task: "Enhanced Withdrawal System"
+    implemented: true
+    working: true
+    file: "/app/frontend/src/Dashboard.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+        - working: true
+          agent: "testing"
+          comment: "Withdrawal system works perfectly. Properly deducts coins from balance (tested: 500 coins -> 400 coins for $1 withdrawal). Shows pending withdrawals with correct amounts and status. Withdrawal popup appears with correct processing message. Balance updates correctly in real-time."
+
+  - task: "Coin Tracking and Conversion System"
+    implemented: true
+    working: true
+    file: "/app/frontend/src/Dashboard.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+        - working: true
+          agent: "testing"
+          comment: "Coin conversion rate (100 coins = $1) working correctly. Offers display both coin amounts and dollar equivalents (1500 coins = $15.00, 1000 coins = $10.00). Balance updates properly after withdrawals and offer completions. Stats overview shows accurate coin balance and earnings."
+
+  - task: "Stats Overview with Started Offers Count"
+    implemented: true
+    working: true
+    file: "/app/frontend/src/Dashboard.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+        - working: true
+          agent: "testing"
+          comment: "Stats overview displays correctly with three cards: Total Earnings, Started Offers count, and Referrals count. Started offers count updates accurately when offers are started (tested showing 2 when both Hopper and Temu offers were started). All stats display in real-time."
 
 backend:
   - task: "User Registration API"
