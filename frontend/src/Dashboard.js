@@ -274,6 +274,8 @@ export const Dashboard = ({ user, onLogout }) => {
               <input
                 type="email"
                 placeholder="your@email.com"
+                value={withdrawalEmail}
+                onChange={(e) => setWithdrawalEmail(e.target.value)}
                 className="w-full px-4 py-2 bg-gray-700 text-white rounded-lg border border-gray-600 focus:border-orange-500 focus:outline-none"
               />
             </div>
