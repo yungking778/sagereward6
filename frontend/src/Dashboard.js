@@ -788,28 +788,6 @@ export const Dashboard = ({ user, onLogout }) => {
       }
     };
 
-    const handlePayPalSubmit = () => {
-      if (paypalEmail && confirmPaypalEmail && paypalEmail === confirmPaypalEmail) {
-        const withdrawal = {
-          id: Date.now(),
-          email: paypalEmail,
-          amount: selectedCashoutOption.amount,
-          coins: selectedCashoutOption.coins,
-          date: new Date().toISOString(),
-          status: 'pending'
-        };
-        setUserCoins(userCoins - selectedCashoutOption.coins);
-        setPendingWithdrawals([...pendingWithdrawals, withdrawal]);
-        setShowPayPalPopup(false);
-        setShowWithdrawalPopup(true);
-        setPaypalEmail('');
-        setConfirmPaypalEmail('');
-        setSelectedCashoutOption(null);
-      } else {
-        alert('Please enter matching PayPal email addresses');
-      }
-    };
-
     return (
       <div className="min-h-screen bg-gradient-to-br from-purple-600 via-blue-600 to-purple-800 p-4">
         <div className="max-w-4xl mx-auto">
