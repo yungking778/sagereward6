@@ -851,7 +851,7 @@ export const Dashboard = ({ user, onLogout }) => {
               className="relative"
             >
               <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-10">
-                <div className="bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full px-6 py-2 flex items-center">
+                <div className="bg-gradient-to-r from-green-400 to-green-500 rounded-full px-6 py-2 flex items-center">
                   <Trophy className="w-5 h-5 text-white mr-2" />
                   <span className="text-white font-bold">Best Deal</span>
                 </div>
