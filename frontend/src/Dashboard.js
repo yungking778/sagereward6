@@ -446,7 +446,7 @@ export const Dashboard = ({ user, onLogout }) => {
                 <DollarSign className="w-6 h-6 text-white" />
               </div>
               <div>
-                <p className="text-2xl font-bold text-white">${userCoins}</p>
+                <p className="text-2xl font-bold text-white">${coinsToDollars(userCoins)}</p>
                 <p className="text-gray-400">Total Earnings</p>
               </div>
             </div>
