@@ -175,22 +175,6 @@ export const Dashboard = ({ user, onLogout }) => {
     }
   };
 
-  const handleCompleteOffer = (offerId) => {
-    const offer = offers.find(o => o.id === offerId);
-    if (offer && startedOffers.find(s => s.id === offerId)) {
-      // Only credit if they actually started the offer
-      if (!completedOffers.includes(offerId)) {
-        setCompletedOffers([...completedOffers, offerId]);
-        setUserCoins(userCoins + offer.reward);
-        
-        // Update started offer status
-        setStartedOffers(startedOffers.map(s => 
-          s.id === offerId ? { ...s, status: 'completed' } : s
-        ));
-      }
-    }
-  };
-
   const handleWithdrawal = () => {
     if (withdrawalEmail && withdrawalAmount) {
       const amount = parseFloat(withdrawalAmount);
