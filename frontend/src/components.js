@@ -145,7 +145,7 @@ export const Header = ({ onSignUp }) => {
                 <div className="w-8 h-8 bg-gradient-to-br from-orange-400 to-orange-600 rounded-full flex items-center justify-center">
                   <Gift className="w-5 h-5 text-white" />
                 </div>
-                <span className="text-xl font-bold text-white">HyperReward</span>
+                <span className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">RewardSage</span>
               </div>
             </div>
 
