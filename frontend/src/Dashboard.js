@@ -172,7 +172,13 @@ export const Dashboard = ({ user, onLogout }) => {
       const amount = parseFloat(withdrawalAmount);
       const requiredCoins = amount * 100; // Convert dollars to coins
       
-      if (requiredCoins <= userCoins && amount >= 1) {
+      // Check if first withdrawal and enforce $20 minimum
+      if (isFirstWithdrawal && amount < 20) {
+        alert('First withdrawal must be at least $20. Complete more offers to reach the minimum.');
+        return;
+      }
+      
+      if (requiredCoins <= userCoins && amount >= (isFirstWithdrawal ? 20 : 1)) {
         // Deduct coins from balance
         setUserCoins(userCoins - requiredCoins);
         
@@ -187,11 +193,14 @@ export const Dashboard = ({ user, onLogout }) => {
         };
         setPendingWithdrawals([...pendingWithdrawals, withdrawal]);
         
+        // Mark that user has made their first withdrawal
+        setIsFirstWithdrawal(false);
+        
         setShowWithdrawalPopup(true);
         setWithdrawalEmail('');
         setWithdrawalAmount('');
       } else {
-        alert('Insufficient coins or invalid amount. Minimum withdrawal is $1.');
+        alert(`Insufficient coins or invalid amount. Minimum withdrawal is $${isFirstWithdrawal ? 20 : 1}.`);
       }
     } else {
       alert('Please fill in both email and amount.');
