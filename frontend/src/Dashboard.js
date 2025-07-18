@@ -196,6 +196,28 @@ export const Dashboard = ({ user, onLogout }) => {
     }
   };
 
+  const handlePayPalSubmit = () => {
+    if (paypalEmail && confirmPaypalEmail && paypalEmail === confirmPaypalEmail) {
+      const withdrawal = {
+        id: Date.now(),
+        email: paypalEmail,
+        amount: selectedCashoutOption.amount,
+        coins: selectedCashoutOption.coins,
+        date: new Date().toISOString(),
+        status: 'pending'
+      };
+      setUserCoins(userCoins - selectedCashoutOption.coins);
+      setPendingWithdrawals([...pendingWithdrawals, withdrawal]);
+      setShowPayPalPopup(false);
+      setShowWithdrawalPopup(true);
+      setPaypalEmail('');
+      setConfirmPaypalEmail('');
+      setSelectedCashoutOption(null);
+    } else {
+      alert('Please enter matching PayPal email addresses');
+    }
+  };
+
   const copyReferralCode = () => {
     navigator.clipboard.writeText(referralCode);
     alert('Referral code copied to clipboard!');
