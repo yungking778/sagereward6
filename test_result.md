@@ -296,6 +296,9 @@ frontend:
         - working: true
           agent: "main"
           comment: "Fixed Netlify deployment configuration parsing error. Moved netlify.toml from /app/frontend/ to /app/ (root directory) and updated build configuration to work with frontend subdirectory. Build command updated to 'cd frontend && yarn install && yarn build' with publish directory 'frontend/build'. Build tested successfully - application builds correctly and is ready for Netlify deployment."
+        - working: true
+          agent: "main"
+          comment: "Fixed Node.js version incompatibility error. Updated NODE_VERSION from '18' to '20' in netlify.toml to meet react-router-dom@7.5.1 requirement (>=20.0.0). Build tested successfully with updated configuration."
 
 backend:
   - task: "User Registration API"
