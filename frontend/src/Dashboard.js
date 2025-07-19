@@ -36,6 +36,33 @@ export const Dashboard = ({ user, onLogout }) => {
   const [isFirstWithdrawal, setIsFirstWithdrawal] = useState(true);
   const [referralLink] = useState(`${window.location.origin}/signup?ref=${Math.random().toString(36).substr(2, 8).toUpperCase()}`);
 
+  // Load dashboard state from localStorage on component mount
+  useEffect(() => {
+    const savedDashboardData = localStorage.getItem('rewardSageDashboard');
+    if (savedDashboardData) {
+      const dashboardState = JSON.parse(savedDashboardData);
+      setActiveTab(dashboardState.activeTab || 'offers');
+      setUserCoins(dashboardState.userCoins || 500);
+      setCompletedOffers(dashboardState.completedOffers || []);
+      setStartedOffers(dashboardState.startedOffers || []);
+      setPendingWithdrawals(dashboardState.pendingWithdrawals || []);
+      setIsFirstWithdrawal(dashboardState.isFirstWithdrawal !== undefined ? dashboardState.isFirstWithdrawal : true);
+    }
+  }, []);
+
+  // Save dashboard state to localStorage whenever important state changes
+  useEffect(() => {
+    const dashboardState = {
+      activeTab,
+      userCoins,
+      completedOffers,
+      startedOffers,
+      pendingWithdrawals,
+      isFirstWithdrawal
+    };
+    localStorage.setItem('rewardSageDashboard', JSON.stringify(dashboardState));
+  }, [activeTab, userCoins, completedOffers, startedOffers, pendingWithdrawals, isFirstWithdrawal]);
+
   // Conversion rate: 100 points = $1
   const coinsToDollars = (coins) => (coins / 100).toFixed(2);
 
