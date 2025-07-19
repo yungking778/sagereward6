@@ -50,7 +50,7 @@ export const Dashboard = ({ user, onLogout }) => {
       difficulty: "Easy",
       time: "2 min",
       locked: false,
-      url: "https://social.hopper.com/en/social/friend-invitation?referral_code=brysonh1mjs&referrer_name=Bryson&reward_items=HOTEL%3A10%25+off+%3AHotels&reward_total=10%25+off+hotels",
+      url: "https://sharing.hopper.com/invite/md1b2mre",
       image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=100&h=100&fit=crop&crop=center"
     },
     {
