@@ -561,22 +561,22 @@ export const HeroSection = ({ onSignUp }) => {
         {/* PayPal Notification Boxes */}
         <div className="absolute top-24 left-4 right-4 z-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex justify-between space-x-4">
+            <div className="flex justify-between space-x-2">
               {/* PayPal Notification 1 */}
               <motion.div
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
-                className="bg-white/20 backdrop-blur-sm rounded-2xl p-4 flex items-center space-x-3 border border-white/30"
+                className="bg-white/20 backdrop-blur-sm rounded-xl p-3 flex items-center space-x-2 border border-white/30"
               >
-                <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold text-sm">PP</span>
+                <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
+                  <span className="text-white font-bold text-xs">PP</span>
                 </div>
                 <div className="text-white">
-                  <p className="font-bold text-lg">PayPal</p>
-                  <p className="text-sm opacity-90">7 mins ago</p>
+                  <p className="font-bold text-sm">PayPal</p>
+                  <p className="text-xs opacity-90">7 mins ago</p>
                 </div>
-                <div className="text-white font-bold text-xl">$25</div>
+                <div className="text-white font-bold text-lg">$25</div>
               </motion.div>
 
               {/* PayPal Notification 2 */}
@@ -584,16 +584,16 @@ export const HeroSection = ({ onSignUp }) => {
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="bg-white/20 backdrop-blur-sm rounded-2xl p-4 flex items-center space-x-3 border border-white/30"
+                className="bg-white/20 backdrop-blur-sm rounded-xl p-3 flex items-center space-x-2 border border-white/30"
               >
-                <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold text-sm">PP</span>
+                <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
+                  <span className="text-white font-bold text-xs">PP</span>
                 </div>
                 <div className="text-white">
-                  <p className="font-bold text-lg">PayPal</p>
-                  <p className="text-sm opacity-90">12 mins ago</p>
+                  <p className="font-bold text-sm">PayPal</p>
+                  <p className="text-xs opacity-90">12 mins ago</p>
                 </div>
-                <div className="text-white font-bold text-xl">$15</div>
+                <div className="text-white font-bold text-lg">$15</div>
               </motion.div>
 
               {/* PayPal Notification 3 */}
@@ -601,16 +601,16 @@ export const HeroSection = ({ onSignUp }) => {
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
-                className="bg-white/20 backdrop-blur-sm rounded-2xl p-4 flex items-center space-x-3 border border-white/30"
+                className="bg-white/20 backdrop-blur-sm rounded-xl p-3 flex items-center space-x-2 border border-white/30"
               >
-                <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold text-sm">PP</span>
+                <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
+                  <span className="text-white font-bold text-xs">PP</span>
                 </div>
                 <div className="text-white">
-                  <p className="font-bold text-lg">PayPal</p>
-                  <p className="text-sm opacity-90">18 mins ago</p>
+                  <p className="font-bold text-sm">PayPal</p>
+                  <p className="text-xs opacity-90">18 mins ago</p>
                 </div>
-                <div className="text-white font-bold text-xl">$8</div>
+                <div className="text-white font-bold text-lg">$8</div>
               </motion.div>
             </div>
           </div>
