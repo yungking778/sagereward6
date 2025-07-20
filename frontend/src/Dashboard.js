@@ -987,7 +987,7 @@ export const Dashboard = ({ user, onLogout }) => {
         </div>
       </div>
       {/* Header */}
-      <header className="bg-gray-900 bg-opacity-90 backdrop-blur-sm border-b border-gray-800">
+      <header className="bg-white/10 backdrop-blur-sm border-b border-white/20 mx-4 mt-4 rounded-2xl">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center space-x-4">
@@ -995,9 +995,9 @@ export const Dashboard = ({ user, onLogout }) => {
               <div className="relative">
                 <button
                   onClick={() => setShowProfileMenu(!showProfileMenu)}
-                  className="flex items-center space-x-2 text-gray-300 hover:text-white transition-colors"
+                  className="flex items-center space-x-2 text-white/90 hover:text-white transition-colors"
                 >
-                  <div className="w-8 h-8 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-full flex items-center justify-center">
+                  <div className="w-10 h-10 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-lg flex items-center justify-center">
                     <User className="w-5 h-5 text-white" />
                   </div>
                   <span className="text-sm font-medium">Menu</span>
@@ -1005,10 +1005,10 @@ export const Dashboard = ({ user, onLogout }) => {
 
                 {/* Profile Dropdown */}
                 {showProfileMenu && (
-                  <div className="absolute left-0 top-full mt-2 w-64 bg-gray-800 rounded-lg shadow-lg border border-gray-700 z-50">
-                    <div className="p-4 border-b border-gray-700">
+                  <div className="absolute left-0 top-full mt-2 w-64 bg-white/10 backdrop-blur-sm rounded-2xl shadow-lg border border-white/20 z-50">
+                    <div className="p-4 border-b border-white/20">
                       <h3 className="text-white font-semibold">Welcome, {user?.name || 'User'}</h3>
-                      <p className="text-gray-400 text-sm">{user?.email || 'user@example.com'}</p>
+                      <p className="text-white/70 text-sm">{user?.email || 'user@example.com'}</p>
                     </div>
                     
                     <div className="py-2">
@@ -1017,7 +1017,7 @@ export const Dashboard = ({ user, onLogout }) => {
                           setActiveTab('profile');
                           setShowProfileMenu(false);
                         }}
-                        className="w-full px-4 py-2 text-left text-gray-300 hover:bg-gray-700 hover:text-white transition-colors flex items-center space-x-3"
+                        className="w-full px-4 py-2 text-left text-white/80 hover:bg-white/10 hover:text-white transition-colors flex items-center space-x-3"
                       >
                         <User className="w-4 h-4" />
                         <span>Profile</span>
@@ -1028,7 +1028,7 @@ export const Dashboard = ({ user, onLogout }) => {
                           setActiveTab('transactions');
                           setShowProfileMenu(false);
                         }}
-                        className="w-full px-4 py-2 text-left text-gray-300 hover:bg-gray-700 hover:text-white transition-colors flex items-center space-x-3"
+                        className="w-full px-4 py-2 text-left text-white/80 hover:bg-white/10 hover:text-white transition-colors flex items-center space-x-3"
                       >
                         <CreditCard className="w-4 h-4" />
                         <span>Transactions</span>
@@ -1039,7 +1039,7 @@ export const Dashboard = ({ user, onLogout }) => {
                           setActiveTab('support');
                           setShowProfileMenu(false);
                         }}
-                        className="w-full px-4 py-2 text-left text-gray-300 hover:bg-gray-700 hover:text-white transition-colors flex items-center space-x-3"
+                        className="w-full px-4 py-2 text-left text-white/80 hover:bg-white/10 hover:text-white transition-colors flex items-center space-x-3"
                       >
                         <Gift className="w-4 h-4" />
                         <span>Support</span>
@@ -1050,28 +1050,30 @@ export const Dashboard = ({ user, onLogout }) => {
               </div>
             </div>
 
-            {/* Center - HyperReward Logo */}
-            <div className="hidden sm:absolute sm:left-1/2 sm:transform sm:-translate-x-1/2 sm:flex items-center space-x-2">
-              <div className="w-8 h-8 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-full flex items-center justify-center relative">
+            {/* Center - RewardSage Logo */}
+            <div className="hidden sm:absolute sm:left-1/2 sm:transform sm:-translate-x-1/2 sm:flex items-center space-x-3">
+              <div className="w-10 h-10 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-lg flex items-center justify-center">
                 <svg viewBox="0 0 24 24" className="w-5 h-5 text-white">
                   <path fill="currentColor" d="M12 2L8 8h8l-4-6zm0 20l4-6H8l4 6zm-6-8l-4-6v12l4-6zm12 0l4-6v12l-4-6z"/>
                 </svg>
-                <div className="absolute inset-0 bg-cyan-400 rounded-full animate-pulse opacity-50"></div>
               </div>
-              <span className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">RewardSage</span>
+              <div className="text-white">
+                <p className="font-bold text-lg">RewardSage</p>
+                <p className="text-sm opacity-90">Dashboard</p>
+              </div>
             </div>
 
             {/* Right - Coin Box */}
             <div className="flex items-center space-x-2 sm:space-x-6">
-              <div className="flex items-center space-x-2 bg-gray-800 rounded-lg px-3 sm:px-4 py-2">
-                <Coins className="w-4 h-4 sm:w-5 sm:h-5 text-cyan-400" />
+              <div className="flex items-center space-x-2 bg-white/10 backdrop-blur-sm rounded-lg px-3 sm:px-4 py-2 border border-white/20">
+                <Coins className="w-4 h-4 sm:w-5 sm:h-5 text-yellow-300" />
                 <span className="text-white font-semibold text-sm sm:text-base">{userCoins}</span>
-                <span className="text-gray-400 text-xs sm:text-sm">coins</span>
+                <span className="text-white/70 text-xs sm:text-sm">coins</span>
               </div>
               
               <button
                 onClick={onLogout}
-                className="text-gray-400 hover:text-white transition-colors"
+                className="text-white/70 hover:text-white transition-colors"
               >
                 <LogOut className="w-4 h-4 sm:w-5 sm:h-5" />
               </button>
