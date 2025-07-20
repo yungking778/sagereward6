@@ -611,7 +611,7 @@ export const HeroSection = ({ onSignUp }) => {
                   Get Started Free
                   <ArrowRight className="w-5 h-5 ml-2" />
                 </button>
-                <button className="border border-gray-600 text-gray-300 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-800 transition-all">
+                <button className="border border-gray-400 text-gray-700 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100 transition-all">
                   How it Works
                 </button>
               </motion.div>
