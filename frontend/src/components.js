@@ -42,15 +42,40 @@ export const SignUpModal = ({ isOpen, onClose, onSignUp }) => {
         transition={{ duration: 0.3 }}
         className="bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 rounded-2xl p-8 max-w-md w-full border border-gray-700 relative overflow-hidden"
         style={{
-          backgroundImage: `linear-gradient(135deg, 
-            rgba(15, 23, 42, 0.95) 0%, 
-            rgba(30, 58, 138, 0.85) 25%, 
-            rgba(37, 99, 235, 0.75) 50%, 
-            rgba(30, 58, 138, 0.85) 75%, 
-            rgba(15, 23, 42, 0.95) 100%
-          )`
+          backgroundImage: `
+            linear-gradient(135deg, 
+              rgba(15, 23, 42, 0.95) 0%, 
+              rgba(30, 58, 138, 0.85) 25%, 
+              rgba(37, 99, 235, 0.75) 50%, 
+              rgba(30, 58, 138, 0.85) 75%, 
+              rgba(15, 23, 42, 0.95) 100%
+            ),
+            url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="diamonds" width="20" height="20" patternUnits="userSpaceOnUse"><polygon points="10,2 18,10 10,18 2,10" fill="none" stroke="rgb(59, 130, 246)" stroke-width="0.5" opacity="0.1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23diamonds)"/></svg>')
+          `,
+          backgroundSize: 'cover, 40px 40px'
         }}
       >
+        {/* Decorative RewardSage logo pattern in background */}
+        <div 
+          className="absolute top-4 right-4 opacity-10"
+          style={{
+            transform: 'rotate(15deg)'
+          }}
+        >
+          <svg viewBox="0 0 24 24" className="w-16 h-16 text-cyan-400">
+            <path fill="currentColor" d="M12 2L8 8h8l-4-6zm0 20l4-6H8l4 6zm-6-8l-4-6v12l4-6zm12 0l4-6v12l-4-6z"/>
+          </svg>
+        </div>
+        <div 
+          className="absolute bottom-4 left-4 opacity-10"
+          style={{
+            transform: 'rotate(-15deg)'
+          }}
+        >
+          <svg viewBox="0 0 24 24" className="w-12 h-12 text-cyan-400">
+            <path fill="currentColor" d="M12 2L8 8h8l-4-6zm0 20l4-6H8l4 6zm-6-8l-4-6v12l4-6zm12 0l4-6v12l-4-6z"/>
+          </svg>
+        </div>
         <div className="text-center mb-6">
           <div className="flex items-center justify-center space-x-2 mb-4">
             <div className="w-12 h-12 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-full flex items-center justify-center relative">
