@@ -40,7 +40,16 @@ export const SignUpModal = ({ isOpen, onClose, onSignUp }) => {
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.3 }}
-        className="bg-gray-900 rounded-2xl p-8 max-w-md w-full border border-gray-700"
+        className="bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 rounded-2xl p-8 max-w-md w-full border border-gray-700 relative overflow-hidden"
+        style={{
+          backgroundImage: `linear-gradient(135deg, 
+            rgba(15, 23, 42, 0.95) 0%, 
+            rgba(30, 58, 138, 0.85) 25%, 
+            rgba(37, 99, 235, 0.75) 50%, 
+            rgba(30, 58, 138, 0.85) 75%, 
+            rgba(15, 23, 42, 0.95) 100%
+          )`
+        }}
       >
         <div className="text-center mb-6">
           <div className="flex items-center justify-center space-x-2 mb-4">
