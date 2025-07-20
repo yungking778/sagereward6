@@ -908,28 +908,46 @@ export const FinalCTA = ({ onSignUp }) => {
 
 // Footer Component
 export const Footer = () => {
+  const [showTerms, setShowTerms] = useState(false);
+  const [showPrivacy, setShowPrivacy] = useState(false);
+
   return (
-    <footer className="bg-gray-900 border-t border-gray-800 py-8">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row justify-between items-center">
-          <div className="flex items-center space-x-2 mb-4 md:mb-0">
-            <div className="w-8 h-8 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-full flex items-center justify-center relative">
-              <svg viewBox="0 0 24 24" className="w-5 h-5 text-white">
-                <path fill="currentColor" d="M12 2L8 8h8l-4-6zm0 20l4-6H8l4 6zm-6-8l-4-6v12l4-6zm12 0l4-6v12l-4-6z"/>
-              </svg>
+    <>
+      <footer className="bg-gray-900 border-t border-gray-800 py-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <div className="flex items-center space-x-2 mb-4 md:mb-0">
+              <div className="w-8 h-8 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-full flex items-center justify-center relative">
+                <svg viewBox="0 0 24 24" className="w-5 h-5 text-white">
+                  <path fill="currentColor" d="M12 2L8 8h8l-4-6zm0 20l4-6H8l4 6zm-6-8l-4-6v12l4-6zm12 0l4-6v12l-4-6z"/>
+                </svg>
+              </div>
+              <span className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">RewardSage</span>
             </div>
-            <span className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">RewardSage</span>
+            <div className="flex items-center space-x-6">
+              <button
+                onClick={() => setShowPrivacy(true)}
+                className="text-gray-400 hover:text-white transition-colors"
+              >
+                Privacy Policy
+              </button>
+              <button
+                onClick={() => setShowTerms(true)}
+                className="text-gray-400 hover:text-white transition-colors"
+              >
+                Terms of Service
+              </button>
+              <a href="#" className="text-gray-400 hover:text-white transition-colors">Contact</a>
+            </div>
           </div>
-          <div className="flex items-center space-x-6">
-            <a href="#" className="text-gray-400 hover:text-white transition-colors">Privacy Policy</a>
-            <a href="#" className="text-gray-400 hover:text-white transition-colors">Terms of Service</a>
-            <a href="#" className="text-gray-400 hover:text-white transition-colors">Contact</a>
+          <div className="mt-8 pt-8 border-t border-gray-800 text-center">
+            <p className="text-gray-400">© 2025 RewardSage. All rights reserved.</p>
           </div>
         </div>
-        <div className="mt-8 pt-8 border-t border-gray-800 text-center">
-          <p className="text-gray-400">© 2025 RewardSage. All rights reserved.</p>
-        </div>
-      </div>
-    </footer>
+      </footer>
+
+      <TermsOfServiceModal isOpen={showTerms} onClose={() => setShowTerms(false)} />
+      <PrivacyPolicyModal isOpen={showPrivacy} onClose={() => setShowPrivacy(false)} />
+    </>
   );
 };
