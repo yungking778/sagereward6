@@ -578,7 +578,7 @@ export const HeroSection = ({ onSignUp }) => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6"
+                className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6"
               >
                 Instant Cash Rewards -{' '}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600">
