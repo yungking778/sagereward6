@@ -951,10 +951,12 @@ export const FinalCTA = ({ onSignUp }) => {
 
   return (
     <>
-      <section className="py-20 bg-gradient-to-br from-blue-500 to-blue-600 relative overflow-hidden">
-        {/* Background decoration */}
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-400/20 to-green-500/20"></div>
-        
+      <section 
+        className="py-20 relative overflow-hidden"
+        style={{
+          background: "linear-gradient(135deg, #764ba2 0%, #667eea 100%)"
+        }}
+      >
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -964,22 +966,27 @@ export const FinalCTA = ({ onSignUp }) => {
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
               Ready to Start Earning?
             </h2>
-            <p className="text-xl text-blue-100 mb-8">
+            <p className="text-xl text-white/90 mb-8">
               Join RewardSage today and get your 500 coin welcome bonus!
             </p>
             
             <div className="flex items-center justify-center mb-8">
-              <div className="flex items-center bg-white/10 backdrop-blur-sm rounded-full px-6 py-3">
-                <div className="w-8 h-8 bg-green-400 rounded-full flex items-center justify-center mr-3">
-                  <Gift className="w-5 h-5 text-green-800" />
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl px-8 py-4 border border-white/20">
+                <div className="flex items-center justify-center space-x-3">
+                  <div className="w-10 h-10 bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-full flex items-center justify-center">
+                    <Gift className="w-5 h-5 text-purple-700" />
+                  </div>
+                  <div className="text-white">
+                    <div className="font-bold text-lg">Welcome Bonus</div>
+                    <div className="text-yellow-300 font-bold">500 Coins</div>
+                  </div>
                 </div>
-                <span className="text-white font-semibold text-lg">500</span>
               </div>
             </div>
             
             <button 
               onClick={handleSignUpClick}
-              className="bg-white text-blue-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100 transition-all transform hover:scale-105 flex items-center justify-center mx-auto"
+              className="bg-white text-purple-700 px-12 py-4 rounded-full text-lg font-bold hover:bg-gray-100 transition-all transform hover:scale-105 flex items-center justify-center mx-auto shadow-lg"
             >
               Sign Up Now - It's Free!
               <Gift className="w-5 h-5 ml-2" />
