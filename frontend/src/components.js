@@ -532,18 +532,11 @@ export const Header = ({ onSignUp, referralCode }) => {
           </div>
         </div>
       </header>
-                  </button>
-                </div>
-              </div>
-            </div>
-          )}
-        </div>
-      </header>
 
       <SignUpModal 
         isOpen={isSignUpOpen} 
         onClose={() => setIsSignUpOpen(false)} 
-        onSignUp={onSignUp}
+        onSignUp={handleSignUp}
       />
     </>
   );
