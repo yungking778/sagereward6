@@ -46,6 +46,7 @@ function SignupPage({ onSignUp }) {
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [user, setUser] = useState(null);
+  const [showCongratulations, setShowCongratulations] = useState(false);
 
   // Load user data from localStorage on app start
   useEffect(() => {
@@ -60,11 +61,16 @@ function App() {
 
   const handleSignUp = (userData) => {
     setUser(userData);
-    setIsLoggedIn(true);
+    setShowCongratulations(true); // Show congratulations modal first
     
     // Save to localStorage
     localStorage.setItem('rewardSageUser', JSON.stringify(userData));
     localStorage.setItem('rewardSageLoggedIn', 'true');
+  };
+
+  const handleCongratulationsClose = () => {
+    setShowCongratulations(false);
+    setIsLoggedIn(true); // Then redirect to dashboard
   };
 
   const handleLogout = () => {
