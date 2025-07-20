@@ -9,7 +9,8 @@ import {
   Testimonials, 
   FinalCTA, 
   Footer,
-  CongratulationsModal
+  CongratulationsModal,
+  DisclaimerModal
 } from './components';
 import { Dashboard } from './Dashboard';
 
