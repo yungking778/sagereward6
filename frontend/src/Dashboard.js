@@ -460,8 +460,18 @@ export const Dashboard = ({ user, onLogout }) => {
           <div className="mt-6 p-4 bg-gray-700 rounded-lg">
             <h5 className="text-white font-semibold mb-2">Quick Links</h5>
             <div className="space-y-2">
-              <a href="#" className="block text-blue-400 hover:text-blue-300 text-sm">Terms of Service</a>
-              <a href="#" className="block text-blue-400 hover:text-blue-300 text-sm">Privacy Policy</a>
+              <button
+                onClick={() => setShowTerms(true)}
+                className="block text-blue-400 hover:text-blue-300 text-sm text-left w-full"
+              >
+                Terms of Service
+              </button>
+              <button
+                onClick={() => setShowPrivacy(true)}
+                className="block text-blue-400 hover:text-blue-300 text-sm text-left w-full"
+              >
+                Privacy Policy
+              </button>
               <a href="#" className="block text-blue-400 hover:text-blue-300 text-sm">Payment Issues</a>
               <a href="#" className="block text-blue-400 hover:text-blue-300 text-sm">Account Security</a>
             </div>
