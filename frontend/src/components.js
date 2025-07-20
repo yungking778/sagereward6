@@ -276,7 +276,174 @@ export const PrivacyPolicyModal = ({ isOpen, onClose }) => {
     </div>
   );
 };
-// Sign Up Modal Component
+// Congratulations Modal Component
+export const CongratulationsModal = ({ isOpen, onClose, userName }) => {
+  if (!isOpen) return null;
+
+  return (
+    <div 
+      className="fixed inset-0 flex items-center justify-center z-50 p-4"
+      style={{
+        background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
+      }}
+    >
+      <motion.div
+        initial={{ opacity: 0, scale: 0.3 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.6, type: "spring", bounce: 0.4 }}
+        className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 max-w-md w-full border border-white/20 relative overflow-hidden"
+      >
+        {/* Confetti Animation Background */}
+        <div className="absolute inset-0 pointer-events-none">
+          {[...Array(20)].map((_, i) => (
+            <motion.div
+              key={i}
+              className="absolute w-2 h-2 bg-yellow-400"
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+                borderRadius: Math.random() > 0.5 ? '50%' : '0%',
+              }}
+              animate={{
+                y: [0, -30, 0],
+                rotate: [0, 360],
+                opacity: [0, 1, 0],
+              }}
+              transition={{
+                duration: 2,
+                delay: i * 0.1,
+                repeat: Infinity,
+                repeatDelay: 2,
+              }}
+            />
+          ))}
+        </div>
+
+        <div className="text-center relative z-10">
+          {/* Animated Coin Icon */}
+          <motion.div
+            initial={{ scale: 0, rotate: -180 }}
+            animate={{ scale: 1, rotate: 0 }}
+            transition={{ duration: 0.8, delay: 0.3, type: "spring", bounce: 0.6 }}
+            className="w-20 h-20 bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg"
+          >
+            <motion.div
+              animate={{ 
+                scale: [1, 1.2, 1],
+                rotate: [0, 5, -5, 0] 
+              }}
+              transition={{ 
+                duration: 2, 
+                repeat: Infinity,
+                repeatDelay: 1 
+              }}
+            >
+              <Coins className="w-10 h-10 text-purple-700" />
+            </motion.div>
+          </motion.div>
+
+          {/* Congratulations Text */}
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+            className="text-3xl font-bold text-white mb-4"
+          >
+            🎉 Congratulations!
+          </motion.h2>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.8 }}
+            className="text-lg text-white/90 mb-2"
+          >
+            Welcome to RewardSage, {userName}!
+          </motion.p>
+
+          {/* Bonus Announcement */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, delay: 1.0, type: "spring" }}
+            className="bg-white/20 backdrop-blur-sm rounded-2xl p-6 border border-white/30 mb-6"
+          >
+            <motion.div
+              animate={{ 
+                scale: [1, 1.05, 1],
+              }}
+              transition={{ 
+                duration: 1.5, 
+                repeat: Infinity,
+                repeatDelay: 0.5 
+              }}
+              className="flex items-center justify-center space-x-3"
+            >
+              <div className="w-12 h-12 bg-gradient-to-br from-green-400 to-green-500 rounded-full flex items-center justify-center">
+                <Gift className="w-6 h-6 text-white" />
+              </div>
+              <div className="text-white">
+                <p className="text-2xl font-bold text-yellow-300">500 COINS</p>
+                <p className="text-sm opacity-90">Sign-up Bonus Added!</p>
+              </div>
+            </motion.div>
+          </motion.div>
+
+          {/* Success Message */}
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 1.2 }}
+            className="text-white/80 text-sm mb-6"
+          >
+            Your account has been created and your bonus has been credited. Start exploring offers to earn more!
+          </motion.p>
+
+          {/* Continue Button */}
+          <motion.button
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 1.4 }}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={onClose}
+            className="bg-white text-purple-700 px-8 py-3 rounded-full font-bold hover:bg-gray-100 transition-all shadow-lg"
+          >
+            Start Earning! 🚀
+          </motion.button>
+        </div>
+
+        {/* Floating Coins Animation */}
+        <div className="absolute inset-0 pointer-events-none">
+          {[...Array(8)].map((_, i) => (
+            <motion.div
+              key={`coin-${i}`}
+              className="absolute w-6 h-6 bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-full flex items-center justify-center"
+              style={{
+                left: `${20 + (i * 10)}%`,
+                top: `${10 + (i % 2 * 80)}%`,
+              }}
+              animate={{
+                y: [-10, -30, -10],
+                x: [0, Math.sin(i) * 20, 0],
+                rotate: [0, 360],
+                opacity: [0.3, 0.8, 0.3],
+              }}
+              transition={{
+                duration: 3,
+                delay: 1.5 + (i * 0.2),
+                repeat: Infinity,
+                repeatDelay: 1,
+              }}
+            >
+              <span className="text-xs text-purple-700 font-bold">$</span>
+            </motion.div>
+          ))}
+        </div>
+      </motion.div>
+    </div>
+  );
+};
 export const SignUpModal = ({ isOpen, onClose, onSignUp }) => {
   const [formData, setFormData] = useState({
     name: '',
