@@ -623,15 +623,15 @@ export const HeroSection = ({ onSignUp }) => {
                 transition={{ duration: 0.6, delay: 0.8 }}
                 className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start mt-8"
               >
-                <div className="flex items-center text-green-400">
+                <div className="flex items-center text-green-600">
                   <CheckCircle className="w-5 h-5 mr-2" />
                   <span>Free to join</span>
                 </div>
-                <div className="flex items-center text-green-400">
+                <div className="flex items-center text-green-600">
                   <CheckCircle className="w-5 h-5 mr-2" />
                   <span>Instant payouts</span>
                 </div>
-                <div className="flex items-center text-green-400">
+                <div className="flex items-center text-green-600">
                   <CheckCircle className="w-5 h-5 mr-2" />
                   <span>$1 minimum</span>
                 </div>
