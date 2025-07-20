@@ -963,6 +963,24 @@ export const Dashboard = ({ user, onLogout }) => {
         backgroundSize: 'cover, 50px 50px'
       }}
     >
+      {/* Decorative RewardSage background elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-20 right-10 opacity-5 transform rotate-12">
+          <svg viewBox="0 0 24 24" className="w-32 h-32 text-cyan-400">
+            <path fill="currentColor" d="M12 2L8 8h8l-4-6zm0 20l4-6H8l4 6zm-6-8l-4-6v12l4-6zm12 0l4-6v12l-4-6z"/>
+          </svg>
+        </div>
+        <div className="absolute bottom-32 left-10 opacity-5 transform -rotate-12">
+          <svg viewBox="0 0 24 24" className="w-24 h-24 text-cyan-400">
+            <path fill="currentColor" d="M12 2L8 8h8l-4-6zm0 20l4-6H8l4 6zm-6-8l-4-6v12l4-6zm12 0l4-6v12l-4-6z"/>
+          </svg>
+        </div>
+        <div className="absolute top-1/2 left-1/2 opacity-3 transform -translate-x-1/2 -translate-y-1/2 rotate-45">
+          <svg viewBox="0 0 24 24" className="w-96 h-96 text-cyan-400">
+            <path fill="currentColor" d="M12 2L8 8h8l-4-6zm0 20l4-6H8l4 6zm-6-8l-4-6v12l4-6zm12 0l4-6v12l-4-6z"/>
+          </svg>
+        </div>
+      </div>
       {/* Header */}
       <header className="bg-gray-900 bg-opacity-90 backdrop-blur-sm border-b border-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
