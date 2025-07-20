@@ -276,12 +276,15 @@ export const PrivacyPolicyModal = ({ isOpen, onClose }) => {
     </div>
   );
 };
+// Sign Up Modal Component
 export const SignUpModal = ({ isOpen, onClose, onSignUp }) => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     password: ''
   });
+  const [showTerms, setShowTerms] = useState(false);
+  const [showPrivacy, setShowPrivacy] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -294,127 +297,152 @@ export const SignUpModal = ({ isOpen, onClose, onSignUp }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-      <motion.div
-        initial={{ opacity: 0, scale: 0.9 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.3 }}
-        className="bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 rounded-2xl p-8 max-w-md w-full border border-gray-700 relative overflow-hidden"
-        style={{
-          backgroundImage: `
-            linear-gradient(135deg, 
-              rgba(15, 23, 42, 0.95) 0%, 
-              rgba(30, 58, 138, 0.85) 25%, 
-              rgba(37, 99, 235, 0.75) 50%, 
-              rgba(30, 58, 138, 0.85) 75%, 
-              rgba(15, 23, 42, 0.95) 100%
-            ),
-            url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="diamonds" width="20" height="20" patternUnits="userSpaceOnUse"><polygon points="10,2 18,10 10,18 2,10" fill="none" stroke="rgb(59, 130, 246)" stroke-width="0.5" opacity="0.1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23diamonds)"/></svg>')
-          `,
-          backgroundSize: 'cover, 40px 40px'
-        }}
-      >
-        {/* Decorative RewardSage logo pattern in background */}
-        <div 
-          className="absolute top-4 right-4 opacity-10"
+    <>
+      <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.3 }}
+          className="bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 rounded-2xl p-8 max-w-md w-full border border-gray-700 relative overflow-hidden"
           style={{
-            transform: 'rotate(15deg)'
+            backgroundImage: `
+              linear-gradient(135deg, 
+                rgba(15, 23, 42, 0.95) 0%, 
+                rgba(30, 58, 138, 0.85) 25%, 
+                rgba(37, 99, 235, 0.75) 50%, 
+                rgba(30, 58, 138, 0.85) 75%, 
+                rgba(15, 23, 42, 0.95) 100%
+              ),
+              url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="diamonds" width="20" height="20" patternUnits="userSpaceOnUse"><polygon points="10,2 18,10 10,18 2,10" fill="none" stroke="rgb(59, 130, 246)" stroke-width="0.5" opacity="0.1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23diamonds)"/></svg>')
+            `,
+            backgroundSize: 'cover, 40px 40px'
           }}
         >
-          <svg viewBox="0 0 24 24" className="w-16 h-16 text-cyan-400">
-            <path fill="currentColor" d="M12 2L8 8h8l-4-6zm0 20l4-6H8l4 6zm-6-8l-4-6v12l4-6zm12 0l4-6v12l-4-6z"/>
-          </svg>
-        </div>
-        <div 
-          className="absolute bottom-4 left-4 opacity-10"
-          style={{
-            transform: 'rotate(-15deg)'
-          }}
-        >
-          <svg viewBox="0 0 24 24" className="w-12 h-12 text-cyan-400">
-            <path fill="currentColor" d="M12 2L8 8h8l-4-6zm0 20l4-6H8l4 6zm-6-8l-4-6v12l4-6zm12 0l4-6v12l-4-6z"/>
-          </svg>
-        </div>
-        <div className="text-center mb-6">
-          <div className="flex items-center justify-center space-x-2 mb-4">
-            <div className="w-12 h-12 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-full flex items-center justify-center relative">
-              <svg viewBox="0 0 24 24" className="w-6 h-6 text-white">
-                <path fill="currentColor" d="M12 2L8 8h8l-4-6zm0 20l4-6H8l4 6zm-6-8l-4-6v12l4-6zm12 0l4-6v12l-4-6z"/>
-              </svg>
-              <div className="absolute inset-0 bg-cyan-400 rounded-full animate-pulse opacity-50"></div>
-            </div>
-            <span className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">RewardSage</span>
+          {/* Decorative RewardSage logo pattern in background */}
+          <div 
+            className="absolute top-4 right-4 opacity-10"
+            style={{
+              transform: 'rotate(15deg)'
+            }}
+          >
+            <svg viewBox="0 0 24 24" className="w-16 h-16 text-cyan-400">
+              <path fill="currentColor" d="M12 2L8 8h8l-4-6zm0 20l4-6H8l4 6zm-6-8l-4-6v12l4-6zm12 0l4-6v12l-4-6z"/>
+            </svg>
           </div>
-          <h2 className="text-2xl font-bold text-white mb-2">Join RewardSage</h2>
-        </div>
-
-        <div className="mb-6">
-          <div className="flex items-center justify-center bg-gradient-to-r from-green-500 to-green-600 rounded-lg p-4 mb-4">
-            <Gift className="w-8 h-8 text-white mr-3" />
-            <div className="text-white">
-              <p className="font-bold">Welcome Bonus!</p>
-              <p className="text-sm">Get 500 coins instantly</p>
-            </div>
+          <div 
+            className="absolute bottom-4 left-4 opacity-10"
+            style={{
+              transform: 'rotate(-15deg)'
+            }}
+          >
+            <svg viewBox="0 0 24 24" className="w-12 h-12 text-cyan-400">
+              <path fill="currentColor" d="M12 2L8 8h8l-4-6zm0 20l4-6H8l4 6zm-6-8l-4-6v12l4-6zm12 0l4-6v12l-4-6z"/>
+            </svg>
           </div>
-        </div>
-
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <div>
-            <label className="block text-sm font-medium text-gray-300 mb-2">Name</label>
-            <div className="relative">
-              <User className="absolute left-3 top-3 w-5 h-5 text-gray-400" />
-              <input
-                type="text"
-                value={formData.name}
-                onChange={(e) => setFormData({...formData, name: e.target.value})}
-                className="w-full pl-10 pr-4 py-3 bg-gray-800 text-white rounded-lg border border-gray-600 focus:border-orange-500 focus:outline-none"
-                placeholder="Enter your name"
-                required
-              />
+          <div className="text-center mb-6">
+            <div className="flex items-center justify-center space-x-2 mb-4">
+              <div className="w-12 h-12 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-full flex items-center justify-center relative">
+                <svg viewBox="0 0 24 24" className="w-6 h-6 text-white">
+                  <path fill="currentColor" d="M12 2L8 8h8l-4-6zm0 20l4-6H8l4 6zm-6-8l-4-6v12l4-6zm12 0l4-6v12l-4-6z"/>
+                </svg>
+                <div className="absolute inset-0 bg-cyan-400 rounded-full animate-pulse opacity-50"></div>
+              </div>
+              <span className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">RewardSage</span>
             </div>
+            <h2 className="text-2xl font-bold text-white mb-2">Join RewardSage</h2>
           </div>
 
-          <div>
-            <label className="block text-sm font-medium text-gray-300 mb-2">Email</label>
-            <div className="relative">
-              <Mail className="absolute left-3 top-3 w-5 h-5 text-gray-400" />
-              <input
-                type="email"
-                value={formData.email}
-                onChange={(e) => setFormData({...formData, email: e.target.value})}
-                className="w-full pl-10 pr-4 py-3 bg-gray-800 text-white rounded-lg border border-gray-600 focus:border-orange-500 focus:outline-none"
-                placeholder="Enter your email"
-                required
-              />
+          <div className="mb-6">
+            <div className="flex items-center justify-center bg-gradient-to-r from-green-500 to-green-600 rounded-lg p-4 mb-4">
+              <Gift className="w-8 h-8 text-white mr-3" />
+              <div className="text-white">
+                <p className="font-bold">Welcome Bonus!</p>
+                <p className="text-sm">Get 500 coins instantly</p>
+              </div>
             </div>
-          </div>
-
-          <div>
-            <label className="block text-sm font-medium text-gray-300 mb-2">Password</label>
-            <input
-              type="password"
-              value={formData.password}
-              onChange={(e) => setFormData({...formData, password: e.target.value})}
-              className="w-full px-4 py-3 bg-gray-800 text-white rounded-lg border border-gray-600 focus:border-orange-500 focus:outline-none"
-              placeholder="Create a password"
-              required
-            />
           </div>
 
           <button
-            type="submit"
-            className="w-full bg-gradient-to-r from-blue-500 to-blue-600 text-white py-3 rounded-lg font-semibold hover:from-blue-600 hover:to-blue-700 transition-all flex items-center justify-center"
+            onClick={onClose}
+            className="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors"
           >
-            <UserPlus className="w-5 h-5 mr-2" />
-            Create Account & Get 500 Coins
+            <X className="w-6 h-6" />
           </button>
-        </form>
 
-        <p className="text-xs text-gray-400 text-center mt-4">
-          By signing up, you agree to our Terms of Service and Privacy Policy
-        </p>
-      </motion.div>
-    </div>
+          <form onSubmit={handleSubmit} className="space-y-4">
+            <div>
+              <label className="block text-sm font-medium text-gray-300 mb-2">Name</label>
+              <div className="relative">
+                <User className="absolute left-3 top-3 w-5 h-5 text-gray-400" />
+                <input
+                  type="text"
+                  value={formData.name}
+                  onChange={(e) => setFormData({...formData, name: e.target.value})}
+                  className="w-full pl-10 pr-4 py-3 bg-gray-800 text-white rounded-lg border border-gray-600 focus:border-orange-500 focus:outline-none"
+                  placeholder="Enter your name"
+                  required
+                />
+              </div>
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium text-gray-300 mb-2">Email</label>
+              <div className="relative">
+                <Mail className="absolute left-3 top-3 w-5 h-5 text-gray-400" />
+                <input
+                  type="email"
+                  value={formData.email}
+                  onChange={(e) => setFormData({...formData, email: e.target.value})}
+                  className="w-full pl-10 pr-4 py-3 bg-gray-800 text-white rounded-lg border border-gray-600 focus:border-orange-500 focus:outline-none"
+                  placeholder="Enter your email"
+                  required
+                />
+              </div>
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium text-gray-300 mb-2">Password</label>
+              <input
+                type="password"
+                value={formData.password}
+                onChange={(e) => setFormData({...formData, password: e.target.value})}
+                className="w-full px-4 py-3 bg-gray-800 text-white rounded-lg border border-gray-600 focus:border-orange-500 focus:outline-none"
+                placeholder="Create a password"
+                required
+              />
+            </div>
+
+            <button
+              type="submit"
+              className="w-full bg-gradient-to-r from-blue-500 to-blue-600 text-white py-3 rounded-lg font-semibold hover:from-blue-600 hover:to-blue-700 transition-all flex items-center justify-center"
+            >
+              <UserPlus className="w-5 h-5 mr-2" />
+              Create Account & Get 500 Coins
+            </button>
+          </form>
+
+          <p className="text-xs text-gray-400 text-center mt-4">
+            By signing up, you agree to our{' '}
+            <button
+              onClick={() => setShowTerms(true)}
+              className="text-cyan-400 hover:text-cyan-300 underline transition-colors"
+            >
+              Terms of Service
+            </button>
+            {' '}and{' '}
+            <button
+              onClick={() => setShowPrivacy(true)}
+              className="text-cyan-400 hover:text-cyan-300 underline transition-colors"
+            >
+              Privacy Policy
+            </button>
+          </p>
+        </motion.div>
+      </div>
+
+      <TermsOfServiceModal isOpen={showTerms} onClose={() => setShowTerms(false)} />
+      <PrivacyPolicyModal isOpen={showPrivacy} onClose={() => setShowPrivacy(false)} />
+    </>
   );
 };
 
