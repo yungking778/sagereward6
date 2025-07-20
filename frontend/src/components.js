@@ -149,60 +149,31 @@ export const PrivacyPolicyModal = ({ isOpen, onClose }) => {
 
         <div className="overflow-y-auto h-[calc(90vh-140px)] pr-4">
           <div className="text-gray-300 leading-relaxed space-y-6">
-            <div className="text-sm text-cyan-400 font-semibold">Last Updated: July 20, 2025</div>
+            <div className="text-sm text-cyan-400 font-semibold">Last Updated: January 15, 2025</div>
             
-            <p>At RewardSage ("the Site," "we," "us," or "our"), we are committed to protecting your privacy. This Privacy Policy explains our practices regarding the collection, use, and storage of information through our website, services, and any related applications or tools (collectively, the "Services"). RewardSage is a mock website designed for entertainment purposes only, and <strong>no real money or monetary value is involved</strong>.</p>
-
             <div className="space-y-4">
-              <h3 className="text-xl font-bold text-white">1. No Collection or Storage of User Data</h3>
-              <p>RewardSage does not collect, store, or process any personally identifiable information (PII) or other user data, such as names, email addresses, IP addresses, or browsing activity. The Services are designed to function without requiring or retaining any user information.</p>
-              <ul className="list-disc list-inside space-y-2 ml-4">
-                <li><strong>No Accounts or Logins</strong>: If the Services do not require user accounts or logins, no personal information is collected during use.</li>
-                <li><strong>No Cookies or Tracking</strong>: We do not use cookies, web beacons, or other tracking technologies to monitor your activity on the Site.</li>
-                <li><strong>No User Content Storage</strong>: Any content or inputs you provide (e.g., text entered for mock rewards or games) are not stored or retained after your session ends.</li>
-              </ul>
+              <h3 className="text-xl font-bold text-white">1. Introduction</h3>
+              <p>At Rewardsage, we respect your privacy. This Privacy Policy explains how we handle information on this mock website, which is designed for entertainment and promotional purposes only.</p>
             </div>
 
             <div className="space-y-4">
-              <h3 className="text-xl font-bold text-white">2. Third-Party Services</h3>
-              <p>RewardSage does not share user data with third parties because no user data is collected or stored. However, the Site may include links to third-party websites for reference or entertainment purposes. We are not responsible for the privacy practices or content of these external sites. We encourage you to review the privacy policies of any third-party sites you visit.</p>
+              <h3 className="text-xl font-bold text-white">2. Information We Do Not Collect</h3>
+              <p>Rewardsage does not collect, store, or process any personal information from users. We do not use forms, cookies, or analytics tools that track your activity or gather data.</p>
             </div>
 
             <div className="space-y-4">
-              <h3 className="text-xl font-bold text-white">3. Data Security</h3>
-              <p>Since we do not collect or store any user data, no personal information is at risk of unauthorized access or breach. We use standard security measures, such as HTTPS, to ensure the Site operates securely for your browsing experience.</p>
+              <h3 className="text-xl font-bold text-white">3. Third-Party Links</h3>
+              <p>This Site contains referral links to third-party platforms. If you click these links, you will be directed to external sites with their own privacy policies. We are not responsible for their data practices, and we encourage you to review their policies.</p>
             </div>
 
             <div className="space-y-4">
-              <h3 className="text-xl font-bold text-white">4. User Rights</h3>
-              <p>As no personal data is collected or stored, there are no user data rights to exercise (e.g., access, modification, or deletion under GDPR, CCPA, or other privacy laws). If you have concerns about your privacy, please contact us for clarification.</p>
+              <h3 className="text-xl font-bold text-white">4. Changes to This Policy</h3>
+              <p>We may update this Privacy Policy from time to time. Any changes will be posted on this page, and your continued use of the Site constitutes acceptance of the updated policy.</p>
             </div>
 
             <div className="space-y-4">
-              <h3 className="text-xl font-bold text-white">5. Cookies and Tracking Technologies</h3>
-              <p>RewardSage does not use cookies, analytics tools, or any tracking technologies. As such, no cookie consent is required, and we are compliant with regulations like the EU Cookie Law and Privacy and Electronic Communications Regulations (PECR).</p>
-            </div>
-
-            <div className="space-y-4">
-              <h3 className="text-xl font-bold text-white">6. Children's Privacy</h3>
-              <p>The Services are not intended for users under the age of 13 (or 16 in certain jurisdictions, as required by laws like COPPA or GDPR). Since we do not collect or store any user data, no personal information from children is collected.</p>
-            </div>
-
-            <div className="space-y-4">
-              <h3 className="text-xl font-bold text-white">7. International Users</h3>
-              <p>RewardSage is a mock website hosted in the United States and governed by U.S. law. As no user data is collected or stored, this Privacy Policy complies with international privacy laws, including GDPR (EU) and CCPA (California), to the extent applicable.</p>
-            </div>
-
-            <div className="space-y-4">
-              <h3 className="text-xl font-bold text-white">8. Changes to This Privacy Policy</h3>
-              <p>We may update this Privacy Policy from time to time to reflect changes in our practices or legal requirements. We will notify you of material changes by posting the updated policy on the Site with a new "Last Updated" date. Your continued use of the Services after such changes constitutes acceptance of the updated Privacy Policy.</p>
-            </div>
-
-            <div className="space-y-4">
-              <h3 className="text-xl font-bold text-white">9. Contact Us</h3>
-              <p>If you have any questions or concerns about this Privacy Policy or our practices, please contact us at:<br />
-              <strong>Email</strong>: support@rewardsage.com<br />
-              <strong>Address</strong>: RewardSage, 123 Mock Lane, Tech City, DE 12345, USA</p>
+              <h3 className="text-xl font-bold text-white">5. Contact Us</h3>
+              <p>If you have questions about this Privacy Policy, please contact us at <strong>rewardsage@support.com</strong>.</p>
             </div>
           </div>
         </div>
