@@ -18,7 +18,264 @@ import {
 } from 'lucide-react';
 import { motion } from 'framer-motion';
 
-// Sign Up Modal Component
+// Terms of Service Modal Component
+export const TermsOfServiceModal = ({ isOpen, onClose }) => {
+  if (!isOpen) return null;
+
+  return (
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+      <motion.div
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.3 }}
+        className="bg-gray-900 rounded-2xl p-8 max-w-4xl w-full h-[90vh] border border-gray-700 relative overflow-hidden"
+      >
+        <div className="flex items-center justify-between mb-6">
+          <div className="flex items-center space-x-3">
+            <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center">
+              <FileText className="w-5 h-5 text-white" />
+            </div>
+            <h2 className="text-2xl font-bold text-white">Terms of Service</h2>
+          </div>
+          <button
+            onClick={onClose}
+            className="text-gray-400 hover:text-white transition-colors"
+          >
+            <X className="w-6 h-6" />
+          </button>
+        </div>
+
+        <div className="overflow-y-auto h-[calc(90vh-140px)] pr-4">
+          <div className="text-gray-300 leading-relaxed space-y-6">
+            <div className="text-sm text-cyan-400 font-semibold">Last Updated: July 20, 2025</div>
+            
+            <p>Welcome to RewardSage ("the Site," "we," "us," or "our"). These Terms of Service ("Terms") govern your access to and use of our website, services, and any related applications or tools (collectively, the "Services"). By accessing or using the Services, you agree to be bound by these Terms. If you do not agree with these Terms, you may not use the Services.</p>
+
+            <div className="space-y-4">
+              <h3 className="text-xl font-bold text-white">1. Acceptance of Terms</h3>
+              <p>By using the Services, you confirm that you are at least 18 years old (or the age of majority in your jurisdiction) and have the legal capacity to enter into these Terms. If you are using the Services on behalf of an organization, you represent that you have the authority to bind that organization to these Terms.</p>
+            </div>
+
+            <div className="space-y-4">
+              <h3 className="text-xl font-bold text-white">2. Description of Services</h3>
+              <p>RewardSage is a mock website designed for <strong>entertainment purposes only</strong>. The Services simulate a rewards or gaming platform where users may engage with virtual content, features, or activities (e.g., earning virtual points or rewards). No real money, currency, or monetary value is involved in any aspect of the Services. All rewards, points, or incentives are purely virtual, non-redeemable, and have no real-world value. The Services are not powered by artificial intelligence and are intended for fictional or demonstrative use only.</p>
+            </div>
+
+            <div className="space-y-4">
+              <h3 className="text-xl font-bold text-white">3. User Accounts</h3>
+              <ul className="list-disc list-inside space-y-2">
+                <li><strong>Account Creation</strong>: To access certain features, you may need to create an account. You agree to provide accurate, current, and complete information during registration and to keep your account information updated.</li>
+                <li><strong>Account Security</strong>: You are responsible for maintaining the confidentiality of your account credentials and for all activities under your account. Notify us immediately at support@rewardsage.com if you suspect unauthorized use of your account.</li>
+                <li><strong>Account Termination</strong>: We reserve the right to suspend or terminate your account at our discretion, including for violations of these Terms.</li>
+              </ul>
+            </div>
+
+            <div className="space-y-4">
+              <h3 className="text-xl font-bold text-white">4. User Responsibilities</h3>
+              <div className="space-y-3">
+                <p><strong>Acceptable Use</strong>: You agree to use the Services only for lawful purposes, for entertainment only, and in accordance with these Terms. You may not:</p>
+                <ul className="list-disc list-inside space-y-1 ml-4">
+                  <li>Use the Services to engage in illegal, harmful, or offensive activities.</li>
+                  <li>Attempt to hack, reverse-engineer, or interfere with the Services.</li>
+                  <li>Use the Services to violate the rights of others, including intellectual property rights.</li>
+                  <li>Overload or disrupt the Services, including through automated means (e.g., bots or scrapers).</li>
+                  <li>Attempt to redeem or convert any virtual rewards or points for real money, goods, or services.</li>
+                </ul>
+                <p><strong>User Content</strong>: You are responsible for any data, text, or other materials ("User Content") you submit to the Services. You represent that you have the right to provide such User Content and that it does not infringe on any third-party rights.</p>
+              </div>
+            </div>
+
+            <div className="space-y-4">
+              <h3 className="text-xl font-bold text-white">5. Intellectual Property</h3>
+              <ul className="list-disc list-inside space-y-2">
+                <li><strong>Ownership</strong>: We own all rights, title, and interest in the Services, including the website design, graphics, text, and other content (except as noted below). All rights not expressly granted are reserved.</li>
+                <li><strong>User Content</strong>: You retain ownership of your User Content. By submitting User Content, you grant us a worldwide, non-exclusive, royalty-free license to use, process, and display your User Content solely to provide the Services. You may not use the Services or any content generated through them for commercial purposes unless explicitly permitted by us.</li>
+                <li><strong>Feedback</strong>: If you provide feedback, suggestions, or ideas about the Services, you grant us a perpetual, irrevocable, royalty-free license to use and incorporate such feedback without compensation.</li>
+              </ul>
+            </div>
+
+            <div className="space-y-4">
+              <h3 className="text-xl font-bold text-white">6. Subscription and Payment</h3>
+              <ul className="list-disc list-inside space-y-2">
+                <li><strong>Free and Paid Plans</strong>: Some features of the Services may be available for free, while others may require a paid subscription (e.g., SuperRewardSage). Details of subscription plans are available at https://rewardsage.com/pricing. All subscriptions are for entertainment purposes only, and no real money or monetary value is involved in the core functionality of the Services.</li>
+                <li><strong>Billing</strong>: If you subscribe to a paid plan, you agree to pay all applicable fees. Subscriptions may renew automatically unless canceled before the renewal date. All payments are non-refundable except as required by law.</li>
+                <li><strong>Changes to Pricing</strong>: We may modify subscription fees at any time. Changes will apply to your next billing cycle, and we will notify you in advance.</li>
+              </ul>
+            </div>
+
+            <div className="space-y-4">
+              <h3 className="text-xl font-bold text-white">7. Entertainment Purposes Only</h3>
+              <p>The Services, including any virtual rewards, points, or incentives, are provided strictly for entertainment purposes. No real money, currency, or monetary value is involved in any aspect of the Services. Any virtual rewards or points earned through the Services cannot be redeemed, exchanged, or converted into real money, goods, or services. RewardSage is a mock website and does not facilitate any real-world transactions or activities.</p>
+            </div>
+
+            <div className="space-y-4">
+              <h3 className="text-xl font-bold text-white">8. Limitations of Liability</h3>
+              <ul className="list-disc list-inside space-y-2">
+                <li><strong>No Warranties</strong>: The Services are provided "as is" without warranties of any kind, express or implied, including accuracy, reliability, or fitness for a particular purpose.</li>
+                <li><strong>Accuracy of Content</strong>: The content on the Services is for entertainment purposes only and may not be accurate or reliable. You are responsible for verifying any information before relying on it.</li>
+                <li><strong>Liability Cap</strong>: To the maximum extent permitted by law, our total liability for any claim arising from the Services will not exceed the amount you paid us in the 12 months preceding the claim. We are not liable for indirect, consequential, or punitive damages.</li>
+                <li><strong>Indemnification</strong>: You agree to indemnify and hold us harmless from any claims, losses, or damages arising from your use of the Services or violation of these Terms.</li>
+              </ul>
+            </div>
+
+            <div className="space-y-4">
+              <h3 className="text-xl font-bold text-white">9. Privacy</h3>
+              <p>Your use of the Services is subject to our Privacy Policy, available at https://rewardsage.com/privacy. The Privacy Policy explains how we collect, use, and protect your personal information.</p>
+            </div>
+
+            <div className="space-y-4">
+              <h3 className="text-xl font-bold text-white">10. Termination</h3>
+              <ul className="list-disc list-inside space-y-2">
+                <li><strong>By You</strong>: You may stop using the Services at any time. To cancel a paid subscription, follow the instructions at https://rewardsage.com/support.</li>
+                <li><strong>By Us</strong>: We may suspend or terminate your access to the Services for any reason, including violation of these Terms, with or without notice.</li>
+                <li><strong>Effect of Termination</strong>: Upon termination, your account and access to the Services will cease, and any data associated with your account may be deleted, except as required by law.</li>
+              </ul>
+            </div>
+
+            <div className="space-y-4">
+              <h3 className="text-xl font-bold text-white">11. Modifications to Terms</h3>
+              <p>We may update these Terms at any time. We will notify you of material changes via email or a notice on the Site. Your continued use of the Services after such changes constitutes acceptance of the updated Terms.</p>
+            </div>
+
+            <div className="space-y-4">
+              <h3 className="text-xl font-bold text-white">12. Governing Law and Dispute Resolution</h3>
+              <ul className="list-disc list-inside space-y-2">
+                <li><strong>Governing Law</strong>: These Terms are governed by the laws of Delaware, USA, without regard to conflict of law principles.</li>
+                <li><strong>Dispute Resolution</strong>: Any disputes arising from these Terms will be resolved through binding arbitration in Wilmington, Delaware, administered by the American Arbitration Association under its rules. You waive any right to participate in a class action lawsuit or class-wide arbitration.</li>
+              </ul>
+            </div>
+
+            <div className="space-y-4">
+              <h3 className="text-xl font-bold text-white">13. Miscellaneous</h3>
+              <ul className="list-disc list-inside space-y-2">
+                <li><strong>Entire Agreement</strong>: These Terms, along with the Privacy Policy, constitute the entire agreement between you and us regarding the Services.</li>
+                <li><strong>Severability</strong>: If any provision of these Terms is found to be unenforceable, the remaining provisions will remain in effect.</li>
+                <li><strong>No Waiver</strong>: Our failure to enforce any right or provision does not constitute a waiver of that right or provision.</li>
+                <li><strong>Assignment</strong>: You may not assign these Terms without our prior written consent. We may assign these Terms without restriction.</li>
+              </ul>
+            </div>
+
+            <div className="space-y-4">
+              <h3 className="text-xl font-bold text-white">14. Contact Us</h3>
+              <p>If you have questions about these Terms, please contact us at:<br />
+              <strong>Email</strong>: support@rewardsage.com<br />
+              <strong>Address</strong>: RewardSage, 123 Mock Lane, Tech City, DE 12345, USA</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-6 flex justify-end">
+          <button
+            onClick={onClose}
+            className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded-lg font-semibold transition-colors"
+          >
+            Close
+          </button>
+        </div>
+      </motion.div>
+    </div>
+  );
+};
+
+// Privacy Policy Modal Component
+export const PrivacyPolicyModal = ({ isOpen, onClose }) => {
+  if (!isOpen) return null;
+
+  return (
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+      <motion.div
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.3 }}
+        className="bg-gray-900 rounded-2xl p-8 max-w-4xl w-full h-[90vh] border border-gray-700 relative overflow-hidden"
+      >
+        <div className="flex items-center justify-between mb-6">
+          <div className="flex items-center space-x-3">
+            <div className="w-10 h-10 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center">
+              <Shield className="w-5 h-5 text-white" />
+            </div>
+            <h2 className="text-2xl font-bold text-white">Privacy Policy</h2>
+          </div>
+          <button
+            onClick={onClose}
+            className="text-gray-400 hover:text-white transition-colors"
+          >
+            <X className="w-6 h-6" />
+          </button>
+        </div>
+
+        <div className="overflow-y-auto h-[calc(90vh-140px)] pr-4">
+          <div className="text-gray-300 leading-relaxed space-y-6">
+            <div className="text-sm text-cyan-400 font-semibold">Last Updated: July 20, 2025</div>
+            
+            <p>At RewardSage ("the Site," "we," "us," or "our"), we are committed to protecting your privacy. This Privacy Policy explains our practices regarding the collection, use, and storage of information through our website, services, and any related applications or tools (collectively, the "Services"). RewardSage is a mock website designed for entertainment purposes only, and <strong>no real money or monetary value is involved</strong>.</p>
+
+            <div className="space-y-4">
+              <h3 className="text-xl font-bold text-white">1. No Collection or Storage of User Data</h3>
+              <p>RewardSage does not collect, store, or process any personally identifiable information (PII) or other user data, such as names, email addresses, IP addresses, or browsing activity. The Services are designed to function without requiring or retaining any user information.</p>
+              <ul className="list-disc list-inside space-y-2 ml-4">
+                <li><strong>No Accounts or Logins</strong>: If the Services do not require user accounts or logins, no personal information is collected during use.</li>
+                <li><strong>No Cookies or Tracking</strong>: We do not use cookies, web beacons, or other tracking technologies to monitor your activity on the Site.</li>
+                <li><strong>No User Content Storage</strong>: Any content or inputs you provide (e.g., text entered for mock rewards or games) are not stored or retained after your session ends.</li>
+              </ul>
+            </div>
+
+            <div className="space-y-4">
+              <h3 className="text-xl font-bold text-white">2. Third-Party Services</h3>
+              <p>RewardSage does not share user data with third parties because no user data is collected or stored. However, the Site may include links to third-party websites for reference or entertainment purposes. We are not responsible for the privacy practices or content of these external sites. We encourage you to review the privacy policies of any third-party sites you visit.</p>
+            </div>
+
+            <div className="space-y-4">
+              <h3 className="text-xl font-bold text-white">3. Data Security</h3>
+              <p>Since we do not collect or store any user data, no personal information is at risk of unauthorized access or breach. We use standard security measures, such as HTTPS, to ensure the Site operates securely for your browsing experience.</p>
+            </div>
+
+            <div className="space-y-4">
+              <h3 className="text-xl font-bold text-white">4. User Rights</h3>
+              <p>As no personal data is collected or stored, there are no user data rights to exercise (e.g., access, modification, or deletion under GDPR, CCPA, or other privacy laws). If you have concerns about your privacy, please contact us for clarification.</p>
+            </div>
+
+            <div className="space-y-4">
+              <h3 className="text-xl font-bold text-white">5. Cookies and Tracking Technologies</h3>
+              <p>RewardSage does not use cookies, analytics tools, or any tracking technologies. As such, no cookie consent is required, and we are compliant with regulations like the EU Cookie Law and Privacy and Electronic Communications Regulations (PECR).</p>
+            </div>
+
+            <div className="space-y-4">
+              <h3 className="text-xl font-bold text-white">6. Children's Privacy</h3>
+              <p>The Services are not intended for users under the age of 13 (or 16 in certain jurisdictions, as required by laws like COPPA or GDPR). Since we do not collect or store any user data, no personal information from children is collected.</p>
+            </div>
+
+            <div className="space-y-4">
+              <h3 className="text-xl font-bold text-white">7. International Users</h3>
+              <p>RewardSage is a mock website hosted in the United States and governed by U.S. law. As no user data is collected or stored, this Privacy Policy complies with international privacy laws, including GDPR (EU) and CCPA (California), to the extent applicable.</p>
+            </div>
+
+            <div className="space-y-4">
+              <h3 className="text-xl font-bold text-white">8. Changes to This Privacy Policy</h3>
+              <p>We may update this Privacy Policy from time to time to reflect changes in our practices or legal requirements. We will notify you of material changes by posting the updated policy on the Site with a new "Last Updated" date. Your continued use of the Services after such changes constitutes acceptance of the updated Privacy Policy.</p>
+            </div>
+
+            <div className="space-y-4">
+              <h3 className="text-xl font-bold text-white">9. Contact Us</h3>
+              <p>If you have any questions or concerns about this Privacy Policy or our practices, please contact us at:<br />
+              <strong>Email</strong>: support@rewardsage.com<br />
+              <strong>Address</strong>: RewardSage, 123 Mock Lane, Tech City, DE 12345, USA</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-6 flex justify-end">
+          <button
+            onClick={onClose}
+            className="bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-lg font-semibold transition-colors"
+          >
+            Close
+          </button>
+        </div>
+      </motion.div>
+    </div>
+  );
+};
 export const SignUpModal = ({ isOpen, onClose, onSignUp }) => {
   const [formData, setFormData] = useState({
     name: '',
