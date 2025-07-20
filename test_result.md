@@ -430,6 +430,30 @@ frontend:
           agent: "testing"
           comment: "Successfully tested new congratulations modal functionality. Modal appears immediately after signup with all required elements: animated coin icon, '🎉 Congratulations!' text, personalized welcome message with user name (Alex Johnson), '500 COINS' bonus announcement, confetti animations, floating coin animations, and 'Start Earning! 🚀' button. Modal has beautiful glass-morphism styling matching app design. Successfully redirects to dashboard after clicking 'Start Earning!' with 500 coins balance correctly displayed ($5.00 total earnings). All animations and visual effects working perfectly. Provides excellent user experience."
 
+  - task: "Offer Info Boxes Implementation"
+    implemented: true
+    working: true
+    file: "/app/frontend/src/Dashboard.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+        - working: true
+          agent: "testing"
+          comment: "Successfully tested offer info boxes implementation. Each offer card now has: 1) Image at the top ✅ 2) Small INFO box underneath the image with blue 'INFO' label ✅ 3) Offer description (e.g., 'Sign up for Hopper and get 10% off hotels') ✅ 4) Referral disclosure text: 'This is a referral link. We may earn rewards if you take actions on this Third-Party Platform.' ✅ 5) Same layout verified in Started offers tab ✅ All info boxes have proper glass-morphism styling matching the purple gradient theme. Screenshots captured showing the implementation working perfectly."
+
+  - task: "Disclaimer Button and Modal Implementation"
+    implemented: true
+    working: true
+    file: "/app/frontend/src/components.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+        - working: true
+          agent: "testing"
+          comment: "Successfully tested disclaimer button and modal functionality. 1) Red 'DISCLAIMER' button found at bottom of 'Why Choose RewardSage?' section ✅ 2) Button opens disclaimer modal with red warning icon and 'Disclaimer' header ✅ 3) Modal contains complete disclaimer text about mock website and referral links ✅ 4) 'I Understand' button successfully closes the modal ✅ 5) Modal has proper purple gradient glass-morphism styling matching app theme ✅ All functionality working perfectly with proper legal disclaimers displayed."
+
 backend:
   - task: "User Registration API"
     implemented: false
