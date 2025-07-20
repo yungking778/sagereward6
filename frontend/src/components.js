@@ -618,22 +618,7 @@ export const HeroSection = ({ onSignUp }) => {
 
         {/* RewardSage Logo Badge */}
         <div className="absolute top-40 left-1/2 transform -translate-x-1/2 z-10">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-            className="bg-white/20 backdrop-blur-sm rounded-2xl p-4 flex items-center space-x-3 border border-white/30"
-          >
-            <div className="w-10 h-10 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-lg flex items-center justify-center">
-              <svg viewBox="0 0 24 24" className="w-5 h-5 text-white">
-                <path fill="currentColor" d="M12 2L8 8h8l-4-6zm0 20l4-6H8l4 6zm-6-8l-4-6v12l4-6zm12 0l4-6v12l-4-6z"/>
-              </svg>
-            </div>
-            <div className="text-white">
-              <p className="font-bold text-lg">RewardSage</p>
-              <p className="text-sm opacity-90">Earn & Play</p>
-            </div>
-          </motion.div>
+          {/* Removed RewardSage badge as requested */}
         </div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-32">
