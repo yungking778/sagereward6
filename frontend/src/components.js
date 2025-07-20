@@ -640,13 +640,13 @@ export const HeroSection = ({ onSignUp }) => {
 
             {/* Right Content - Space for where fox was */}
             <div className="hidden lg:block">
-              <div className="w-full h-96 bg-gradient-to-br from-gray-800 to-gray-900 rounded-3xl border border-gray-700 flex items-center justify-center">
+              <div className="w-full h-96 bg-gradient-to-br from-gray-100 to-gray-200 rounded-3xl border border-gray-300 flex items-center justify-center">
                 <div className="text-center">
                   <div className="w-24 h-24 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-4">
                     <Gift className="w-12 h-12 text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold text-white mb-2">Start Earning Today</h3>
-                  <p className="text-gray-400">Join thousands of users earning daily rewards</p>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-2">Start Earning Today</h3>
+                  <p className="text-gray-600">Join thousands of users earning daily rewards</p>
                 </div>
               </div>
             </div>
