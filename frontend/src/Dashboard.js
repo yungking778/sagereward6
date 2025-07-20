@@ -947,7 +947,22 @@ export const Dashboard = ({ user, onLogout }) => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
+    <div 
+      className="min-h-screen bg-gray-900 relative overflow-hidden"
+      style={{
+        backgroundImage: `
+          linear-gradient(135deg, 
+            rgba(15, 23, 42, 0.95) 0%, 
+            rgba(30, 58, 138, 0.85) 25%, 
+            rgba(37, 99, 235, 0.75) 50%, 
+            rgba(30, 58, 138, 0.85) 75%, 
+            rgba(15, 23, 42, 0.95) 100%
+          ),
+          url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgb(59, 130, 246)" stroke-width="0.5" opacity="0.1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>')
+        `,
+        backgroundSize: 'cover, 50px 50px'
+      }}
+    >
       {/* Header */}
       <header className="bg-gray-900 bg-opacity-90 backdrop-blur-sm border-b border-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
