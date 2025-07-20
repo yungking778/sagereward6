@@ -546,110 +546,203 @@ export const HeroSection = ({ onSignUp }) => {
   return (
     <>
       <section 
-        className="pt-20 pb-16 relative overflow-hidden"
+        className="pt-20 pb-16 relative overflow-hidden min-h-screen"
         style={{
-          backgroundImage: "url('/rewardsage-bg.svg')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-          backgroundColor: "white"
+          background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
         }}
       >
-        {/* Background overlay for text readability */}
-        <div className="absolute inset-0 bg-white/80"></div>
-        
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Left Content */}
-            <div className="text-center lg:text-left">
-              {/* Welcome Bonus Badge */}
+        {/* PayPal Notification Boxes */}
+        <div className="absolute top-24 left-4 right-4 z-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex justify-between space-x-4">
+              {/* PayPal Notification 1 */}
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
-                className="inline-flex items-center bg-gradient-to-r from-green-500 to-green-600 text-white px-4 py-2 rounded-full text-sm font-semibold mb-6"
+                className="bg-white/20 backdrop-blur-sm rounded-2xl p-4 flex items-center space-x-3 border border-white/30"
               >
-                <Gift className="w-4 h-4 mr-2" />
-                500 Coin Welcome Bonus
+                <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
+                  <span className="text-white font-bold text-sm">PP</span>
+                </div>
+                <div className="text-white">
+                  <p className="font-bold text-lg">PayPal</p>
+                  <p className="text-sm opacity-90">7 mins ago</p>
+                </div>
+                <div className="text-white font-bold text-xl">$25</div>
               </motion.div>
 
-              {/* Main Heading */}
-              <motion.h1
-                initial={{ opacity: 0, y: 20 }}
+              {/* PayPal Notification 2 */}
+              <motion.div
+                initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6"
+                className="bg-white/20 backdrop-blur-sm rounded-2xl p-4 flex items-center space-x-3 border border-white/30"
               >
-                Instant Cash Rewards -{' '}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600">
-                  Play and Earn
-                </span>{' '}
-                with RewardSage
-              </motion.h1>
+                <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
+                  <span className="text-white font-bold text-sm">PP</span>
+                </div>
+                <div className="text-white">
+                  <p className="font-bold text-lg">PayPal</p>
+                  <p className="text-sm opacity-90">12 mins ago</p>
+                </div>
+                <div className="text-white font-bold text-xl">$15</div>
+              </motion.div>
 
-              {/* Subtitle */}
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
+              {/* PayPal Notification 3 */}
+              <motion.div
+                initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
-                className="text-xl text-gray-700 mb-8 max-w-2xl mx-auto lg:mx-0"
+                className="bg-white/20 backdrop-blur-sm rounded-2xl p-4 flex items-center space-x-3 border border-white/30"
               >
-                Ready to explore mobile games & apps for instant gift cards + PayPal rewards? Start earning today with quick, fun gaming tasks.
-              </motion.p>
-
-              {/* CTA Buttons */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.6 }}
-                className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
-              >
-                <button 
-                  onClick={handleSignUpClick}
-                  className="bg-gradient-to-r from-blue-500 to-blue-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:from-blue-600 hover:to-blue-700 transition-all transform hover:scale-105 flex items-center justify-center"
-                >
-                  Get Started Free
-                  <ArrowRight className="w-5 h-5 ml-2" />
-                </button>
-                <button className="border border-gray-400 text-gray-700 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100 transition-all">
-                  How it Works
-                </button>
-              </motion.div>
-
-              {/* Features */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.8 }}
-                className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start mt-8"
-              >
-                <div className="flex items-center text-green-600">
-                  <CheckCircle className="w-5 h-5 mr-2" />
-                  <span>Free to join</span>
+                <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
+                  <span className="text-white font-bold text-sm">PP</span>
                 </div>
-                <div className="flex items-center text-green-600">
-                  <CheckCircle className="w-5 h-5 mr-2" />
-                  <span>Instant payouts</span>
+                <div className="text-white">
+                  <p className="font-bold text-lg">PayPal</p>
+                  <p className="text-sm opacity-90">18 mins ago</p>
                 </div>
-                <div className="flex items-center text-green-600">
-                  <CheckCircle className="w-5 h-5 mr-2" />
-                  <span>$1 minimum</span>
-                </div>
+                <div className="text-white font-bold text-xl">$8</div>
               </motion.div>
             </div>
+          </div>
+        </div>
 
-            {/* Right Content - Space for where fox was */}
-            <div className="hidden lg:block">
-              <div className="w-full h-96 bg-gradient-to-br from-gray-100 to-gray-200 rounded-3xl border border-gray-300 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="w-24 h-24 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Gift className="w-12 h-12 text-white" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">Start Earning Today</h3>
-                  <p className="text-gray-600">Join thousands of users earning daily rewards</p>
+        {/* RewardSage Logo Badge */}
+        <div className="absolute top-40 left-1/2 transform -translate-x-1/2 z-10">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+            className="bg-white/20 backdrop-blur-sm rounded-full px-6 py-3 flex items-center space-x-3 border border-white/30"
+          >
+            <div className="w-8 h-8 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-full flex items-center justify-center">
+              <svg viewBox="0 0 24 24" className="w-5 h-5 text-white">
+                <path fill="currentColor" d="M12 2L8 8h8l-4-6zm0 20l4-6H8l4 6zm-6-8l-4-6v12l4-6zm12 0l4-6v12l-4-6z"/>
+              </svg>
+            </div>
+            <span className="text-white font-bold text-xl">RewardSage</span>
+          </motion.div>
+        </div>
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-32">
+          <div className="text-center">
+            {/* Main Heading */}
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.8 }}
+              className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight"
+            >
+              MAKE MONEY BY<br />
+              <span className="text-yellow-300">PLAYING GAMES</span>
+            </motion.h1>
+
+            {/* Subtitle */}
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 1.0 }}
+              className="text-xl text-white/90 mb-8 max-w-4xl mx-auto"
+            >
+              Play, Earn, Cashout: Turn Fun Into Real Money and Exciting Gift Cards With RewardSage
+            </motion.p>
+
+            {/* CTA Button */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 1.2 }}
+              className="mb-6"
+            >
+              <button 
+                onClick={handleSignUpClick}
+                className="bg-white text-purple-700 px-12 py-4 rounded-full text-lg font-bold hover:bg-gray-100 transition-all transform hover:scale-105 flex items-center justify-center mx-auto shadow-lg"
+              >
+                <svg className="w-6 h-6 mr-3" viewBox="0 0 24 24">
+                  <path fill="#4285f4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                  <path fill="#34a853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                  <path fill="#fbbc05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                  <path fill="#ea4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                </svg>
+                Continue with Google
+              </button>
+            </motion.div>
+
+            {/* Rating */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 1.4 }}
+              className="flex items-center justify-center space-x-2 mb-8"
+            >
+              <div className="flex space-x-1">
+                {[1,2,3,4,5].map((star) => (
+                  <Star key={star} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                ))}
+              </div>
+              <span className="text-white font-bold text-lg">4.7/5 on Google</span>
+            </motion.div>
+
+            {/* Statistics */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 1.6 }}
+              className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-12"
+            >
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
+                <div className="text-3xl font-bold text-white mb-2">500K+</div>
+                <div className="text-white/80">Happy Users</div>
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
+                <div className="text-3xl font-bold text-white mb-2">2500</div>
+                <div className="text-white/80">Offers Available</div>
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
+                <div className="text-3xl font-bold text-white mb-2">$200</div>
+                <div className="text-white/80">Max Per Offer</div>
+              </div>
+            </motion.div>
+
+            {/* Game Icons */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 1.8 }}
+              className="flex justify-center space-x-4 flex-wrap gap-4"
+            >
+              <div className="bg-white/20 backdrop-blur-sm rounded-2xl p-4 border border-white/20 flex items-center space-x-3">
+                <div className="w-12 h-12 bg-gradient-to-br from-green-400 to-green-600 rounded-lg flex items-center justify-center">
+                  <Gift className="w-6 h-6 text-white" />
+                </div>
+                <div className="text-white">
+                  <div className="font-bold">Game Rewards</div>
+                  <div className="text-sm opacity-80">$25.00</div>
                 </div>
               </div>
-            </div>
+
+              <div className="bg-white/20 backdrop-blur-sm rounded-2xl p-4 border border-white/20 flex items-center space-x-3">
+                <div className="w-12 h-12 bg-gradient-to-br from-blue-400 to-blue-600 rounded-lg flex items-center justify-center">
+                  <Clock className="w-6 h-6 text-white" />
+                </div>
+                <div className="text-white">
+                  <div className="font-bold">Quick Tasks</div>
+                  <div className="text-sm opacity-80">$15.00</div>
+                </div>
+              </div>
+
+              <div className="bg-white/20 backdrop-blur-sm rounded-2xl p-4 border border-white/20 flex items-center space-x-3">
+                <div className="w-12 h-12 bg-gradient-to-br from-purple-400 to-purple-600 rounded-lg flex items-center justify-center">
+                  <Users className="w-6 h-6 text-white" />
+                </div>
+                <div className="text-white">
+                  <div className="font-bold">Referrals</div>
+                  <div className="text-sm opacity-80">$50.00</div>
+                </div>
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
