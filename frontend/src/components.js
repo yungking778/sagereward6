@@ -826,13 +826,18 @@ export const WhyChoose = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-gray-800 to-gray-900">
+    <section 
+      className="py-20 relative overflow-hidden"
+      style={{
+        background: "linear-gradient(135deg, #764ba2 0%, #667eea 100%)"
+      }}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
             Why Choose RewardSage?
           </h2>
-          <p className="text-xl text-gray-400">
+          <p className="text-xl text-white/90">
             The fastest and most rewarding way to earn from mobile gaming
           </p>
         </div>
@@ -844,17 +849,17 @@ export const WhyChoose = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
-              className="bg-gray-900 rounded-2xl p-8 border border-gray-700 hover:border-orange-500 transition-all group"
+              className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover:border-white/40 transition-all group hover:transform hover:scale-105"
             >
               <div className="flex items-start space-x-6">
-                <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                <div className="w-16 h-16 bg-gradient-to-br from-cyan-400 to-cyan-500 rounded-full flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
                   <div className="text-white">
                     {feature.icon}
                   </div>
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-white mb-4">{feature.title}</h3>
-                  <p className="text-gray-400">{feature.description}</p>
+                  <p className="text-white/80">{feature.description}</p>
                 </div>
               </div>
             </motion.div>
