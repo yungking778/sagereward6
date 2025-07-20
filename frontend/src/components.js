@@ -12,7 +12,9 @@ import {
   X,
   User,
   Mail,
-  UserPlus
+  UserPlus,
+  FileText,
+  Shield
 } from 'lucide-react';
 import { motion } from 'framer-motion';
 
