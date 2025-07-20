@@ -190,7 +190,60 @@ export const PrivacyPolicyModal = ({ isOpen, onClose }) => {
     </div>
   );
 };
-// Congratulations Modal Component
+// Disclaimer Modal Component
+export const DisclaimerModal = ({ isOpen, onClose }) => {
+  if (!isOpen) return null;
+
+  return (
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+      <motion.div
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.3 }}
+        className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 max-w-2xl w-full border border-white/20 relative overflow-hidden"
+        style={{
+          background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
+        }}
+      >
+        <div className="flex items-center justify-between mb-6">
+          <div className="flex items-center space-x-3">
+            <div className="w-10 h-10 bg-gradient-to-br from-red-500 to-red-600 rounded-full flex items-center justify-center">
+              <span className="text-white font-bold text-lg">!</span>
+            </div>
+            <h2 className="text-2xl font-bold text-white">Disclaimer</h2>
+          </div>
+          <button
+            onClick={onClose}
+            className="text-white/70 hover:text-white transition-colors"
+          >
+            <X className="w-6 h-6" />
+          </button>
+        </div>
+
+        <div className="overflow-y-auto max-h-96 pr-4">
+          <div className="text-white leading-relaxed space-y-4">
+            <p>Rewardsage is a mock website created solely for entertainment and promotional purposes. It is not a real-money platform, and no actual transactions occur on this site. Any points, rewards, or incentives mentioned are fictional and intended for entertainment only.</p>
+            
+            <p>This site includes referral links to third-party platforms, such as [Third-Party Platform Name]. If you click these links and take actions on the third-party site (e.g., signing up or making a purchase), we may earn rewards or commissions. These referral links are for promotional purposes, and we are not affiliated with or endorsed by the third-party platforms.</p>
+            
+            <p>We are not responsible for any issues, losses, or disputes arising from your use of the third-party platforms. Your interactions with these platforms are governed by their own terms and policies.</p>
+            
+            <p>By using Rewardsage, you acknowledge that it is a mock site for entertainment purposes only and that no real transactions or services are provided here.</p>
+          </div>
+        </div>
+
+        <div className="mt-6 flex justify-end">
+          <button
+            onClick={onClose}
+            className="bg-white text-purple-700 px-6 py-2 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
+          >
+            I Understand
+          </button>
+        </div>
+      </motion.div>
+    </div>
+  );
+};
 export const CongratulationsModal = ({ isOpen, onClose, userName }) => {
   if (!isOpen) return null;
 
