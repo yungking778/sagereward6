@@ -592,7 +592,7 @@ export const HeroSection = ({ onSignUp }) => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
-                className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto lg:mx-0"
+                className="text-xl text-gray-700 mb-8 max-w-2xl mx-auto lg:mx-0"
               >
                 Ready to explore mobile games & apps for instant gift cards + PayPal rewards? Start earning today with quick, fun gaming tasks.
               </motion.p>
