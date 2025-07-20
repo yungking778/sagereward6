@@ -1242,6 +1242,10 @@ export const Dashboard = ({ user, onLogout }) => {
 
       {/* Withdrawal Success Popup */}
       {showWithdrawalPopup && <WithdrawalPopup />}
+
+      {/* Terms of Service and Privacy Policy Modals */}
+      <TermsOfServiceModal isOpen={showTerms} onClose={() => setShowTerms(false)} />
+      <PrivacyPolicyModal isOpen={showPrivacy} onClose={() => setShowPrivacy(false)} />
     </div>
   );
 };
