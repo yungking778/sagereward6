@@ -894,13 +894,18 @@ export const Testimonials = () => {
   ];
 
   return (
-    <section className="py-20 bg-gray-900">
+    <section 
+      className="py-20 relative overflow-hidden"
+      style={{
+        background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
+      }}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
             What Our Users Say
           </h2>
-          <p className="text-xl text-gray-400">
+          <p className="text-xl text-white/90">
             Join thousands of satisfied users earning daily rewards
           </p>
         </div>
@@ -912,21 +917,21 @@ export const Testimonials = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
-              className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-8 border border-gray-700"
+              className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover:border-white/40 transition-all hover:transform hover:scale-105"
             >
               <div className="mb-6">
                 <div className="flex items-center justify-between mb-4">
                   <div>
                     <h4 className="font-bold text-white">{testimonial.name}</h4>
-                    <p className="text-sm text-green-400 font-semibold">Earned {testimonial.earned}</p>
+                    <p className="text-sm text-yellow-300 font-semibold">Earned {testimonial.earned}</p>
                   </div>
                   <div className="flex space-x-1">
                     {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-green-400 text-green-400" />
+                      <Star key={i} className="w-4 h-4 fill-yellow-300 text-yellow-300" />
                     ))}
                   </div>
                 </div>
-                <p className="text-gray-400 italic">"{testimonial.text}"</p>
+                <p className="text-white/80 italic">"{testimonial.text}"</p>
               </div>
             </motion.div>
           ))}
