@@ -31,6 +31,8 @@ export const Dashboard = ({ user, onLogout }) => {
   const [showWithdrawalPopup, setShowWithdrawalPopup] = useState(false);
   const [showPayPalPopup, setShowPayPalPopup] = useState(false);
   const [showProfileMenu, setShowProfileMenu] = useState(false);
+  const [showTerms, setShowTerms] = useState(false);
+  const [showPrivacy, setShowPrivacy] = useState(false);
   const [selectedCashoutOption, setSelectedCashoutOption] = useState(null);
   const [paypalEmail, setPaypalEmail] = useState('');
   const [confirmPaypalEmail, setConfirmPaypalEmail] = useState('');
