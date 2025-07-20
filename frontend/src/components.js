@@ -545,9 +545,18 @@ export const HeroSection = ({ onSignUp }) => {
 
   return (
     <>
-      <section className="pt-20 pb-16 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 relative overflow-hidden">
-        {/* Background decoration */}
-        <div className="absolute inset-0 bg-gradient-to-br from-orange-500/10 to-purple-500/10"></div>
+      <section 
+        className="pt-20 pb-16 relative overflow-hidden"
+        style={{
+          backgroundImage: "url('/rewardsage-bg.svg')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          backgroundColor: "white"
+        }}
+      >
+        {/* Background overlay for text readability */}
+        <div className="absolute inset-0 bg-white/80"></div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
