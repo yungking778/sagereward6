@@ -912,6 +912,8 @@ export const HowItWorks = () => {
 
 // Why Choose Component
 export const WhyChoose = () => {
+  const [showDisclaimer, setShowDisclaimer] = useState(false);
+
   const features = [
     {
       icon: <Zap className="w-8 h-8" />,
@@ -936,47 +938,67 @@ export const WhyChoose = () => {
   ];
 
   return (
-    <section 
-      className="py-20 relative overflow-hidden"
-      style={{
-        background: "linear-gradient(135deg, #764ba2 0%, #667eea 100%)"
-      }}
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Why Choose RewardSage?
-          </h2>
-          <p className="text-xl text-white/90">
-            The fastest and most rewarding way to earn from mobile gaming
-          </p>
-        </div>
+    <>
+      <section 
+        className="py-20 relative overflow-hidden"
+        style={{
+          background: "linear-gradient(135deg, #764ba2 0%, #667eea 100%)"
+        }}
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+              Why Choose RewardSage?
+            </h2>
+            <p className="text-xl text-white/90">
+              The fastest and most rewarding way to earn from mobile gaming
+            </p>
+          </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
-          {features.map((feature, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
-              className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover:border-white/40 transition-all group hover:transform hover:scale-105"
-            >
-              <div className="flex items-start space-x-6">
-                <div className="w-16 h-16 bg-gradient-to-br from-cyan-400 to-cyan-500 rounded-full flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
-                  <div className="text-white">
-                    {feature.icon}
+          <div className="grid md:grid-cols-2 gap-8">
+            {features.map((feature, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.2 }}
+                className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover:border-white/40 transition-all group hover:transform hover:scale-105"
+              >
+                <div className="flex items-start space-x-6">
+                  <div className="w-16 h-16 bg-gradient-to-br from-cyan-400 to-cyan-500 rounded-full flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                    <div className="text-white">
+                      {feature.icon}
+                    </div>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-white mb-4">{feature.title}</h3>
+                    <p className="text-white/80">{feature.description}</p>
                   </div>
                 </div>
-                <div>
-                  <h3 className="text-xl font-bold text-white mb-4">{feature.title}</h3>
-                  <p className="text-white/80">{feature.description}</p>
-                </div>
-              </div>
-            </motion.div>
-          ))}
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Disclaimer Button */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 1.0 }}
+            className="flex justify-center mt-12"
+          >
+            <button
+              onClick={() => setShowDisclaimer(true)}
+              className="bg-red-500 hover:bg-red-600 text-white px-6 py-3 rounded-lg font-semibold transition-all transform hover:scale-105 flex items-center space-x-2 shadow-lg"
+            >
+              <span className="text-lg font-bold">⚠️</span>
+              <span>DISCLAIMER</span>
+            </button>
+          </motion.div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      <DisclaimerModal isOpen={showDisclaimer} onClose={() => setShowDisclaimer(false)} />
+    </>
   );
 };
 
