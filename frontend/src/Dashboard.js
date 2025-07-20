@@ -622,14 +622,25 @@ export const Dashboard = ({ user, onLogout }) => {
             <div key={offer.id} className="bg-gray-800 rounded-xl p-6 border border-gray-700">
               <div className="flex items-start justify-between">
                 <div className="flex items-start space-x-4">
-                  <img 
-                    src={offer.image} 
-                    alt={offer.title}
-                    className="w-16 h-16 rounded-lg object-cover"
-                  />
+                  <div className="flex flex-col">
+                    <img 
+                      src={offer.image} 
+                      alt={offer.title}
+                      className="w-16 h-16 rounded-lg object-cover mb-2"
+                    />
+                    
+                    {/* Info Box */}
+                    <div className="w-16 bg-white/10 backdrop-blur-sm rounded-md p-2 border border-white/20">
+                      <div className="text-center">
+                        <div className="text-xs text-blue-300 font-semibold mb-1">INFO</div>
+                        <div className="text-xs text-white/80 leading-tight mb-2">{offer.description}</div>
+                        <div className="text-xs text-yellow-300 leading-tight">This is a referral link. We may earn rewards if you take actions on this Third-Party Platform.</div>
+                      </div>
+                    </div>
+                  </div>
+                  
                   <div className="flex-1">
-                    <h4 className="font-bold text-white mb-1">{offer.title}</h4>
-                    <p className="text-sm text-gray-400 mb-2">{offer.description}</p>
+                    <h4 className="font-bold text-white mb-2">{offer.title}</h4>
                     <div className="flex items-center space-x-4 text-xs text-gray-500">
                       <span>Started: {new Date(offer.startedAt).toLocaleDateString()}</span>
                       <span>Reward: {offer.reward} coins (${coinsToDollars(offer.reward)})</span>
