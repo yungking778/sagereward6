@@ -112,6 +112,13 @@ function App() {
           />
         </Routes>
       </Router>
+      
+      {/* Congratulations Modal */}
+      <CongratulationsModal 
+        isOpen={showCongratulations}
+        onClose={handleCongratulationsClose}
+        userName={user?.name}
+      />
     </div>
   );
 }
