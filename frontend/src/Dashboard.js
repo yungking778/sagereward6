@@ -88,8 +88,8 @@ export const Dashboard = ({ user, onLogout }) => {
     {
       id: 2,
       title: "Temu - Shopping App",
-      description: "Sign up for Temu and start shopping with great deals",
-      reward: 1000, // 1000 coins = $10
+      description: "Shop on Temu and get started with amazing discounts",
+      reward: 1200, // 1200 coins = $12
       currency: "coins",
       type: "signup",
       difficulty: "Easy",
@@ -108,73 +108,60 @@ export const Dashboard = ({ user, onLogout }) => {
       difficulty: "Easy",
       time: "2 min",
       locked: false,
-      url: "https://slink.bigovideo.tv/GXRLgJ",
-      image: "https://images.unsplash.com/photo-1690683790356-c1edb75e3df7?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzd8MHwxfHNlYXJjaHwxfHxicm9hZGNhc3QlMjBpY29ufGVufDB8fHx8MTc1Mjg0Mjc0M3ww&ixlib=rb-4.1.0&q=85&w=100&h=100&fit=crop"
+      url: "https://www.bigo.tv/",
+      image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=100&h=100&fit=crop&crop=center"
     },
     {
       id: 4,
-      title: "Shopify - Start Your Store",
-      description: "Create a Shopify store and complete the tutorial",
-      reward: 2500, // 2500 coins = $25
+      title: "Temu - Get Credit Up To $20",
+      description: "Get credit up to $20.00 today! Click and accept invitation to get credit together",
+      reward: 2000, // 2000 coins = $20
       currency: "coins",
       type: "signup",
-      difficulty: "Medium",
-      time: "10 min",
-      locked: true,
-      url: "#",
-      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=100&h=100&fit=crop&crop=center"
+      difficulty: "Easy",
+      time: "2 min",
+      locked: false,
+      url: "https://temu.com/a/nIgcwUzufKs70Wq",
+      image: "https://images.unsplash.com/photo-1607083206869-4c7672e72a8a?w=100&h=100&fit=crop&crop=center"
     },
     {
       id: 5,
-      title: "Coinbase - Crypto Signup",
-      description: "Sign up for Coinbase and verify your account",
-      reward: 3000, // 3000 coins = $30
+      title: "SHEIN - Fashion Shopping",
+      description: "Get $50 OFF on your shopping now! Amazing fashion deals and discounts",
+      reward: 1800, // 1800 coins = $18
       currency: "coins",
       type: "signup",
-      difficulty: "Medium",
-      time: "15 min",
-      locked: true,
-      url: "#",
-      image: "https://images.unsplash.com/photo-1621761191319-c6fb62004040?w=100&h=100&fit=crop&crop=center"
+      difficulty: "Easy",
+      time: "3 min",
+      locked: false,
+      url: "https://onelink.shein.com/14/4v9zn00iz0nl",
+      image: "https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?w=100&h=100&fit=crop&crop=center"
     },
     {
       id: 6,
-      title: "Uber Eats - Food Delivery",
-      description: "Order food through Uber Eats (minimum $15)",
-      reward: 2000, // 2000 coins = $20
+      title: "MyFreeApp - Play & Earn",
+      description: "App that pays you to play! Register, start quests, and claim a $3 reward",
+      reward: 1000, // 1000 coins = $10
       currency: "coins",
-      type: "purchase",
+      type: "game",
+      difficulty: "Easy",
+      time: "5 min",
+      locked: false,
+      url: "https://www.myfreeapp.io?referral_code=QDSXWNUM",
+      image: "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=100&h=100&fit=crop&crop=center"
+    },
+    {
+      id: 7,
+      title: "SurveyJunkie - Online Surveys",
+      description: "Take surveys and earn rewards for your opinions",
+      reward: 600, // 600 coins = $6
+      currency: "coins",
+      type: "survey",
       difficulty: "Easy",
       time: "5 min",
       locked: true,
       url: "#",
-      image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=100&h=100&fit=crop&crop=center"
-    },
-    {
-      id: 7,
-      title: "Netflix - Stream Movies",
-      description: "Sign up for Netflix free trial",
-      reward: 1200, // 1200 coins = $12
-      currency: "coins",
-      type: "trial",
-      difficulty: "Easy",
-      time: "3 min",
-      locked: true,
-      url: "#",
-      image: "https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?w=100&h=100&fit=crop&crop=center"
-    },
-    {
-      id: 8,
-      title: "Spotify - Music Streaming",
-      description: "Sign up for Spotify Premium trial",
-      reward: 1000, // 1000 coins = $10
-      currency: "coins",
-      type: "trial",
-      difficulty: "Easy",
-      time: "2 min",
-      locked: true,
-      url: "#",
-      image: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=100&h=100&fit=crop&crop=center"
+      image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=100&h=100&fit=crop&crop=center"
     }
   ];
 
