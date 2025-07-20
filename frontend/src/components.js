@@ -48,119 +48,61 @@ export const TermsOfServiceModal = ({ isOpen, onClose }) => {
 
         <div className="overflow-y-auto h-[calc(90vh-140px)] pr-4">
           <div className="text-gray-300 leading-relaxed space-y-6">
-            <div className="text-sm text-cyan-400 font-semibold">Last Updated: July 20, 2025</div>
+            <div className="text-sm text-cyan-400 font-semibold">Last Updated: January 15, 2025</div>
             
-            <p>Welcome to RewardSage ("the Site," "we," "us," or "our"). These Terms of Service ("Terms") govern your access to and use of our website, services, and any related applications or tools (collectively, the "Services"). By accessing or using the Services, you agree to be bound by these Terms. If you do not agree with these Terms, you may not use the Services.</p>
-
             <div className="space-y-4">
-              <h3 className="text-xl font-bold text-white">1. Acceptance of Terms</h3>
-              <p>By using the Services, you confirm that you are at least 18 years old (or the age of majority in your jurisdiction) and have the legal capacity to enter into these Terms. If you are using the Services on behalf of an organization, you represent that you have the authority to bind that organization to these Terms.</p>
+              <h3 className="text-xl font-bold text-white">1. Introduction</h3>
+              <p>Welcome to Rewardsage ("the Site"), a mock website designed for entertainment and promotional purposes only. By accessing or using this Site, you agree to these Terms and Conditions ("Terms"). If you do not agree, please do not use the Site.</p>
             </div>
 
             <div className="space-y-4">
-              <h3 className="text-xl font-bold text-white">2. Description of Services</h3>
-              <p>RewardSage is a mock website designed for <strong>entertainment purposes only</strong>. The Services simulate a rewards or gaming platform where users may engage with virtual content, features, or activities (e.g., earning virtual points or rewards). No real money, currency, or monetary value is involved in any aspect of the Services. All rewards, points, or incentives are purely virtual, non-redeemable, and have no real-world value. The Services are not powered by artificial intelligence and are intended for fictional or demonstrative use only.</p>
+              <h3 className="text-xl font-bold text-white">2. Purpose of the Site</h3>
+              <p>Rewardsage is a mock platform created to simulate the experience of real-money platforms for entertainment purposes. It does not offer real money, rewards, or services. Any points, rewards, or incentives mentioned are fictional and cannot be redeemed.</p>
             </div>
 
             <div className="space-y-4">
-              <h3 className="text-xl font-bold text-white">3. User Accounts</h3>
-              <ul className="list-disc list-inside space-y-2">
-                <li><strong>Account Creation</strong>: To access certain features, you may need to create an account. You agree to provide accurate, current, and complete information during registration and to keep your account information updated.</li>
-                <li><strong>Account Security</strong>: You are responsible for maintaining the confidentiality of your account credentials and for all activities under your account. Notify us immediately at support@rewardsage.com if you suspect unauthorized use of your account.</li>
-                <li><strong>Account Termination</strong>: We reserve the right to suspend or terminate your account at our discretion, including for violations of these Terms.</li>
-              </ul>
+              <h3 className="text-xl font-bold text-white">3. Referral Links</h3>
+              <p>This Site contains referral links to third-party platforms. If you click these links and take actions on the third-party site (e.g., signing up or making a purchase), we may earn rewards or commissions. These links are provided for promotional purposes only, and we are not affiliated with or endorsed by the third-party platforms.</p>
             </div>
 
             <div className="space-y-4">
               <h3 className="text-xl font-bold text-white">4. User Responsibilities</h3>
-              <div className="space-y-3">
-                <p><strong>Acceptable Use</strong>: You agree to use the Services only for lawful purposes, for entertainment only, and in accordance with these Terms. You may not:</p>
-                <ul className="list-disc list-inside space-y-1 ml-4">
-                  <li>Use the Services to engage in illegal, harmful, or offensive activities.</li>
-                  <li>Attempt to hack, reverse-engineer, or interfere with the Services.</li>
-                  <li>Use the Services to violate the rights of others, including intellectual property rights.</li>
-                  <li>Overload or disrupt the Services, including through automated means (e.g., bots or scrapers).</li>
-                  <li>Attempt to redeem or convert any virtual rewards or points for real money, goods, or services.</li>
-                </ul>
-                <p><strong>User Content</strong>: You are responsible for any data, text, or other materials ("User Content") you submit to the Services. You represent that you have the right to provide such User Content and that it does not infringe on any third-party rights.</p>
-              </div>
+              <p>You agree to use the Site for lawful purposes only. You may not:</p>
+              <ul className="list-disc list-inside space-y-1 ml-4">
+                <li>Use automated tools (e.g., bots) to interact with the Site or referral links.</li>
+                <li>Attempt to manipulate the referral system (e.g., creating multiple accounts).</li>
+                <li>Engage in any activity that could harm the Site or its users.</li>
+              </ul>
             </div>
 
             <div className="space-y-4">
               <h3 className="text-xl font-bold text-white">5. Intellectual Property</h3>
-              <ul className="list-disc list-inside space-y-2">
-                <li><strong>Ownership</strong>: We own all rights, title, and interest in the Services, including the website design, graphics, text, and other content (except as noted below). All rights not expressly granted are reserved.</li>
-                <li><strong>User Content</strong>: You retain ownership of your User Content. By submitting User Content, you grant us a worldwide, non-exclusive, royalty-free license to use, process, and display your User Content solely to provide the Services. You may not use the Services or any content generated through them for commercial purposes unless explicitly permitted by us.</li>
-                <li><strong>Feedback</strong>: If you provide feedback, suggestions, or ideas about the Services, you grant us a perpetual, irrevocable, royalty-free license to use and incorporate such feedback without compensation.</li>
-              </ul>
+              <p>All content on this Site, including text, graphics, and logos, is the property of Rewardsage or used with permission. You may not copy, distribute, or use any content without prior written consent.</p>
             </div>
 
             <div className="space-y-4">
-              <h3 className="text-xl font-bold text-white">6. Subscription and Payment</h3>
-              <ul className="list-disc list-inside space-y-2">
-                <li><strong>Free and Paid Plans</strong>: Some features of the Services may be available for free, while others may require a paid subscription (e.g., SuperRewardSage). Details of subscription plans are available at https://rewardsage.com/pricing. All subscriptions are for entertainment purposes only, and no real money or monetary value is involved in the core functionality of the Services.</li>
-                <li><strong>Billing</strong>: If you subscribe to a paid plan, you agree to pay all applicable fees. Subscriptions may renew automatically unless canceled before the renewal date. All payments are non-refundable except as required by law.</li>
-                <li><strong>Changes to Pricing</strong>: We may modify subscription fees at any time. Changes will apply to your next billing cycle, and we will notify you in advance.</li>
-              </ul>
+              <h3 className="text-xl font-bold text-white">6. Disclaimer of Liability</h3>
+              <p>Rewardsage is provided "as is" for entertainment purposes only. We make no warranties or representations about the accuracy or functionality of the Site. We are not liable for any damages, losses, or disputes arising from your use of the Site or any third-party platforms linked through referral links.</p>
             </div>
 
             <div className="space-y-4">
-              <h3 className="text-xl font-bold text-white">7. Entertainment Purposes Only</h3>
-              <p>The Services, including any virtual rewards, points, or incentives, are provided strictly for entertainment purposes. No real money, currency, or monetary value is involved in any aspect of the Services. Any virtual rewards or points earned through the Services cannot be redeemed, exchanged, or converted into real money, goods, or services. RewardSage is a mock website and does not facilitate any real-world transactions or activities.</p>
+              <h3 className="text-xl font-bold text-white">7. Third-Party Platforms</h3>
+              <p>We are not responsible for the actions, services, or policies of third-party platforms linked from this Site. Your use of these platforms is at your own risk and subject to their terms and conditions.</p>
             </div>
 
             <div className="space-y-4">
-              <h3 className="text-xl font-bold text-white">8. Limitations of Liability</h3>
-              <ul className="list-disc list-inside space-y-2">
-                <li><strong>No Warranties</strong>: The Services are provided "as is" without warranties of any kind, express or implied, including accuracy, reliability, or fitness for a particular purpose.</li>
-                <li><strong>Accuracy of Content</strong>: The content on the Services is for entertainment purposes only and may not be accurate or reliable. You are responsible for verifying any information before relying on it.</li>
-                <li><strong>Liability Cap</strong>: To the maximum extent permitted by law, our total liability for any claim arising from the Services will not exceed the amount you paid us in the 12 months preceding the claim. We are not liable for indirect, consequential, or punitive damages.</li>
-                <li><strong>Indemnification</strong>: You agree to indemnify and hold us harmless from any claims, losses, or damages arising from your use of the Services or violation of these Terms.</li>
-              </ul>
+              <h3 className="text-xl font-bold text-white">8. Changes to These Terms</h3>
+              <p>We may update these Terms from time to time. Your continued use of the Site constitutes acceptance of the updated Terms.</p>
             </div>
 
             <div className="space-y-4">
-              <h3 className="text-xl font-bold text-white">9. Privacy</h3>
-              <p>Your use of the Services is subject to our Privacy Policy, available at https://rewardsage.com/privacy. The Privacy Policy explains how we collect, use, and protect your personal information.</p>
+              <h3 className="text-xl font-bold text-white">9. Governing Law</h3>
+              <p>These Terms are governed by the laws of United States of America. Any disputes will be resolved in the courts of United States of America.</p>
             </div>
 
             <div className="space-y-4">
-              <h3 className="text-xl font-bold text-white">10. Termination</h3>
-              <ul className="list-disc list-inside space-y-2">
-                <li><strong>By You</strong>: You may stop using the Services at any time. To cancel a paid subscription, follow the instructions at https://rewardsage.com/support.</li>
-                <li><strong>By Us</strong>: We may suspend or terminate your access to the Services for any reason, including violation of these Terms, with or without notice.</li>
-                <li><strong>Effect of Termination</strong>: Upon termination, your account and access to the Services will cease, and any data associated with your account may be deleted, except as required by law.</li>
-              </ul>
-            </div>
-
-            <div className="space-y-4">
-              <h3 className="text-xl font-bold text-white">11. Modifications to Terms</h3>
-              <p>We may update these Terms at any time. We will notify you of material changes via email or a notice on the Site. Your continued use of the Services after such changes constitutes acceptance of the updated Terms.</p>
-            </div>
-
-            <div className="space-y-4">
-              <h3 className="text-xl font-bold text-white">12. Governing Law and Dispute Resolution</h3>
-              <ul className="list-disc list-inside space-y-2">
-                <li><strong>Governing Law</strong>: These Terms are governed by the laws of Delaware, USA, without regard to conflict of law principles.</li>
-                <li><strong>Dispute Resolution</strong>: Any disputes arising from these Terms will be resolved through binding arbitration in Wilmington, Delaware, administered by the American Arbitration Association under its rules. You waive any right to participate in a class action lawsuit or class-wide arbitration.</li>
-              </ul>
-            </div>
-
-            <div className="space-y-4">
-              <h3 className="text-xl font-bold text-white">13. Miscellaneous</h3>
-              <ul className="list-disc list-inside space-y-2">
-                <li><strong>Entire Agreement</strong>: These Terms, along with the Privacy Policy, constitute the entire agreement between you and us regarding the Services.</li>
-                <li><strong>Severability</strong>: If any provision of these Terms is found to be unenforceable, the remaining provisions will remain in effect.</li>
-                <li><strong>No Waiver</strong>: Our failure to enforce any right or provision does not constitute a waiver of that right or provision.</li>
-                <li><strong>Assignment</strong>: You may not assign these Terms without our prior written consent. We may assign these Terms without restriction.</li>
-              </ul>
-            </div>
-
-            <div className="space-y-4">
-              <h3 className="text-xl font-bold text-white">14. Contact Us</h3>
-              <p>If you have questions about these Terms, please contact us at:<br />
-              <strong>Email</strong>: support@rewardsage.com<br />
-              <strong>Address</strong>: RewardSage, 123 Mock Lane, Tech City, DE 12345, USA</p>
+              <h3 className="text-xl font-bold text-white">10. Contact Us</h3>
+              <p>If you have questions about these Terms, please contact us at <strong>rewardsage@support.com</strong>.</p>
             </div>
           </div>
         </div>
