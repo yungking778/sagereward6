@@ -8,7 +8,8 @@ import {
   WhyChoose, 
   Testimonials, 
   FinalCTA, 
-  Footer 
+  Footer,
+  CongratulationsModal
 } from './components';
 import { Dashboard } from './Dashboard';
 
