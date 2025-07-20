@@ -14,7 +14,8 @@ import {
   Mail,
   UserPlus,
   FileText,
-  Shield
+  Shield,
+  Coins
 } from 'lucide-react';
 import { motion } from 'framer-motion';
 
