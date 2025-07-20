@@ -464,60 +464,74 @@ export const Header = ({ onSignUp, referralCode }) => {
 
   return (
     <>
-      <header className="w-full bg-gray-900 bg-opacity-90 backdrop-blur-sm fixed top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            {/* Logo */}
-            <div className="flex items-center">
-              <div className="flex items-center space-x-2">
-                <div className="w-8 h-8 bg-gradient-to-br from-orange-400 to-orange-600 rounded-full flex items-center justify-center">
-                  <Gift className="w-5 h-5 text-white" />
+      <header className="w-full fixed top-0 z-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+          <div className="bg-white/20 backdrop-blur-sm rounded-2xl border border-white/30 px-6 py-3">
+            <div className="flex justify-between items-center">
+              {/* Logo */}
+              <div className="flex items-center">
+                <div className="flex items-center space-x-3">
+                  <div className="w-10 h-10 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-lg flex items-center justify-center">
+                    <svg viewBox="0 0 24 24" className="w-5 h-5 text-white">
+                      <path fill="currentColor" d="M12 2L8 8h8l-4-6zm0 20l4-6H8l4 6zm-6-8l-4-6v12l4-6zm12 0l4-6v12l-4-6z"/>
+                    </svg>
+                  </div>
+                  <div className="text-white">
+                    <p className="font-bold text-lg">RewardSage</p>
+                    <p className="text-sm opacity-90 hidden sm:block">Play & Earn</p>
+                  </div>
                 </div>
-                <span className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">RewardSage</span>
               </div>
-            </div>
 
-            {/* Desktop Navigation */}
-            <nav className="hidden md:flex space-x-8">
-              <a href="#" className="text-gray-300 hover:text-white transition-colors">Discover</a>
-              <a href="#" className="text-gray-300 hover:text-white transition-colors">Rewards</a>
-              <a href="#" className="text-gray-300 hover:text-white transition-colors">Leaderboard</a>
-            </nav>
+              {/* Desktop Navigation */}
+              <nav className="hidden lg:flex space-x-8">
+                <a href="#" className="text-white/90 hover:text-white transition-colors font-medium">Discover</a>
+                <a href="#" className="text-white/90 hover:text-white transition-colors font-medium">Rewards</a>
+                <a href="#" className="text-white/90 hover:text-white transition-colors font-medium">Leaderboard</a>
+              </nav>
 
-            {/* Desktop Auth Buttons */}
-            <div className="hidden md:flex items-center space-x-4">
-              <button className="text-gray-300 hover:text-white transition-colors">Log in</button>
-              <button 
-                onClick={handleSignUpClick}
-                className="bg-gradient-to-r from-blue-500 to-blue-600 text-white px-4 py-2 rounded-lg hover:from-blue-600 hover:to-blue-700 transition-all"
+              {/* Desktop Auth Buttons */}
+              <div className="hidden md:flex items-center space-x-4">
+                <button className="text-white/90 hover:text-white transition-colors font-medium">Log in</button>
+                <button 
+                  onClick={handleSignUpClick}
+                  className="bg-white text-purple-700 px-4 py-2 rounded-lg hover:bg-gray-100 transition-all font-bold"
+                >
+                  Sign up
+                </button>
+              </div>
+
+              {/* Mobile menu button */}
+              <button
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                className="md:hidden text-white/90 hover:text-white"
               >
-                Sign up
+                {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
               </button>
             </div>
 
-            {/* Mobile menu button */}
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="md:hidden text-gray-300 hover:text-white"
-            >
-              {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </button>
+            {/* Mobile Navigation */}
+            {isMenuOpen && (
+              <div className="md:hidden mt-4 pt-4 border-t border-white/20">
+                <div className="space-y-2">
+                  <a href="#" className="block px-3 py-2 text-white/90 hover:text-white font-medium">Discover</a>
+                  <a href="#" className="block px-3 py-2 text-white/90 hover:text-white font-medium">Rewards</a>
+                  <a href="#" className="block px-3 py-2 text-white/90 hover:text-white font-medium">Leaderboard</a>
+                  <div className="border-t border-white/20 pt-2 mt-2">
+                    <button className="block w-full text-left px-3 py-2 text-white/90 hover:text-white font-medium">Log in</button>
+                    <button 
+                      onClick={handleSignUpClick}
+                      className="block w-full bg-white text-purple-700 px-3 py-2 rounded-lg mt-2 hover:bg-gray-100 transition-all font-bold"
+                    >
+                      Sign up
+                    </button>
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
-
-          {/* Mobile Navigation */}
-          {isMenuOpen && (
-            <div className="md:hidden">
-              <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-gray-800 rounded-lg mt-2">
-                <a href="#" className="block px-3 py-2 text-gray-300 hover:text-white">Discover</a>
-                <a href="#" className="block px-3 py-2 text-gray-300 hover:text-white">Rewards</a>
-                <a href="#" className="block px-3 py-2 text-gray-300 hover:text-white">Leaderboard</a>
-                <div className="border-t border-gray-700 pt-2">
-                  <button className="block w-full text-left px-3 py-2 text-gray-300 hover:text-white">Log in</button>
-                  <button 
-                    onClick={handleSignUpClick}
-                    className="block w-full bg-gradient-to-r from-blue-500 to-blue-600 text-white px-3 py-2 rounded-lg mt-2 hover:from-blue-600 hover:to-blue-700 transition-all"
-                  >
-                    Sign up
+        </div>
+      </header>
                   </button>
                 </div>
               </div>
