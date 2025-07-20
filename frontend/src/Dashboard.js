@@ -14,9 +14,12 @@ import {
   LogOut,
   Coins,
   TrendingUp,
-  Trophy
+  Trophy,
+  FileText,
+  Shield
 } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { TermsOfServiceModal, PrivacyPolicyModal } from './components';
 
 export const Dashboard = ({ user, onLogout }) => {
   const [activeTab, setActiveTab] = useState('offers');
