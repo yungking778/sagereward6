@@ -641,7 +641,7 @@ export const HeroSection = ({ onSignUp }) => {
               transition={{ duration: 0.6, delay: 1.0 }}
               className="text-xl text-white/90 mb-8 max-w-4xl mx-auto"
             >
-              Play, Earn, Cashout: Turn Fun Into Real Money and Exciting Gift Cards With RewardSage
+              Play, Win, Redeem: Transform Fun into Cash and Awesome Gift Cards with RewardSage
             </motion.p>
 
             {/* CTA Button */}
