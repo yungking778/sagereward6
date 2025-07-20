@@ -567,16 +567,16 @@ export const HeroSection = ({ onSignUp }) => {
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
-                className="bg-white/20 backdrop-blur-sm rounded-xl p-3 flex items-center space-x-2 border border-white/30"
+                className="bg-white/20 backdrop-blur-sm rounded-lg p-2 flex items-center space-x-2 border border-white/30"
               >
-                <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
+                <div className="w-6 h-6 bg-blue-600 rounded flex items-center justify-center">
                   <span className="text-white font-bold text-xs">PP</span>
                 </div>
                 <div className="text-white">
-                  <p className="font-bold text-sm">PayPal</p>
-                  <p className="text-xs opacity-90">7 mins ago</p>
+                  <p className="font-bold text-xs">PayPal</p>
+                  <p className="text-xs opacity-90">7 mins</p>
                 </div>
-                <div className="text-white font-bold text-lg">$25</div>
+                <div className="text-white font-bold text-sm">$25</div>
               </motion.div>
 
               {/* PayPal Notification 2 */}
@@ -584,16 +584,16 @@ export const HeroSection = ({ onSignUp }) => {
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="bg-white/20 backdrop-blur-sm rounded-xl p-3 flex items-center space-x-2 border border-white/30"
+                className="bg-white/20 backdrop-blur-sm rounded-lg p-2 flex items-center space-x-2 border border-white/30"
               >
-                <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
+                <div className="w-6 h-6 bg-blue-600 rounded flex items-center justify-center">
                   <span className="text-white font-bold text-xs">PP</span>
                 </div>
                 <div className="text-white">
-                  <p className="font-bold text-sm">PayPal</p>
-                  <p className="text-xs opacity-90">12 mins ago</p>
+                  <p className="font-bold text-xs">PayPal</p>
+                  <p className="text-xs opacity-90">12 mins</p>
                 </div>
-                <div className="text-white font-bold text-lg">$15</div>
+                <div className="text-white font-bold text-sm">$15</div>
               </motion.div>
 
               {/* PayPal Notification 3 */}
@@ -601,16 +601,16 @@ export const HeroSection = ({ onSignUp }) => {
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
-                className="bg-white/20 backdrop-blur-sm rounded-xl p-3 flex items-center space-x-2 border border-white/30"
+                className="bg-white/20 backdrop-blur-sm rounded-lg p-2 flex items-center space-x-2 border border-white/30"
               >
-                <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
+                <div className="w-6 h-6 bg-blue-600 rounded flex items-center justify-center">
                   <span className="text-white font-bold text-xs">PP</span>
                 </div>
                 <div className="text-white">
-                  <p className="font-bold text-sm">PayPal</p>
-                  <p className="text-xs opacity-90">18 mins ago</p>
+                  <p className="font-bold text-xs">PayPal</p>
+                  <p className="text-xs opacity-90">18 mins</p>
                 </div>
-                <div className="text-white font-bold text-lg">$8</div>
+                <div className="text-white font-bold text-sm">$8</div>
               </motion.div>
             </div>
           </div>
