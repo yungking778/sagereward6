@@ -102,7 +102,7 @@
 # Testing Data - Main Agent and testing sub agent both should log testing data below this section
 #====================================================================================================
 
-user_problem_statement: "Test the HyperReward application functionality including sign-up flow, dashboard functionality, withdrawal functionality, referral functionality, and navigation/logout"
+user_problem_statement: "Make the terms and services box functional and add Terms of Service and Privacy Policy content with Last Updated: July 20, 2025"
 
 frontend:
   - task: "Landing Page Display"
