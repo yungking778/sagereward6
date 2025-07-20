@@ -1051,24 +1051,6 @@ export const Footer = () => {
           </div>
         </div>
       </footer>
-                className="text-gray-400 hover:text-white transition-colors"
-              >
-                Privacy Policy
-              </button>
-              <button
-                onClick={() => setShowTerms(true)}
-                className="text-gray-400 hover:text-white transition-colors"
-              >
-                Terms of Service
-              </button>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">Contact</a>
-            </div>
-          </div>
-          <div className="mt-8 pt-8 border-t border-gray-800 text-center">
-            <p className="text-gray-400">© 2025 RewardSage. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
 
       <TermsOfServiceModal isOpen={showTerms} onClose={() => setShowTerms(false)} />
       <PrivacyPolicyModal isOpen={showPrivacy} onClose={() => setShowPrivacy(false)} />
