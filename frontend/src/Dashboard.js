@@ -1196,23 +1196,23 @@ export const Dashboard = ({ user, onLogout }) => {
         <div className="max-w-md mx-auto">
           <div className="flex items-center justify-between">
             <button
-              onClick={() => setActiveTab('withdrawal')}
+              onClick={() => setActiveTab('cashout')}
               className={`flex flex-col items-center py-2 px-3 rounded-lg transition-colors ${
-                activeTab === 'withdrawal' ? 'text-green-400' : 'text-gray-400'
+                activeTab === 'cashout' ? 'text-green-400' : 'text-gray-400'
               }`}
             >
               <CreditCard className="w-6 h-6 mb-1" />
-              <span className="text-xs font-medium">Cashout</span>
+              <span className="text-xs font-medium">PayPal</span>
             </button>
             
             <button
-              onClick={() => setActiveTab('referral')}
+              onClick={() => setActiveTab('transactions')}
               className={`flex flex-col items-center py-2 px-3 rounded-lg transition-colors ${
-                activeTab === 'referral' ? 'text-green-400' : 'text-gray-400'
+                activeTab === 'transactions' ? 'text-green-400' : 'text-gray-400'
               }`}
             >
-              <Gift className="w-6 h-6 mb-1" />
-              <span className="text-xs font-medium">Daily Rewards</span>
+              <FileText className="w-6 h-6 mb-1" />
+              <span className="text-xs font-medium">Transactions</span>
             </button>
             
             <button
@@ -1233,18 +1233,18 @@ export const Dashboard = ({ user, onLogout }) => {
                 activeTab === 'started' ? 'text-green-400' : 'text-gray-400'
               }`}
             >
-              <FileText className="w-6 h-6 mb-1" />
+              <Clock className="w-6 h-6 mb-1" />
               <span className="text-xs font-medium">Active Tasks</span>
             </button>
             
             <button
-              onClick={() => setActiveTab('profile')}
+              onClick={() => setActiveTab('referral')}
               className={`flex flex-col items-center py-2 px-3 rounded-lg transition-colors ${
-                activeTab === 'profile' ? 'text-green-400' : 'text-gray-400'
+                activeTab === 'referral' ? 'text-green-400' : 'text-gray-400'
               }`}
             >
               <Users className="w-6 h-6 mb-1" />
-              <span className="text-xs font-medium">Invite</span>
+              <span className="text-xs font-medium">Referrals</span>
             </button>
           </div>
         </div>
