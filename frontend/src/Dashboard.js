@@ -491,45 +491,76 @@ export const Dashboard = ({ user, onLogout }) => {
   );
 
   const renderOffers = () => (
-    <div className="space-y-4">
+    <div className="space-y-8">
       {/* In Progress Section */}
-      <div className="mb-6">
-        <div className="flex items-center justify-between mb-4">
-          <h3 className="text-xl font-bold text-white">In Progress</h3>
-          <button className="text-blue-400 text-sm font-medium">See all</button>
+      <div className="mb-8">
+        <div className="flex items-center justify-between mb-6">
+          <div>
+            <h3 className="text-2xl font-bold text-white tracking-tight">In Progress</h3>
+            <p className="text-white/60 text-sm mt-1">Your active earning opportunities</p>
+          </div>
+          <button className="text-emerald-400 text-sm font-medium hover:text-emerald-300 transition-colors duration-200 flex items-center space-x-1">
+            <span>See all</span>
+            <ArrowRight className="w-4 h-4" />
+          </button>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {startedOffers.map((offer) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {startedOffers.map((offer, index) => (
             <motion.div
               key={offer.id}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="bg-gradient-to-br from-blue-600 to-purple-700 rounded-2xl p-4 relative overflow-hidden"
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              className="group relative bg-gradient-to-br from-emerald-600 via-teal-600 to-cyan-700 rounded-3xl p-6 shadow-2xl hover:shadow-emerald-500/20 transition-all duration-500 transform hover:scale-105 hover:-translate-y-2"
             >
-              <div className="absolute top-3 right-3">
-                <div className="w-6 h-6 bg-black bg-opacity-30 rounded-full flex items-center justify-center">
-                  <span className="text-white text-xs font-bold">🍎</span>
-                </div>
+              <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute top-4 right-4 w-8 h-8 bg-black/20 backdrop-blur-sm rounded-full flex items-center justify-center">
+                <span className="text-white text-sm font-bold">🍎</span>
               </div>
               
-              <div className="flex items-center space-x-3 mb-3">
-                <img 
-                  src={offer.image} 
-                  alt={offer.title}
-                  className="w-12 h-12 rounded-xl object-cover"
-                />
-                <div className="flex-1">
-                  <h4 className="font-bold text-white text-sm">{offer.title}</h4>
-                  <p className="text-blue-200 text-xs">{offer.completedTasks || 0} tasks completed</p>
+              <div className="relative z-10">
+                <div className="flex items-center space-x-4 mb-4">
+                  <div className="relative">
+                    <img 
+                      src={offer.image} 
+                      alt={offer.title}
+                      className="w-16 h-16 rounded-2xl object-cover shadow-lg ring-2 ring-white/20"
+                    />
+                    <div className="absolute -bottom-2 -right-2 w-6 h-6 bg-emerald-500 rounded-full flex items-center justify-center">
+                      <CheckCircle className="w-4 h-4 text-white" />
+                    </div>
+                  </div>
+                  <div className="flex-1">
+                    <h4 className="font-bold text-white text-lg">{offer.title}</h4>
+                    <p className="text-emerald-100 text-sm">{offer.completedTasks || Math.floor(Math.random() * 5) + 1} of {offer.tasksRemaining + (offer.completedTasks || 0)} tasks completed</p>
+                  </div>
                 </div>
-              </div>
-              
-              <div className="text-white">
+                
+                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 mb-4">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-white/80 text-sm">Progress</span>
+                    <span className="text-emerald-200 text-sm font-semibold">{Math.floor(((offer.completedTasks || 1) / (offer.tasksRemaining + (offer.completedTasks || 1))) * 100)}%</span>
+                  </div>
+                  <div className="w-full bg-white/20 rounded-full h-2">
+                    <div 
+                      className="bg-gradient-to-r from-emerald-400 to-teal-400 h-2 rounded-full transition-all duration-500"
+                      style={{ width: `${Math.floor(((offer.completedTasks || 1) / (offer.tasksRemaining + (offer.completedTasks || 1))) * 100)}%` }}
+                    ></div>
+                  </div>
+                </div>
+                
                 <div className="flex items-center justify-between">
-                  <span className="text-gray-300 text-sm line-through">${coinsToDollars(offer.reward * 0.7)}</span>
-                  <span className="text-xl font-bold">${coinsToDollars(offer.reward)}</span>
+                  <div className="text-white">
+                    <div className="flex items-center space-x-2">
+                      <span className="text-white/60 text-sm line-through">${coinsToDollars(offer.reward * 0.7)}</span>
+                      <span className="text-2xl font-bold text-white">${coinsToDollars(offer.reward)}</span>
+                    </div>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <div className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
+                    <span className="text-emerald-200 text-sm font-medium">Active</span>
+                  </div>
                 </div>
               </div>
             </motion.div>
@@ -538,73 +569,99 @@ export const Dashboard = ({ user, onLogout }) => {
       </div>
 
       {/* Available Offers Section */}
-      <div className="mb-6">
-        <div className="flex items-center justify-between mb-4">
-          <h3 className="text-xl font-bold text-white">RewardSage Specials</h3>
-          <button className="text-blue-400 text-sm font-medium">See all</button>
+      <div className="mb-8">
+        <div className="flex items-center justify-between mb-6">
+          <div>
+            <h3 className="text-2xl font-bold text-white tracking-tight">Premium Specials</h3>
+            <p className="text-white/60 text-sm mt-1">Exclusive high-value opportunities</p>
+          </div>
+          <button className="text-emerald-400 text-sm font-medium hover:text-emerald-300 transition-colors duration-200 flex items-center space-x-1">
+            <span>See all</span>
+            <ArrowRight className="w-4 h-4" />
+          </button>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {offers.map((offer) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {offers.map((offer, index) => (
             <motion.div
               key={offer.id}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className={`bg-gradient-to-br from-green-600 to-blue-700 rounded-2xl p-4 relative overflow-hidden ${
-                offer.locked ? 'opacity-50' : ''
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              className={`group relative bg-gradient-to-br from-slate-800 via-slate-900 to-black rounded-3xl p-6 shadow-2xl hover:shadow-purple-500/20 transition-all duration-500 transform hover:scale-105 hover:-translate-y-2 ${
+                offer.locked ? 'opacity-60' : ''
               }`}
             >
+              <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              
               {offer.locked && (
-                <div className="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center z-10 rounded-2xl">
+                <div className="absolute inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-20 rounded-3xl">
                   <div className="text-center">
-                    <Lock className="w-8 h-8 text-gray-400 mx-auto mb-2" />
-                    <p className="text-gray-400 font-semibold text-sm">Locked</p>
+                    <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <Lock className="w-8 h-8 text-white/80" />
+                    </div>
+                    <p className="text-white font-semibold text-lg">Locked</p>
+                    <p className="text-white/60 text-sm mt-1">Complete more offers to unlock</p>
                   </div>
                 </div>
               )}
               
               {/* Bonus Badge */}
               {offer.bonus && (
-                <div className="absolute top-2 left-2 bg-yellow-500 text-black px-2 py-1 rounded-lg text-xs font-bold">
-                  X{offer.bonus}
+                <div className="absolute top-4 left-4 bg-gradient-to-r from-yellow-400 to-orange-500 text-black px-3 py-1 rounded-full text-xs font-bold shadow-lg">
+                  <span className="flex items-center space-x-1">
+                    <Star className="w-3 h-3 fill-current" />
+                    <span>X{offer.bonus}</span>
+                  </span>
                 </div>
               )}
               
-              <div className="absolute top-3 right-3">
-                <div className="w-6 h-6 bg-black bg-opacity-30 rounded-full flex items-center justify-center">
-                  <span className="text-white text-xs font-bold">🍎</span>
-                </div>
+              <div className="absolute top-4 right-4 w-8 h-8 bg-black/20 backdrop-blur-sm rounded-full flex items-center justify-center">
+                <span className="text-white text-sm font-bold">🍎</span>
               </div>
               
-              <div className="flex items-center space-x-3 mb-3">
-                <img 
-                  src={offer.image} 
-                  alt={offer.title}
-                  className="w-12 h-12 rounded-xl object-cover"
-                />
-                <div className="flex-1">
-                  <h4 className="font-bold text-white text-sm">{offer.title}</h4>
-                  <p className="text-blue-200 text-xs">Only {offer.tasksRemaining || Math.floor(Math.random() * 20) + 1} tasks</p>
+              <div className="relative z-10">
+                <div className="flex items-center space-x-4 mb-4">
+                  <div className="relative">
+                    <img 
+                      src={offer.image} 
+                      alt={offer.title}
+                      className="w-16 h-16 rounded-2xl object-cover shadow-lg ring-2 ring-white/20"
+                    />
+                    <div className="absolute -bottom-2 -right-2 w-6 h-6 bg-purple-500 rounded-full flex items-center justify-center">
+                      <Gift className="w-4 h-4 text-white" />
+                    </div>
+                  </div>
+                  <div className="flex-1">
+                    <h4 className="font-bold text-white text-lg">{offer.title}</h4>
+                    <p className="text-purple-300 text-sm">Only {offer.tasksRemaining || Math.floor(Math.random() * 20) + 1} tasks remaining</p>
+                  </div>
                 </div>
-              </div>
-              
-              <div className="text-white">
-                <div className="flex items-center justify-between">
-                  <span className="text-gray-300 text-sm line-through">${coinsToDollars(offer.reward * 0.7)}</span>
-                  <span className="text-xl font-bold">${coinsToDollars(offer.reward)}</span>
+                
+                <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-4 mb-4 border border-white/10">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-white/80 text-sm">Reward Value</span>
+                    <div className="flex items-center space-x-2">
+                      <Coins className="w-4 h-4 text-yellow-400" />
+                      <span className="text-yellow-400 text-sm font-semibold">{offer.reward} coins</span>
+                    </div>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-white/60 text-lg line-through">${coinsToDollars(offer.reward * 0.7)}</span>
+                    <span className="text-3xl font-bold text-white">${coinsToDollars(offer.reward)}</span>
+                  </div>
                 </div>
+                
+                {!offer.locked && (
+                  <button
+                    onClick={() => handleStartOffer(offer.id)}
+                    className="w-full bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white py-3 rounded-2xl text-sm font-bold transition-all duration-300 flex items-center justify-center space-x-2 shadow-lg hover:shadow-emerald-500/30 transform hover:scale-105"
+                  >
+                    <span>Start Earning</span>
+                    <ExternalLink className="w-4 h-4" />
+                  </button>
+                )}
               </div>
-              
-              {!offer.locked && (
-                <button
-                  onClick={() => handleStartOffer(offer.id)}
-                  className="w-full mt-3 bg-white bg-opacity-20 hover:bg-opacity-30 text-white py-2 rounded-lg text-sm font-semibold transition-all flex items-center justify-center"
-                >
-                  Start
-                  <ExternalLink className="w-4 h-4 ml-1" />
-                </button>
-              )}
             </motion.div>
           ))}
         </div>
