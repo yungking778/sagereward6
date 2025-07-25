@@ -631,7 +631,7 @@ export const Header = ({ onSignUp, referralCode }) => {
                     <button className="block w-full text-left px-3 py-2 text-white/90 hover:text-white font-medium">Log in</button>
                     <button 
                       onClick={handleSignUpClick}
-                      className="block w-full bg-white text-purple-700 px-3 py-2 rounded-lg mt-2 hover:bg-gray-100 transition-all font-bold"
+                      className="block w-full bg-white text-green-700 px-3 py-2 rounded-lg mt-2 hover:bg-gray-100 transition-all font-bold"
                     >
                       Sign up
                     </button>
