@@ -712,15 +712,15 @@ export const Dashboard = ({ user, onLogout }) => {
                     </div>
                     
                     {/* Professional Info Box */}
-                    <div className="bg-gradient-to-r from-slate-800/90 to-slate-900/90 backdrop-blur-xl rounded-2xl p-4 border border-white/10 shadow-2xl hover:shadow-blue-500/20 transition-all duration-300">
-                      <div className="flex items-center space-x-4">
-                        <div className="w-8 h-8 bg-gradient-to-br from-blue-400 to-purple-500 rounded-xl flex items-center justify-center flex-shrink-0">
-                          <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <div className="bg-gradient-to-r from-slate-800/90 to-slate-900/90 backdrop-blur-xl rounded-2xl px-4 py-3 border border-white/10 shadow-2xl hover:shadow-blue-500/20 transition-all duration-300">
+                      <div className="flex items-center space-x-3">
+                        <div className="w-6 h-6 bg-gradient-to-br from-blue-400 to-purple-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                          <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
                             <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
                           </svg>
                         </div>
-                        <div className="text-sm text-blue-300 font-bold tracking-wide">DETAILS</div>
-                        <div className="text-sm text-white/90 font-medium">{offer.description}</div>
+                        <span className="text-xs text-blue-300 font-bold tracking-wide">DETAILS:</span>
+                        <span className="text-xs text-white/90 font-medium">{offer.description}</span>
                       </div>
                     </div>
                   </div>
