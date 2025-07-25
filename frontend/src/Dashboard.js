@@ -16,7 +16,10 @@ import {
   TrendingUp,
   Trophy,
   FileText,
-  Shield
+  Shield,
+  Menu,
+  ArrowRight,
+  Star
 } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { TermsOfServiceModal, PrivacyPolicyModal } from './components';
