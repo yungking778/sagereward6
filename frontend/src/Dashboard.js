@@ -1151,32 +1151,7 @@ export const Dashboard = ({ user, onLogout }) => {
         </div>
 
         {/* Tabs */}
-        <div className="bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20 shadow-lg">
-          <div className="px-4 sm:px-6 py-2 sm:py-3 border-b border-white/20">
-            <nav className="flex space-x-2 sm:space-x-8 overflow-x-auto">
-              {[
-                { id: 'offers', label: 'Offers', icon: Gift },
-                { id: 'started', label: 'Started', icon: Clock },
-                { id: 'cashout', label: 'Cashout', icon: CreditCard },
-                { id: 'withdrawal', label: 'Withdrawal', icon: DollarSign },
-                { id: 'referral', label: 'Referral', icon: Users }
-              ].map((tab) => (
-                <button
-                  key={tab.id}
-                  onClick={() => setActiveTab(tab.id)}
-                  className={`flex items-center space-x-1 sm:space-x-2 px-3 sm:px-6 py-3 sm:py-4 text-xs sm:text-sm font-medium rounded-xl transition-all whitespace-nowrap ${
-                    activeTab === tab.id
-                      ? 'text-white bg-white/20 backdrop-blur-sm border border-white/30'
-                      : 'text-white/70 hover:text-white hover:bg-white/10'
-                  }`}
-                >
-                  <tab.icon className="w-4 h-4 flex-shrink-0" />
-                  <span className="hidden sm:inline">{tab.label}</span>
-                  <span className="sm:hidden">{tab.label.substring(0, 4)}</span>
-                </button>
-              ))}
-            </nav>
-          </div>
+        <div className="bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20 overflow-hidden">
           
           <div className="p-4 sm:p-6">
             {activeTab === 'offers' && renderOffers()}
