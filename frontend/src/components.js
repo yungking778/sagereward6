@@ -605,7 +605,7 @@ export const Header = ({ onSignUp, referralCode }) => {
                 <button className="text-white/90 hover:text-white transition-colors font-medium">Log in</button>
                 <button 
                   onClick={handleSignUpClick}
-                  className="bg-white text-purple-700 px-4 py-2 rounded-lg hover:bg-gray-100 transition-all font-bold"
+                  className="bg-white text-green-700 px-4 py-2 rounded-lg hover:bg-gray-100 transition-all font-bold"
                 >
                   Sign up
                 </button>
