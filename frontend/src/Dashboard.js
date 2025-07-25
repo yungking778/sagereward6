@@ -1381,8 +1381,7 @@ export const Dashboard = ({ user, onLogout }) => {
               </div>
               <h3 className="text-2xl font-bold text-white mb-2">Confirm PayPal Email</h3>
               <p className="text-gray-300">
-                Cashing out ${selectedCashoutOption?.amount} 
-                {selectedCashoutOption?.bonus > 0 && <span className="text-orange-400"> (+${selectedCashoutOption?.bonus} bonus)</span>}
+                Cashing out ${coinsToDollars(userCoins)} ({userCoins} coins)
               </p>
             </div>
 
