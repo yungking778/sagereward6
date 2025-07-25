@@ -251,7 +251,7 @@ export const CongratulationsModal = ({ isOpen, onClose, userName }) => {
     <div 
       className="fixed inset-0 flex items-center justify-center z-50 p-4"
       style={{
-        background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
+        background: "linear-gradient(135deg, #000000 0%, #16a34a 100%)"
       }}
     >
       <motion.div
