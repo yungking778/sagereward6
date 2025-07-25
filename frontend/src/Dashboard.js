@@ -598,6 +598,8 @@ export const Dashboard = ({ user, onLogout }) => {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               className={`group relative bg-gradient-to-br from-slate-800 via-slate-900 to-black rounded-3xl p-6 shadow-2xl hover:shadow-purple-500/20 transition-all duration-500 transform hover:scale-105 hover:-translate-y-2 ${
                 offer.locked ? 'opacity-60' : ''
+              } ${
+                offer.id === 2 || offer.id === 3 ? 'border-2 border-yellow-400 shadow-yellow-400/30' : ''
               }`}
             >
               <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
