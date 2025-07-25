@@ -1029,7 +1029,7 @@ export const Testimonials = () => {
     <section 
       className="py-20 relative overflow-hidden"
       style={{
-        background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
+        background: "linear-gradient(135deg, #000000 0%, #16a34a 100%)"
       }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
