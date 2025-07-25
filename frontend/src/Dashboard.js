@@ -227,6 +227,11 @@ export const Dashboard = ({ user, onLogout }) => {
 
   const handlePayPalSubmit = () => {
     if (paypalEmail && confirmPaypalEmail && paypalEmail === confirmPaypalEmail) {
+      if (userCoins < 500) { // Minimum $5 withdrawal
+        alert('Minimum withdrawal amount is $5 (500 coins)');
+        return;
+      }
+      
       const withdrawal = {
         id: Date.now(),
         email: paypalEmail,
