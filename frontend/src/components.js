@@ -305,7 +305,7 @@ export const CongratulationsModal = ({ isOpen, onClose, userName }) => {
                 repeatDelay: 1 
               }}
             >
-              <Coins className="w-10 h-10 text-purple-700" />
+              <Coins className="w-10 h-10 text-green-700" />
             </motion.div>
           </motion.div>
 
