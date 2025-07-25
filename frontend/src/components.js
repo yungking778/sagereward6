@@ -403,7 +403,7 @@ export const CongratulationsModal = ({ isOpen, onClose, userName }) => {
                 repeatDelay: 1,
               }}
             >
-              <span className="text-xs text-purple-700 font-bold">$</span>
+              <span className="text-xs text-green-700 font-bold">$</span>
             </motion.div>
           ))}
         </div>
