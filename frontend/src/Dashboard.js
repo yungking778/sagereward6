@@ -507,83 +507,123 @@ export const Dashboard = ({ user, onLogout }) => {
   );
 
   const renderOffers = () => (
-    <div className="space-y-6">
-      <div className="bg-gradient-to-r from-orange-500 to-orange-600 rounded-xl p-6 text-white">
-        <h3 className="text-2xl font-bold mb-2">Available Offers</h3>
-        <p className="text-orange-100">Complete offers to earn coins and cash rewards</p>
-      </div>
-      
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-        {offers.map((offer) => (
-          <motion.div
-            key={offer.id}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className={`bg-gray-800 rounded-xl p-4 sm:p-6 border ${
-              offer.locked ? 'border-gray-700' : 'border-orange-500'
-            } relative overflow-hidden`}
-          >
-            {offer.locked && (
-              <div className="absolute inset-0 bg-gray-900 bg-opacity-80 flex items-center justify-center z-10">
-                <div className="text-center">
-                  <Lock className="w-12 h-12 text-gray-400 mx-auto mb-2" />
-                  <p className="text-gray-400 font-semibold">Locked</p>
-                  <p className="text-xs text-gray-500 mt-1">Complete more offers to unlock</p>
-                </div>
-              </div>
-            )}
-            
-            <div className="flex items-start space-x-4">
-              <div className="flex flex-col">
-                <img 
-                  src={offer.image} 
-                  alt={offer.title}
-                  className="w-16 h-16 rounded-lg object-cover mb-2"
-                />
-                
-                {/* Info Box */}
-                <div className="w-16 bg-white/10 backdrop-blur-sm rounded-md p-2 border border-white/20">
-                  <div className="text-center">
-                    <div className="text-xs text-blue-300 font-semibold mb-1">INFO</div>
-                    <div className="text-xs text-white/80 leading-tight mb-2">{offer.description}</div>
-                    <div className="text-xs text-yellow-300 leading-tight">This is a referral link. We may earn rewards if you take actions on this Third-Party Platform.</div>
-                  </div>
+    <div className="space-y-4">
+      {/* In Progress Section */}
+      <div className="mb-6">
+        <div className="flex items-center justify-between mb-4">
+          <h3 className="text-xl font-bold text-white">In Progress</h3>
+          <button className="text-blue-400 text-sm font-medium">See all</button>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {startedOffers.map((offer) => (
+            <motion.div
+              key={offer.id}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="bg-gradient-to-br from-blue-600 to-purple-700 rounded-2xl p-4 relative overflow-hidden"
+            >
+              <div className="absolute top-3 right-3">
+                <div className="w-6 h-6 bg-black bg-opacity-30 rounded-full flex items-center justify-center">
+                  <span className="text-white text-xs font-bold">🍎</span>
                 </div>
               </div>
               
-              <div className="flex-1">
-                <h4 className="font-bold text-white mb-3">{offer.title}</h4>
-                
-                <div className="flex items-center space-x-4 text-xs text-gray-500 mb-4">
-                  <div className="flex items-center">
-                    <Clock className="w-3 h-3 mr-1" />
-                    {offer.time}
-                  </div>
-                  <div className="flex items-center">
-                    <TrendingUp className="w-3 h-3 mr-1" />
-                    {offer.difficulty}
-                  </div>
-                </div>
-                
-                <div className="flex items-center justify-between">
-                  <div className="text-2xl font-bold text-cyan-400">
-                    {offer.reward} coins (${coinsToDollars(offer.reward)})
-                  </div>
-                  {!offer.locked && (
-                    <button
-                      onClick={() => handleStartOffer(offer.id)}
-                      className="bg-cyan-500 hover:bg-cyan-600 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-colors flex items-center touch-manipulation"
-                    >
-                      Start
-                      <ExternalLink className="w-4 h-4 ml-1" />
-                    </button>
-                  )}
+              <div className="flex items-center space-x-3 mb-3">
+                <img 
+                  src={offer.image} 
+                  alt={offer.title}
+                  className="w-12 h-12 rounded-xl object-cover"
+                />
+                <div className="flex-1">
+                  <h4 className="font-bold text-white text-sm">{offer.title}</h4>
+                  <p className="text-blue-200 text-xs">{offer.completedTasks || 0} tasks completed</p>
                 </div>
               </div>
-            </div>
-          </motion.div>
-        ))}
+              
+              <div className="text-white">
+                <div className="flex items-center justify-between">
+                  <span className="text-gray-300 text-sm line-through">${coinsToDollars(offer.reward * 0.7)}</span>
+                  <span className="text-xl font-bold">${coinsToDollars(offer.reward)}</span>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+
+      {/* Available Offers Section */}
+      <div className="mb-6">
+        <div className="flex items-center justify-between mb-4">
+          <h3 className="text-xl font-bold text-white">RewardSage Specials</h3>
+          <button className="text-blue-400 text-sm font-medium">See all</button>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {offers.map((offer) => (
+            <motion.div
+              key={offer.id}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className={`bg-gradient-to-br from-green-600 to-blue-700 rounded-2xl p-4 relative overflow-hidden ${
+                offer.locked ? 'opacity-50' : ''
+              }`}
+            >
+              {offer.locked && (
+                <div className="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center z-10 rounded-2xl">
+                  <div className="text-center">
+                    <Lock className="w-8 h-8 text-gray-400 mx-auto mb-2" />
+                    <p className="text-gray-400 font-semibold text-sm">Locked</p>
+                  </div>
+                </div>
+              )}
+              
+              {/* Bonus Badge */}
+              {offer.bonus && (
+                <div className="absolute top-2 left-2 bg-yellow-500 text-black px-2 py-1 rounded-lg text-xs font-bold">
+                  X{offer.bonus}
+                </div>
+              )}
+              
+              <div className="absolute top-3 right-3">
+                <div className="w-6 h-6 bg-black bg-opacity-30 rounded-full flex items-center justify-center">
+                  <span className="text-white text-xs font-bold">🍎</span>
+                </div>
+              </div>
+              
+              <div className="flex items-center space-x-3 mb-3">
+                <img 
+                  src={offer.image} 
+                  alt={offer.title}
+                  className="w-12 h-12 rounded-xl object-cover"
+                />
+                <div className="flex-1">
+                  <h4 className="font-bold text-white text-sm">{offer.title}</h4>
+                  <p className="text-blue-200 text-xs">Only {offer.tasksRemaining || Math.floor(Math.random() * 20) + 1} tasks</p>
+                </div>
+              </div>
+              
+              <div className="text-white">
+                <div className="flex items-center justify-between">
+                  <span className="text-gray-300 text-sm line-through">${coinsToDollars(offer.reward * 0.7)}</span>
+                  <span className="text-xl font-bold">${coinsToDollars(offer.reward)}</span>
+                </div>
+              </div>
+              
+              {!offer.locked && (
+                <button
+                  onClick={() => handleStartOffer(offer.id)}
+                  className="w-full mt-3 bg-white bg-opacity-20 hover:bg-opacity-30 text-white py-2 rounded-lg text-sm font-semibold transition-all flex items-center justify-center"
+                >
+                  Start
+                  <ExternalLink className="w-4 h-4 ml-1" />
+                </button>
+              )}
+            </motion.div>
+          ))}
+        </div>
       </div>
     </div>
   );
