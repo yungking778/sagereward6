@@ -897,7 +897,7 @@ export const HowItWorks = () => {
             >
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover:border-white/40 transition-all group hover:transform hover:scale-105">
                 <div className="w-16 h-16 bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
-                  <span className="text-2xl font-bold text-purple-700">{step.number}</span>
+                  <span className="text-2xl font-bold text-green-700">{step.number}</span>
                 </div>
                 <h3 className="text-xl font-bold text-white mb-4">{step.title}</h3>
                 <p className="text-white/80">{step.description}</p>
