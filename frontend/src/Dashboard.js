@@ -1197,6 +1197,68 @@ export const Dashboard = ({ user, onLogout }) => {
         </div>
       </main>
       
+      {/* Bottom Navigation Bar */}
+      <div className="fixed bottom-0 left-0 right-0 bg-gray-900 border-t border-gray-800 px-4 py-2 z-50">
+        <div className="max-w-md mx-auto">
+          <div className="flex items-center justify-between">
+            <button
+              onClick={() => setActiveTab('withdrawal')}
+              className={`flex flex-col items-center py-2 px-3 rounded-lg transition-colors ${
+                activeTab === 'withdrawal' ? 'text-green-400' : 'text-gray-400'
+              }`}
+            >
+              <CreditCard className="w-6 h-6 mb-1" />
+              <span className="text-xs font-medium">Cashout</span>
+            </button>
+            
+            <button
+              onClick={() => setActiveTab('referral')}
+              className={`flex flex-col items-center py-2 px-3 rounded-lg transition-colors ${
+                activeTab === 'referral' ? 'text-green-400' : 'text-gray-400'
+              }`}
+            >
+              <Gift className="w-6 h-6 mb-1" />
+              <span className="text-xs font-medium">Daily Rewards</span>
+            </button>
+            
+            <button
+              onClick={() => setActiveTab('offers')}
+              className={`flex flex-col items-center py-2 px-3 rounded-lg transition-colors ${
+                activeTab === 'offers' ? 'text-green-400' : 'text-gray-400'
+              }`}
+            >
+              <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center mb-1">
+                <DollarSign className="w-5 h-5 text-white" />
+              </div>
+              <span className="text-xs font-medium">Earn</span>
+            </button>
+            
+            <button
+              onClick={() => setActiveTab('started')}
+              className={`flex flex-col items-center py-2 px-3 rounded-lg transition-colors ${
+                activeTab === 'started' ? 'text-green-400' : 'text-gray-400'
+              }`}
+            >
+              <FileText className="w-6 h-6 mb-1" />
+              <span className="text-xs font-medium">Active Tasks</span>
+            </button>
+            
+            <button
+              onClick={() => setActiveTab('profile')}
+              className={`flex flex-col items-center py-2 px-3 rounded-lg transition-colors ${
+                activeTab === 'profile' ? 'text-green-400' : 'text-gray-400'
+              }`}
+            >
+              <Users className="w-6 h-6 mb-1" />
+              <span className="text-xs font-medium">Invite</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      
+      {/* Add padding to main content to account for bottom nav */}
+      <div className="h-20"></div>
+      
       {/* PayPal Email Confirmation Popup */}
       {showPayPalPopup && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
