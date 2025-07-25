@@ -51,7 +51,7 @@ export const Dashboard = ({ user, onLogout }) => {
     if (savedDashboardData) {
       const dashboardState = JSON.parse(savedDashboardData);
       setActiveTab(dashboardState.activeTab || 'offers');
-      setUserCoins(dashboardState.userCoins || 500);
+      setUserCoins(dashboardState.userCoins || 2500);
       setCompletedOffers(dashboardState.completedOffers || []);
       setStartedOffers(dashboardState.startedOffers || []);
       setPendingWithdrawals(dashboardState.pendingWithdrawals || []);
