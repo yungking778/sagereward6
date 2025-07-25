@@ -1175,36 +1175,51 @@ export const Dashboard = ({ user, onLogout }) => {
       {/* Main Content */}
       <main className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-4 sm:py-8">
         {/* Stats Overview */}
-        <div className="grid grid-cols-3 gap-2 sm:gap-4 mb-6 sm:mb-8">
-          <div className="bg-white/10 backdrop-blur-sm rounded-xl p-3 sm:p-4 border border-white/20">
+        <div className="grid grid-cols-3 gap-4 mb-8">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="bg-gradient-to-br from-emerald-500/20 to-teal-500/20 backdrop-blur-xl rounded-3xl p-6 border border-emerald-500/30 hover:border-emerald-400/50 transition-all duration-300 shadow-xl hover:shadow-emerald-500/20"
+          >
             <div className="text-center">
-              <div className="w-8 h-8 bg-gradient-to-br from-green-400 to-green-500 rounded-full flex items-center justify-center mx-auto mb-2">
-                <DollarSign className="w-4 h-4 text-white" />
+              <div className="w-12 h-12 bg-gradient-to-br from-emerald-400 to-teal-400 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                <DollarSign className="w-6 h-6 text-white" />
               </div>
-              <p className="text-lg sm:text-xl font-bold text-white">${coinsToDollars(userCoins)}</p>
-              <p className="text-white/70 text-xs sm:text-sm">Total Earnings</p>
+              <p className="text-2xl font-bold text-white mb-1">${coinsToDollars(userCoins)}</p>
+              <p className="text-emerald-200 text-sm font-medium">Total Earnings</p>
             </div>
-          </div>
+          </motion.div>
           
-          <div className="bg-white/10 backdrop-blur-sm rounded-xl p-3 sm:p-4 border border-white/20">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="bg-gradient-to-br from-blue-500/20 to-purple-500/20 backdrop-blur-xl rounded-3xl p-6 border border-blue-500/30 hover:border-blue-400/50 transition-all duration-300 shadow-xl hover:shadow-blue-500/20"
+          >
             <div className="text-center">
-              <div className="w-8 h-8 bg-gradient-to-br from-blue-400 to-blue-500 rounded-full flex items-center justify-center mx-auto mb-2">
-                <Clock className="w-4 h-4 text-white" />
+              <div className="w-12 h-12 bg-gradient-to-br from-blue-400 to-purple-400 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                <Clock className="w-6 h-6 text-white" />
               </div>
-              <p className="text-lg sm:text-xl font-bold text-white">{startedOffers.length}</p>
-              <p className="text-white/70 text-xs sm:text-sm">Started Offers</p>
+              <p className="text-2xl font-bold text-white mb-1">{startedOffers.length}</p>
+              <p className="text-blue-200 text-sm font-medium">Active Tasks</p>
             </div>
-          </div>
+          </motion.div>
           
-          <div className="bg-white/10 backdrop-blur-sm rounded-xl p-3 sm:p-4 border border-white/20">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="bg-gradient-to-br from-purple-500/20 to-pink-500/20 backdrop-blur-xl rounded-3xl p-6 border border-purple-500/30 hover:border-purple-400/50 transition-all duration-300 shadow-xl hover:shadow-purple-500/20"
+          >
             <div className="text-center">
-              <div className="w-8 h-8 bg-gradient-to-br from-green-400 to-green-500 rounded-full flex items-center justify-center mx-auto mb-2">
-                <Users className="w-4 h-4 text-white" />
+              <div className="w-12 h-12 bg-gradient-to-br from-purple-400 to-pink-400 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                <Users className="w-6 h-6 text-white" />
               </div>
-              <p className="text-lg sm:text-xl font-bold text-white">0</p>
-              <p className="text-white/70 text-xs sm:text-sm">Referrals</p>
+              <p className="text-2xl font-bold text-white mb-1">0</p>
+              <p className="text-purple-200 text-sm font-medium">Referrals</p>
             </div>
-          </div>
+          </motion.div>
         </div>
 
         {/* Tabs */}
