@@ -92,8 +92,8 @@ export const Dashboard = ({ user, onLogout }) => {
     {
       id: 2,
       title: "SoFi - Financial Dashboard",
-      description: "Earn $10 in rewards points when you activate free credit score monitoring",
-      reward: 1000,
+      description: "Earn $35 in rewards points when you activate free credit score monitoring",
+      reward: 3500,
       time: "3 min",
       difficulty: "Easy",
       locked: false,
