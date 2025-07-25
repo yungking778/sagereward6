@@ -106,7 +106,7 @@ export const Dashboard = ({ user, onLogout }) => {
       id: 3,
       title: "Hopper - Hotel Booking",
       description: "Sign up for Hopper and get hotel booking discounts",
-      reward: 1500,
+      reward: 2500,
       time: "2 min",
       difficulty: "Easy",
       locked: false,
