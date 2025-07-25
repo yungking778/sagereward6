@@ -703,12 +703,25 @@ export const Dashboard = ({ user, onLogout }) => {
                       className="w-16 h-16 rounded-lg object-cover mb-2"
                     />
                     
-                    {/* Info Box */}
-                    <div className="w-16 bg-white/10 backdrop-blur-sm rounded-md p-2 border border-white/20">
+                    {/* Professional Info Box */}
+                    <div className="w-20 bg-gradient-to-br from-slate-800/90 to-slate-900/90 backdrop-blur-xl rounded-2xl p-3 border border-white/10 shadow-2xl hover:shadow-blue-500/20 transition-all duration-300">
                       <div className="text-center">
-                        <div className="text-xs text-blue-300 font-semibold mb-1">INFO</div>
-                        <div className="text-xs text-white/80 leading-tight mb-2">{offer.description}</div>
-                        <div className="text-xs text-yellow-300 leading-tight">This is a referral link. We may earn rewards if you take actions on this Third-Party Platform.</div>
+                        <div className="w-6 h-6 bg-gradient-to-br from-blue-400 to-purple-500 rounded-lg flex items-center justify-center mx-auto mb-2">
+                          <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
+                          </svg>
+                        </div>
+                        <div className="text-xs text-blue-300 font-bold mb-2 tracking-wide">DETAILS</div>
+                        <div className="text-xs text-white/90 leading-tight mb-3 font-medium">{offer.description}</div>
+                        <div className="bg-gradient-to-r from-yellow-400/20 to-orange-400/20 rounded-lg p-2 border border-yellow-400/30">
+                          <div className="flex items-center justify-center mb-1">
+                            <svg className="w-3 h-3 text-yellow-400 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                              <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+                            </svg>
+                            <span className="text-xs text-yellow-300 font-bold">DISCLAIMER</span>
+                          </div>
+                          <div className="text-xs text-yellow-200 leading-tight font-medium">Referral partnership. We may earn rewards from third-party actions.</div>
+                        </div>
                       </div>
                     </div>
                   </div>
