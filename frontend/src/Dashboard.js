@@ -1002,7 +1002,7 @@ export const Dashboard = ({ user, onLogout }) => {
                 </div>
                 
                 <button
-                  onClick={() => setShowWithdrawalPopup(true)}
+                  onClick={() => setShowPayPalPopup(true)}
                   className="w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white py-3 rounded-lg font-semibold transition-all transform hover:scale-105"
                 >
                   Withdraw via PayPal
