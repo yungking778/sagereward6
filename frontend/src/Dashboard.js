@@ -932,210 +932,113 @@ export const Dashboard = ({ user, onLogout }) => {
   );
 
   const renderCashout = () => {
-    const cashoutOptions = [
-      {
-        amount: 1,
-        coins: 100,
-        bonus: 0,
-        status: !isFirstWithdrawal && userCoins >= 100 ? 'available' : 'locked',
-        progress: Math.min((userCoins / 100) * 100, 100),
-        firstWithdrawalLocked: isFirstWithdrawal
-      },
-      {
-        amount: 5,
-        coins: 500,
-        bonus: 1,
-        status: !isFirstWithdrawal && userCoins >= 500 ? 'available' : userCoins >= 400 ? 'almost' : 'locked',
-        progress: Math.min((userCoins / 500) * 100, 100),
-        firstWithdrawalLocked: isFirstWithdrawal
-      },
-      {
-        amount: 10,
-        coins: 1000,
-        bonus: 5,
-        status: !isFirstWithdrawal && userCoins >= 1000 ? 'available' : userCoins >= 800 ? 'almost' : 'locked',
-        progress: Math.min((userCoins / 1000) * 100, 100),
-        firstWithdrawalLocked: isFirstWithdrawal
-      },
-      {
-        amount: 20,
-        coins: 2000,
-        bonus: 10,
-        status: userCoins >= 2000 ? 'available' : userCoins >= 1600 ? 'almost' : 'locked',
-        progress: Math.min((userCoins / 2000) * 100, 100),
-        firstWithdrawalLocked: false
-      },
-      {
-        amount: 50,
-        coins: 5000,
-        bonus: 25,
-        status: userCoins >= 5000 ? 'available' : userCoins >= 4000 ? 'almost' : 'locked',
-        progress: Math.min((userCoins / 5000) * 100, 100),
-        bestDeal: true,
-        firstWithdrawalLocked: false
-      }
-    ];
-
-    const handleCashout = (option) => {
-      if (option.status === 'available') {
-        setSelectedCashoutOption(option);
-        setShowPayPalPopup(true);
-      }
-    };
-
+    const canWithdraw = completedOffers.length >= 3;
+    const offersRemaining = Math.max(0, 3 - completedOffers.length);
+    
     return (
-      <div className="min-h-screen bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 p-4">
-        <div className="max-w-4xl mx-auto">
-          {/* Header */}
-          <div className="text-center mb-8 pt-8">
-            <h1 className="text-3xl font-bold text-white mb-2">Cash Out</h1>
-            <p className="text-blue-200">Choose your PayPal reward</p>
-            <div className="mt-4 bg-white/10 rounded-full px-6 py-2 inline-block">
-              <span className="text-white font-semibold">{userCoins} coins available</span>
+      <div className="space-y-6">
+        <div className="bg-gradient-to-r from-green-500 to-green-600 rounded-xl p-6 text-white">
+          <h3 className="text-2xl font-bold mb-2">Cash Out</h3>
+          <p className="text-green-100">Convert your coins to real money via PayPal</p>
+        </div>
+
+        {/* Withdrawal Requirement Notice */}
+        {!canWithdraw && (
+          <div className="bg-gradient-to-r from-yellow-500/20 to-orange-500/20 backdrop-blur-xl rounded-2xl p-6 border border-yellow-500/30">
+            <div className="flex items-center space-x-3 mb-4">
+              <div className="w-12 h-12 bg-gradient-to-br from-yellow-400 to-orange-400 rounded-2xl flex items-center justify-center">
+                <Trophy className="w-6 h-6 text-white" />
+              </div>
+              <div>
+                <h4 className="text-xl font-bold text-white">Withdrawal Requirements</h4>
+                <p className="text-yellow-200">Complete offers to unlock withdrawals</p>
+              </div>
+            </div>
+            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4">
+              <div className="flex items-center justify-between mb-2">
+                <span className="text-white font-medium">Progress to Withdrawal</span>
+                <span className="text-yellow-300 font-bold">{completedOffers.length}/3 offers</span>
+              </div>
+              <div className="w-full bg-white/20 rounded-full h-3">
+                <div 
+                  className="bg-gradient-to-r from-yellow-400 to-orange-400 h-3 rounded-full transition-all duration-500"
+                  style={{ width: `${(completedOffers.length / 3) * 100}%` }}
+                ></div>
+              </div>
+              <p className="text-yellow-200 text-sm mt-3">
+                {offersRemaining === 0 
+                  ? "🎉 You can now withdraw your earnings!" 
+                  : `Complete ${offersRemaining} more offer${offersRemaining > 1 ? 's' : ''} to unlock withdrawals`
+                }
+              </p>
             </div>
           </div>
+        )}
 
-          {/* PayPal Cards Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-            {cashoutOptions.filter(option => !option.bestDeal).map((option, index) => (
-              <motion.div
-                key={option.amount}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className={`relative bg-gradient-to-br from-blue-500 to-blue-700 rounded-2xl p-6 border-2 ${
-                  option.status === 'available' ? 'border-green-400 cursor-pointer hover:scale-105' : 
-                  option.status === 'almost' ? 'border-green-400' : 'border-gray-500'
-                } transition-all duration-300`}
-                onClick={() => handleCashout(option)}
-              >
-                {/* PayPal Logo */}
-                <div className="flex items-center justify-center mb-4">
-                  <div className="bg-white rounded-lg px-4 py-2">
-                    <span className="text-blue-600 font-bold text-lg">PayPal</span>
+        {canWithdraw ? (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="bg-gray-800 rounded-xl p-6 border border-gray-700">
+              <h4 className="text-xl font-bold text-white mb-4">PayPal Withdrawal</h4>
+              <div className="space-y-4">
+                <div className="bg-gray-700 rounded-lg p-4">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-gray-300">Available Balance</span>
+                    <span className="text-2xl font-bold text-cyan-400">${coinsToDollars(userCoins)}</span>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-gray-300">Coins</span>
+                    <span className="text-white font-semibold">{userCoins} coins</span>
                   </div>
                 </div>
-
-                {/* Status */}
-                <div className="text-center mb-4">
-                  <h3 className="text-white font-bold text-lg mb-2">
-                    {option.firstWithdrawalLocked ? 'First withdrawal $20 minimum' :
-                     option.status === 'available' ? 'Ready to Cash Out!' : 
-                     option.status === 'almost' ? 'Almost there!' : 'Earn to Unlock!'}
-                  </h3>
-                  <p className="text-white/80">
-                    {userCoins} / {option.coins} Coins
-                  </p>
+                
+                <button
+                  onClick={() => setShowWithdrawalPopup(true)}
+                  className="w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white py-3 rounded-lg font-semibold transition-all transform hover:scale-105"
+                >
+                  Withdraw via PayPal
+                </button>
+              </div>
+            </div>
+            
+            <div className="bg-gray-800 rounded-xl p-6 border border-gray-700">
+              <h4 className="text-xl font-bold text-white mb-4">Withdrawal Info</h4>
+              <div className="space-y-3 text-sm">
+                <div className="flex items-center space-x-2">
+                  <CheckCircle className="w-4 h-4 text-green-400" />
+                  <span className="text-gray-300">Minimum withdrawal: $5</span>
                 </div>
-
-                {/* Progress Bar */}
-                <div className="mb-4">
-                  <div className="bg-gray-700 rounded-full h-3 overflow-hidden">
-                    <div 
-                      className={`h-full transition-all duration-500 ${
-                        option.status === 'available' ? 'bg-green-400' : 
-                        option.status === 'almost' ? 'bg-green-400' : 'bg-gray-500'
-                      }`}
-                      style={{ width: `${option.progress}%` }}
-                    />
-                  </div>
+                <div className="flex items-center space-x-2">
+                  <CheckCircle className="w-4 h-4 text-green-400" />
+                  <span className="text-gray-300">Processing time: 24-48 hours</span>
                 </div>
-
-                {/* Amount */}
-                <div className="flex items-center justify-center space-x-2">
-                  <div className="bg-blue-600 rounded-xl px-6 py-3 text-center">
-                    <span className="text-white font-bold text-2xl">${option.amount}</span>
-                  </div>
-                  {option.bonus > 0 && (
-                    <div className="bg-gradient-to-r from-green-400 to-green-500 rounded-xl px-4 py-3 text-center">
-                      <span className="text-white font-bold">+${option.bonus}</span>
-                    </div>
-                  )}
+                <div className="flex items-center space-x-2">
+                  <CheckCircle className="w-4 h-4 text-green-400" />
+                  <span className="text-gray-300">No withdrawal fees</span>
                 </div>
-
-                {/* Lock Icon */}
-                {option.status === 'locked' && (
-                  <div className="absolute top-4 right-4 bg-gray-700 rounded-full p-2">
-                    <Lock className="w-5 h-5 text-gray-400" />
-                  </div>
-                )}
-              </motion.div>
-            ))}
+                <div className="flex items-center space-x-2">
+                  <CheckCircle className="w-4 h-4 text-green-400" />
+                  <span className="text-gray-300">Completed {completedOffers.length}/3 required offers</span>
+                </div>
+              </div>
+            </div>
           </div>
-
-          {/* Best Deal Card */}
-          {cashoutOptions.find(option => option.bestDeal) && (
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="relative"
-            >
-              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-10">
-                <div className="bg-gradient-to-r from-green-400 to-green-500 rounded-full px-6 py-2 flex items-center">
-                  <Trophy className="w-5 h-5 text-white mr-2" />
-                  <span className="text-white font-bold">Best Deal</span>
-                </div>
+        ) : (
+          <div className="bg-gray-800 rounded-xl p-6 border border-gray-700">
+            <div className="text-center py-8">
+              <div className="w-16 h-16 bg-gray-700 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Lock className="w-8 h-8 text-gray-400" />
               </div>
-
-              <div 
-                className={`bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl p-8 border-4 ${
-                  cashoutOptions.find(option => option.bestDeal).status === 'available' ? 
-                  'border-green-400 cursor-pointer hover:scale-105' : 'border-gray-500'
-                } transition-all duration-300`}
-                onClick={() => handleCashout(cashoutOptions.find(option => option.bestDeal))}
+              <h3 className="text-xl font-semibold text-white mb-2">Withdrawals Locked</h3>
+              <p className="text-gray-400 mb-4">Complete {offersRemaining} more offer{offersRemaining > 1 ? 's' : ''} to unlock withdrawals</p>
+              <button
+                onClick={() => setActiveTab('offers')}
+                className="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-all"
               >
-                {/* PayPal Logo */}
-                <div className="flex items-center justify-center mb-6">
-                  <div className="bg-white rounded-lg px-6 py-3">
-                    <span className="text-blue-600 font-bold text-2xl">PayPal</span>
-                  </div>
-                </div>
-
-                {/* Status */}
-                <div className="text-center mb-6">
-                  <h3 className="text-white font-bold text-2xl mb-3">
-                    {cashoutOptions.find(option => option.bestDeal).status === 'available' ? 
-                     'Ready to Cash Out!' : 'Earn to Unlock!'}
-                  </h3>
-                  <p className="text-white/80 text-lg">
-                    {userCoins} / {cashoutOptions.find(option => option.bestDeal).coins} Coins
-                  </p>
-                </div>
-
-                {/* Progress Bar */}
-                <div className="mb-6">
-                  <div className="bg-gray-700 rounded-full h-4 overflow-hidden">
-                    <div 
-                      className={`h-full transition-all duration-500 ${
-                        cashoutOptions.find(option => option.bestDeal).status === 'available' ? 
-                        'bg-green-400' : 'bg-gray-500'
-                      }`}
-                      style={{ width: `${cashoutOptions.find(option => option.bestDeal).progress}%` }}
-                    />
-                  </div>
-                </div>
-
-                {/* Amount */}
-                <div className="flex items-center justify-center space-x-3">
-                  <div className="bg-blue-700 rounded-xl px-8 py-4 text-center">
-                    <span className="text-white font-bold text-3xl">$50</span>
-                  </div>
-                  <div className="bg-gradient-to-r from-green-400 to-green-500 rounded-xl px-6 py-4 text-center">
-                    <span className="text-white font-bold text-2xl">+$25</span>
-                  </div>
-                </div>
-
-                {/* Lock Icon */}
-                {cashoutOptions.find(option => option.bestDeal).status === 'locked' && (
-                  <div className="absolute top-6 right-6 bg-gray-700 rounded-full p-3">
-                    <Lock className="w-6 h-6 text-gray-400" />
-                  </div>
-                )}
-              </div>
-            </motion.div>
-          )}
-        </div>
+                View Available Offers
+              </button>
+            </div>
+          </div>
+        )}
       </div>
     );
   };
