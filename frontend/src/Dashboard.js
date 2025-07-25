@@ -618,7 +618,7 @@ export const Dashboard = ({ user, onLogout }) => {
               
               {/* Hot Offer Badge */}
               {(offer.id === 2 || offer.id === 3) && (
-                <div className="absolute top-2 left-2 bg-gradient-to-r from-yellow-400 to-orange-500 text-black px-3 py-1 rounded-full text-xs font-bold shadow-lg z-10">
+                <div className="absolute -top-2 -left-2 bg-gradient-to-r from-yellow-400 to-orange-500 text-black px-3 py-1 rounded-full text-xs font-bold shadow-lg z-20">
                   <span className="flex items-center space-x-1">
                     <span>🔥</span>
                     <span>HOT OFFER</span>
@@ -628,7 +628,17 @@ export const Dashboard = ({ user, onLogout }) => {
               
               {/* Bonus Badge */}
               {offer.bonus && !(offer.id === 2 || offer.id === 3) && (
-                <div className="absolute top-4 left-4 bg-gradient-to-r from-yellow-400 to-orange-500 text-black px-3 py-1 rounded-full text-xs font-bold shadow-lg">
+                <div className="absolute top-4 left-4 bg-gradient-to-r from-yellow-400 to-orange-500 text-black px-3 py-1 rounded-full text-xs font-bold shadow-lg z-10">
+                  <span className="flex items-center space-x-1">
+                    <Star className="w-3 h-3 fill-current" />
+                    <span>X{offer.bonus}</span>
+                  </span>
+                </div>
+              )}
+              
+              {/* Bonus Badge for Hot Offers */}
+              {offer.bonus && (offer.id === 2 || offer.id === 3) && (
+                <div className="absolute top-4 left-4 bg-gradient-to-r from-purple-400 to-purple-500 text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg z-10">
                   <span className="flex items-center space-x-1">
                     <Star className="w-3 h-3 fill-current" />
                     <span>X{offer.bonus}</span>
