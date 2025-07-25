@@ -1106,7 +1106,7 @@ export const FinalCTA = ({ onSignUp }) => {
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl px-8 py-4 border border-white/20">
                 <div className="flex items-center justify-center space-x-3">
                   <div className="w-10 h-10 bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-full flex items-center justify-center">
-                    <Gift className="w-5 h-5 text-purple-700" />
+                    <Gift className="w-5 h-5 text-green-700" />
                   </div>
                   <div className="text-white">
                     <div className="font-bold text-lg">Welcome Bonus</div>
