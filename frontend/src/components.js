@@ -525,7 +525,7 @@ export const SignUpModal = ({ isOpen, onClose, onSignUp }) => {
 
             <button
               type="submit"
-              className="w-full bg-white text-purple-700 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-all flex items-center justify-center transform hover:scale-105"
+              className="w-full bg-white text-green-700 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-all flex items-center justify-center transform hover:scale-105"
             >
               <UserPlus className="w-5 h-5 mr-2" />
               Create Account & Get 500 Coins
