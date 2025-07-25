@@ -1086,7 +1086,7 @@ export const FinalCTA = ({ onSignUp }) => {
       <section 
         className="py-20 relative overflow-hidden"
         style={{
-          background: "linear-gradient(135deg, #764ba2 0%, #667eea 100%)"
+          background: "linear-gradient(135deg, #000000 0%, #16a34a 100%)"
         }}
       >
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
