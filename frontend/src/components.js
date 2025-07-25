@@ -1118,7 +1118,7 @@ export const FinalCTA = ({ onSignUp }) => {
             
             <button 
               onClick={handleSignUpClick}
-              className="bg-white text-purple-700 px-12 py-4 rounded-full text-lg font-bold hover:bg-gray-100 transition-all transform hover:scale-105 flex items-center justify-center mx-auto shadow-lg"
+              className="bg-white text-green-700 px-12 py-4 rounded-full text-lg font-bold hover:bg-gray-100 transition-all transform hover:scale-105 flex items-center justify-center mx-auto shadow-lg"
             >
               Sign Up Now - It's Free!
               <Gift className="w-5 h-5 ml-2" />
