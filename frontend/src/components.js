@@ -374,7 +374,7 @@ export const CongratulationsModal = ({ isOpen, onClose, userName }) => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={onClose}
-            className="bg-white text-purple-700 px-8 py-3 rounded-full font-bold hover:bg-gray-100 transition-all shadow-lg"
+            className="bg-white text-green-700 px-8 py-3 rounded-full font-bold hover:bg-gray-100 transition-all shadow-lg"
           >
             Start Earning! 🚀
           </motion.button>
