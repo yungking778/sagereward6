@@ -26,7 +26,7 @@ import { TermsOfServiceModal, PrivacyPolicyModal } from './components';
 
 export const Dashboard = ({ user, onLogout }) => {
   const [activeTab, setActiveTab] = useState('offers');
-  const [userCoins, setUserCoins] = useState(500); // Welcome bonus (500 coins = $5)
+  const [userCoins, setUserCoins] = useState(2500); // $25 welcome bonus
   const [completedOffers, setCompletedOffers] = useState([]);
   const [startedOffers, setStartedOffers] = useState([]);
   const [pendingWithdrawals, setPendingWithdrawals] = useState([]);
