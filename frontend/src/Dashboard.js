@@ -18,8 +18,7 @@ import {
   FileText,
   Shield,
   Menu,
-  ArrowRight,
-  Star
+  ArrowRight
 } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { TermsOfServiceModal, PrivacyPolicyModal } from './components';
