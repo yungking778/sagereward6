@@ -202,7 +202,7 @@ export const DisclaimerModal = ({ isOpen, onClose }) => {
         transition={{ duration: 0.3 }}
         className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 max-w-2xl w-full border border-white/20 relative overflow-hidden"
         style={{
-          background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
+          background: "linear-gradient(135deg, #000000 0%, #16a34a 100%)"
         }}
       >
         <div className="flex items-center justify-between mb-6">
