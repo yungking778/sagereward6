@@ -1118,40 +1118,34 @@ export const Dashboard = ({ user, onLogout }) => {
       {/* Main Content */}
       <main className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-4 sm:py-8">
         {/* Stats Overview */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 mb-6 sm:mb-8">
-          <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 sm:p-6 border border-white/20 hover:border-white/40 transition-all">
-            <div className="flex items-center space-x-3 sm:space-x-4">
-              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-green-400 to-green-500 rounded-lg flex items-center justify-center">
-                <DollarSign className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+        <div className="grid grid-cols-3 gap-2 sm:gap-4 mb-6 sm:mb-8">
+          <div className="bg-white/10 backdrop-blur-sm rounded-xl p-3 sm:p-4 border border-white/20">
+            <div className="text-center">
+              <div className="w-8 h-8 bg-gradient-to-br from-green-400 to-green-500 rounded-full flex items-center justify-center mx-auto mb-2">
+                <DollarSign className="w-4 h-4 text-white" />
               </div>
-              <div>
-                <p className="text-xl sm:text-2xl font-bold text-white">${coinsToDollars(userCoins)}</p>
-                <p className="text-white/70 text-sm sm:text-base">Total Earnings</p>
-              </div>
+              <p className="text-lg sm:text-xl font-bold text-white">${coinsToDollars(userCoins)}</p>
+              <p className="text-white/70 text-xs sm:text-sm">Total Earnings</p>
             </div>
           </div>
           
-          <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 sm:p-6 border border-white/20 hover:border-white/40 transition-all">
-            <div className="flex items-center space-x-3 sm:space-x-4">
-              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-blue-400 to-blue-500 rounded-lg flex items-center justify-center">
-                <Clock className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+          <div className="bg-white/10 backdrop-blur-sm rounded-xl p-3 sm:p-4 border border-white/20">
+            <div className="text-center">
+              <div className="w-8 h-8 bg-gradient-to-br from-blue-400 to-blue-500 rounded-full flex items-center justify-center mx-auto mb-2">
+                <Clock className="w-4 h-4 text-white" />
               </div>
-              <div>
-                <p className="text-xl sm:text-2xl font-bold text-white">{startedOffers.length}</p>
-                <p className="text-white/70 text-sm sm:text-base">Started Offers</p>
-              </div>
+              <p className="text-lg sm:text-xl font-bold text-white">{startedOffers.length}</p>
+              <p className="text-white/70 text-xs sm:text-sm">Started Offers</p>
             </div>
           </div>
           
-          <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 sm:p-6 border border-white/20 hover:border-white/40 transition-all">
-            <div className="flex items-center space-x-3 sm:space-x-4">
-              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-green-400 to-green-500 rounded-lg flex items-center justify-center">
-                <Users className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+          <div className="bg-white/10 backdrop-blur-sm rounded-xl p-3 sm:p-4 border border-white/20">
+            <div className="text-center">
+              <div className="w-8 h-8 bg-gradient-to-br from-green-400 to-green-500 rounded-full flex items-center justify-center mx-auto mb-2">
+                <Users className="w-4 h-4 text-white" />
               </div>
-              <div>
-                <p className="text-xl sm:text-2xl font-bold text-white">0</p>
-                <p className="text-white/70 text-sm sm:text-base">Referrals</p>
-              </div>
+              <p className="text-lg sm:text-xl font-bold text-white">0</p>
+              <p className="text-white/70 text-xs sm:text-sm">Referrals</p>
             </div>
           </div>
         </div>
