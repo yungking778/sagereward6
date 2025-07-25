@@ -230,12 +230,12 @@ export const Dashboard = ({ user, onLogout }) => {
       const withdrawal = {
         id: Date.now(),
         email: paypalEmail,
-        amount: selectedCashoutOption.amount,
-        coins: selectedCashoutOption.coins,
+        amount: coinsToDollars(userCoins),
+        coins: userCoins,
         date: new Date().toISOString(),
         status: 'pending'
       };
-      setUserCoins(userCoins - selectedCashoutOption.coins);
+      setUserCoins(0); // Withdraw all coins
       setPendingWithdrawals([...pendingWithdrawals, withdrawal]);
       
       // Mark that user has made their first withdrawal
@@ -245,7 +245,6 @@ export const Dashboard = ({ user, onLogout }) => {
       setShowWithdrawalPopup(true);
       setPaypalEmail('');
       setConfirmPaypalEmail('');
-      setSelectedCashoutOption(null);
     } else {
       alert('Please enter matching PayPal email addresses');
     }
