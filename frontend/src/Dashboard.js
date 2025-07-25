@@ -43,6 +43,7 @@ export const Dashboard = ({ user, onLogout }) => {
   const [withdrawalAmount, setWithdrawalAmount] = useState('');
   const [isFirstWithdrawal, setIsFirstWithdrawal] = useState(true);
   const [referralLink] = useState(`${window.location.origin}/signup?ref=${Math.random().toString(36).substr(2, 8).toUpperCase()}`);
+  const [copied, setCopied] = useState(false);
 
   // Load dashboard state from localStorage on component mount
   useEffect(() => {
