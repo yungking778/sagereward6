@@ -695,16 +695,24 @@ export const Dashboard = ({ user, onLogout }) => {
           {startedOffers.map((offer) => (
             <div key={offer.id} className="bg-gray-800 rounded-xl p-6 border border-gray-700">
               <div className="flex items-start justify-between">
-                <div className="flex items-start space-x-4">
-                  <div className="flex flex-col">
+                <div className="flex items-start space-x-4 flex-1">
+                  <div className="flex flex-col flex-shrink-0">
                     <img 
                       src={offer.image} 
                       alt={offer.title}
                       className="w-16 h-16 rounded-lg object-cover mb-2"
                     />
+                  </div>
+                  
+                  <div className="flex-1">
+                    <h4 className="font-bold text-white mb-2">{offer.title}</h4>
+                    <div className="flex items-center space-x-4 text-xs text-gray-500 mb-3">
+                      <span>Started: {new Date(offer.startedAt).toLocaleDateString()}</span>
+                      <span>Reward: {offer.reward} coins (${coinsToDollars(offer.reward)})</span>
+                    </div>
                     
                     {/* Professional Info Box */}
-                    <div className="flex-1 bg-gradient-to-r from-slate-800/90 to-slate-900/90 backdrop-blur-xl rounded-2xl p-4 border border-white/10 shadow-2xl hover:shadow-blue-500/20 transition-all duration-300 ml-4">
+                    <div className="bg-gradient-to-r from-slate-800/90 to-slate-900/90 backdrop-blur-xl rounded-2xl p-4 border border-white/10 shadow-2xl hover:shadow-blue-500/20 transition-all duration-300">
                       <div className="flex items-center space-x-3">
                         <div className="w-8 h-8 bg-gradient-to-br from-blue-400 to-purple-500 rounded-xl flex items-center justify-center flex-shrink-0">
                           <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
@@ -716,14 +724,6 @@ export const Dashboard = ({ user, onLogout }) => {
                           <div className="text-sm text-white/90 leading-relaxed font-medium">{offer.description}</div>
                         </div>
                       </div>
-                    </div>
-                  </div>
-                  
-                  <div className="flex-1">
-                    <h4 className="font-bold text-white mb-2">{offer.title}</h4>
-                    <div className="flex items-center space-x-4 text-xs text-gray-500">
-                      <span>Started: {new Date(offer.startedAt).toLocaleDateString()}</span>
-                      <span>Reward: {offer.reward} coins (${coinsToDollars(offer.reward)})</span>
                     </div>
                   </div>
                 </div>
