@@ -1414,7 +1414,6 @@ export const Dashboard = ({ user, onLogout }) => {
                     setShowPayPalPopup(false);
                     setPaypalEmail('');
                     setConfirmPaypalEmail('');
-                    setSelectedCashoutOption(null);
                   }}
                   className="flex-1 bg-gray-700 hover:bg-gray-600 text-white px-4 py-3 rounded-lg font-semibold transition-colors"
                 >
