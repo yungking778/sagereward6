@@ -763,7 +763,7 @@ export const HeroSection = ({ onSignUp }) => {
             >
               <button 
                 onClick={handleSignUpClick}
-                className="bg-white text-purple-700 px-12 py-4 rounded-full text-lg font-bold hover:bg-gray-100 transition-all transform hover:scale-105 flex items-center justify-center mx-auto shadow-lg"
+                className="bg-white text-green-700 px-12 py-4 rounded-full text-lg font-bold hover:bg-gray-100 transition-all transform hover:scale-105 flex items-center justify-center mx-auto shadow-lg"
               >
                 Continue to Sign Up
               </button>
