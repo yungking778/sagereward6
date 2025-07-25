@@ -76,92 +76,76 @@ export const Dashboard = ({ user, onLogout }) => {
       id: 1,
       title: "Hopper - Hotel Booking",
       description: "Sign up for Hopper and get 10% off hotels",
-      reward: 1500, // 1500 coins = $15
-      currency: "coins",
-      type: "signup",
-      difficulty: "Easy",
+      reward: 1500,
       time: "2 min",
+      difficulty: "Easy",
       locked: false,
       url: "https://sharing.hopper.com/invite/md1b2mre",
-      image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=100&h=100&fit=crop&crop=center"
+      image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=100&h=100&fit=crop&crop=center",
+      tasksRemaining: 9,
+      bonus: 3
     },
     {
       id: 2,
       title: "Temu - Shopping App",
       description: "Shop on Temu and get started with amazing discounts",
-      reward: 1200, // 1200 coins = $12
-      currency: "coins",
-      type: "signup",
-      difficulty: "Easy",
+      reward: 1200,
       time: "3 min",
+      difficulty: "Easy",
       locked: false,
       url: "https://temu.to/m/ujo1d8ihpv3",
-      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=100&h=100&fit=crop&crop=center"
+      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=100&h=100&fit=crop&crop=center",
+      tasksRemaining: 15,
+      bonus: 3
     },
     {
       id: 3,
       title: "BIGO Live - Live Streaming",
       description: "Join BIGO Live and start live streaming or watch others",
-      reward: 800, // 800 coins = $8
-      currency: "coins",
-      type: "signup",
-      difficulty: "Easy",
+      reward: 800,
       time: "2 min",
+      difficulty: "Easy",
       locked: false,
       url: "https://www.bigo.tv/",
-      image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=100&h=100&fit=crop&crop=center"
+      image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=100&h=100&fit=crop&crop=center",
+      tasksRemaining: 11
     },
     {
       id: 4,
-      title: "Temu - Get Credit Up To $20",
-      description: "Get credit up to $20.00 today! Click and accept invitation to get credit together",
-      reward: 2000, // 2000 coins = $20
-      currency: "coins",
-      type: "signup",
-      difficulty: "Easy",
-      time: "2 min",
+      title: "Call of Dragons",
+      description: "Play Call of Dragons and complete your first battle",
+      reward: 2000,
+      time: "5 min",
+      difficulty: "Medium",
       locked: false,
       url: "https://temu.com/a/nIgcwUzufKs70Wq",
-      image: "https://images.unsplash.com/photo-1607083206869-4c7672e72a8a?w=100&h=100&fit=crop&crop=center"
+      image: "https://images.unsplash.com/photo-1607083206869-4c7672e72a8a?w=100&h=100&fit=crop&crop=center",
+      tasksRemaining: 7,
+      bonus: 2
     },
     {
       id: 5,
-      title: "SHEIN - Fashion Shopping",
-      description: "Get $50 OFF on your shopping now! Amazing fashion deals and discounts",
-      reward: 1800, // 1800 coins = $18
-      currency: "coins",
-      type: "signup",
-      difficulty: "Easy",
-      time: "3 min",
-      locked: false,
-      url: "https://onelink.shein.com/14/4v9zn00iz0nl",
-      image: "https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?w=100&h=100&fit=crop&crop=center"
+      title: "Hero Wars",
+      description: "Download Hero Wars and reach level 10",
+      reward: 1800,
+      time: "10 min",
+      difficulty: "Medium",
+      locked: true,
+      url: "https://example.com/hero-wars",
+      image: "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=100&h=100&fit=crop&crop=center",
+      tasksRemaining: 10
     },
     {
       id: 6,
-      title: "MyFreeApp - Play & Earn",
-      description: "App that pays you to play! Register, start quests, and claim a $3 reward",
-      reward: 1000, // 1000 coins = $10
-      currency: "coins",
-      type: "game",
+      title: "Slime Carnage",
+      description: "Play Slime Carnage and complete the tutorial",
+      reward: 1000,
+      time: "4 min",
       difficulty: "Easy",
-      time: "5 min",
-      locked: false,
-      url: "https://www.myfreeapp.io?referral_code=QDSXWNUM",
-      image: "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=100&h=100&fit=crop&crop=center"
-    },
-    {
-      id: 7,
-      title: "SurveyJunkie - Online Surveys",
-      description: "Take surveys and earn rewards for your opinions",
-      reward: 600, // 600 coins = $6
-      currency: "coins",
-      type: "survey",
-      difficulty: "Easy",
-      time: "5 min",
       locked: true,
-      url: "#",
-      image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=100&h=100&fit=crop&crop=center"
+      url: "https://example.com/slime-carnage",
+      image: "https://images.unsplash.com/photo-1493711662062-fa541adb5eae?w=100&h=100&fit=crop&crop=center",
+      tasksRemaining: 8
     }
   ];
 
