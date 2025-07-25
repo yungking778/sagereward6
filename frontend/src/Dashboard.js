@@ -253,7 +253,8 @@ export const Dashboard = ({ user, onLogout }) => {
 
   const copyReferralLink = () => {
     navigator.clipboard.writeText(referralLink);
-    alert('Referral link copied to clipboard!');
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
   };
 
   const renderProfile = () => (
