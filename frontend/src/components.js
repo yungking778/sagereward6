@@ -818,7 +818,7 @@ export const HeroSection = ({ onSignUp }) => {
               </div>
 
               <div className="bg-white/20 backdrop-blur-sm rounded-2xl p-4 border border-white/20 flex items-center space-x-3">
-                <div className="w-12 h-12 bg-gradient-to-br from-purple-400 to-purple-600 rounded-lg flex items-center justify-center">
+                <div className="w-12 h-12 bg-gradient-to-br from-green-400 to-green-600 rounded-lg flex items-center justify-center">
                   <Users className="w-6 h-6 text-white" />
                 </div>
                 <div className="text-white">
