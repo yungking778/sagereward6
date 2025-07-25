@@ -1080,96 +1080,121 @@ export const Dashboard = ({ user, onLogout }) => {
         </div>
       </div>
       {/* Header */}
-      <header className="bg-white/10 backdrop-blur-sm border-b border-white/20 mx-4 mt-4 rounded-2xl">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <div className="flex items-center space-x-4">
-              {/* Profile Menu */}
+      <header className="relative z-40">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+          <div className="bg-white/5 backdrop-blur-xl rounded-3xl p-6 border border-white/10 shadow-2xl">
+            <div className="flex items-center justify-between">
+              {/* Left - User Menu */}
               <div className="relative">
-                <button
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
                   onClick={() => setShowProfileMenu(!showProfileMenu)}
-                  className="flex items-center space-x-2 text-white/90 hover:text-white transition-colors"
+                  className="flex items-center space-x-3 bg-white/10 backdrop-blur-sm rounded-2xl px-4 py-3 border border-white/20 hover:border-white/30 transition-all duration-300 shadow-lg hover:shadow-xl"
                 >
-                  <div className="w-10 h-10 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-lg flex items-center justify-center">
+                  <div className="w-10 h-10 bg-gradient-to-br from-emerald-400 to-teal-400 rounded-xl flex items-center justify-center shadow-lg">
                     <User className="w-5 h-5 text-white" />
                   </div>
-                  <span className="text-sm font-medium">Menu</span>
-                </button>
-
-                {/* Profile Dropdown */}
-                {showProfileMenu && (
-                  <div className="absolute left-0 top-full mt-2 w-64 bg-white/10 backdrop-blur-sm rounded-2xl shadow-lg border border-white/20 z-50">
-                    <div className="p-4 border-b border-white/20">
-                      <h3 className="text-white font-semibold">Welcome, {user?.name || 'User'}</h3>
-                      <p className="text-white/70 text-sm">{user?.email || 'user@example.com'}</p>
-                    </div>
-                    
-                    <div className="py-2">
-                      <button
-                        onClick={() => {
-                          setActiveTab('profile');
-                          setShowProfileMenu(false);
-                        }}
-                        className="w-full px-4 py-2 text-left text-white/80 hover:bg-white/10 hover:text-white transition-colors flex items-center space-x-3"
-                      >
-                        <User className="w-4 h-4" />
-                        <span>Profile</span>
-                      </button>
-                      
-                      <button
-                        onClick={() => {
-                          setActiveTab('transactions');
-                          setShowProfileMenu(false);
-                        }}
-                        className="w-full px-4 py-2 text-left text-white/80 hover:bg-white/10 hover:text-white transition-colors flex items-center space-x-3"
-                      >
-                        <CreditCard className="w-4 h-4" />
-                        <span>Transactions</span>
-                      </button>
-                      
-                      <button
-                        onClick={() => {
-                          setActiveTab('support');
-                          setShowProfileMenu(false);
-                        }}
-                        className="w-full px-4 py-2 text-left text-white/80 hover:bg-white/10 hover:text-white transition-colors flex items-center space-x-3"
-                      >
-                        <Gift className="w-4 h-4" />
-                        <span>Support</span>
-                      </button>
-                    </div>
+                  <div className="hidden sm:block text-left">
+                    <p className="text-white font-bold text-sm">Welcome back</p>
+                    <p className="text-white/70 text-xs">{user?.name || 'User'}</p>
                   </div>
+                  <div className="sm:block">
+                    <Menu className="w-4 h-4 text-white/70" />
+                  </div>
+                </motion.button>
+
+                {showProfileMenu && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 10 }}
+                    className="absolute top-full left-0 mt-2 w-64 bg-black/90 backdrop-blur-xl rounded-2xl border border-white/10 shadow-2xl overflow-hidden z-50"
+                  >
+                    <div className="p-4">
+                      <div className="flex items-center space-x-3 mb-4">
+                        <div className="w-12 h-12 bg-gradient-to-br from-emerald-400 to-teal-400 rounded-xl flex items-center justify-center shadow-lg">
+                          <User className="w-6 h-6 text-white" />
+                        </div>
+                        <div>
+                          <p className="text-white font-bold">{user?.name || 'User'}</p>
+                          <p className="text-white/70 text-sm">{user?.email || 'Premium Member'}</p>
+                        </div>
+                      </div>
+                      
+                      <div className="space-y-2">
+                        <button
+                          onClick={() => {
+                            setActiveTab('profile');
+                            setShowProfileMenu(false);
+                          }}
+                          className="w-full px-4 py-3 text-left text-white/80 hover:bg-white/10 hover:text-white transition-colors rounded-xl flex items-center space-x-3"
+                        >
+                          <User className="w-5 h-5" />
+                          <span>Profile Settings</span>
+                        </button>
+                        
+                        <button
+                          onClick={() => {
+                            setActiveTab('transactions');
+                            setShowProfileMenu(false);
+                          }}
+                          className="w-full px-4 py-3 text-left text-white/80 hover:bg-white/10 hover:text-white transition-colors rounded-xl flex items-center space-x-3"
+                        >
+                          <CreditCard className="w-5 h-5" />
+                          <span>Transactions</span>
+                        </button>
+                        
+                        <button
+                          onClick={() => {
+                            setActiveTab('support');
+                            setShowProfileMenu(false);
+                          }}
+                          className="w-full px-4 py-3 text-left text-white/80 hover:bg-white/10 hover:text-white transition-colors rounded-xl flex items-center space-x-3"
+                        >
+                          <Gift className="w-5 h-5" />
+                          <span>Support</span>
+                        </button>
+                      </div>
+                    </div>
+                  </motion.div>
                 )}
               </div>
-            </div>
 
-            {/* Center - RewardSage Logo */}
-            <div className="hidden sm:absolute sm:left-1/2 sm:transform sm:-translate-x-1/2 sm:flex items-center space-x-3">
-              <div className="w-10 h-10 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-lg flex items-center justify-center">
-                <svg viewBox="0 0 24 24" className="w-5 h-5 text-white">
-                  <path fill="currentColor" d="M12 2L8 8h8l-4-6zm0 20l4-6H8l4 6zm-6-8l-4-6v12l4-6zm12 0l4-6v12l-4-6z"/>
-                </svg>
+              {/* Center - RewardSage Logo */}
+              <div className="hidden sm:flex items-center space-x-4">
+                <div className="w-12 h-12 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-2xl flex items-center justify-center shadow-lg">
+                  <svg viewBox="0 0 24 24" className="w-6 h-6 text-white">
+                    <path fill="currentColor" d="M12 2L8 8h8l-4-6zm0 20l4-6H8l4 6zm-6-8l-4-6v12l4-6zm12 0l4-6v12l-4-6z"/>
+                  </svg>
+                </div>
+                <div className="text-white">
+                  <p className="font-bold text-xl tracking-tight">RewardSage</p>
+                  <p className="text-sm opacity-80">Premium Dashboard</p>
+                </div>
               </div>
-              <div className="text-white">
-                <p className="font-bold text-lg">RewardSage</p>
-                <p className="text-sm opacity-90">Dashboard</p>
-              </div>
-            </div>
 
-            {/* Right - Coin Box */}
-            <div className="flex items-center space-x-2 sm:space-x-6">
-              <div className="flex items-center space-x-2 bg-white/10 backdrop-blur-sm rounded-lg px-3 sm:px-4 py-2 border border-white/20">
-                <Coins className="w-4 h-4 sm:w-5 sm:h-5 text-yellow-300" />
-                <span className="text-white font-semibold text-sm sm:text-base">{userCoins}</span>
-                <span className="text-white/70 text-xs sm:text-sm">coins</span>
+              {/* Right - Coin Balance & Logout */}
+              <div className="flex items-center space-x-4">
+                <div className="flex items-center space-x-3 bg-gradient-to-r from-yellow-500/20 to-orange-500/20 backdrop-blur-sm rounded-2xl px-4 py-3 border border-yellow-500/30 shadow-lg">
+                  <div className="w-8 h-8 bg-gradient-to-br from-yellow-400 to-orange-400 rounded-xl flex items-center justify-center shadow-lg">
+                    <Coins className="w-5 h-5 text-white" />
+                  </div>
+                  <div>
+                    <p className="text-white font-bold text-lg">{userCoins.toLocaleString()}</p>
+                    <p className="text-yellow-200 text-xs">coins</p>
+                  </div>
+                </div>
+                
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={onLogout}
+                  className="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-2xl flex items-center justify-center border border-white/20 hover:border-white/30 transition-all duration-300 shadow-lg hover:shadow-xl"
+                >
+                  <LogOut className="w-5 h-5 text-white/70 hover:text-white" />
+                </motion.button>
               </div>
-              
-              <button
-                onClick={onLogout}
-                className="text-white/70 hover:text-white transition-colors"
-              >
-                <LogOut className="w-4 h-4 sm:w-5 sm:h-5" />
-              </button>
             </div>
           </div>
         </div>
