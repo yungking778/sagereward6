@@ -665,7 +665,7 @@ export const HeroSection = ({ onSignUp }) => {
       <section 
         className="pt-20 pb-16 relative overflow-hidden min-h-screen"
         style={{
-          background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
+          background: "linear-gradient(135deg, #000000 0%, #16a34a 100%)"
         }}
       >
         {/* PayPal Notification Boxes */}
